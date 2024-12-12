@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Geordie Kidd</title>
-    <link>http://localhost:1313/writing/</link>
+    <link>https://geordiekidd.com/writing/</link>
     <description>Recent content on Geordie Kidd</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
     <copyright>Geordie Kidd</copyright>
     <lastBuildDate>Thu, 12 Dec 2024 19:05:55 +1100</lastBuildDate>
-    <atom:link href="http://localhost:1313/writing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://geordiekidd.com/writing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Close Edge</title>
-      <link>http://localhost:1313/writing/2020/close-edge/</link>
+      <link>https://geordiekidd.com/writing/2020/close-edge/</link>
       <pubDate>Thu, 12 Dec 2024 19:05:55 +1100</pubDate>
-      <guid>http://localhost:1313/writing/2020/close-edge/</guid>
+      <guid>https://geordiekidd.com/writing/2020/close-edge/</guid>
       <description> Kidd, G. (2020). Expressions of identity by South Sudanese hip hop artists in Melbourne, Australia. Australasian review of African studies, 41(2), 147-163. </description>
     </item>
   </channel>
