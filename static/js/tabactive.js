@@ -7,8 +7,8 @@ $(document).ready(function(){
     $(this).addClass("active");
   });
 
-  // Add fade-out effect on link/button click
-  $("a, button").on("click", function(event) {
+  // Add fade-out effect on button click
+  $("button").on("click", function(event) {
     const target = $(this).attr("href") || $(this).data("place-link"); // Adjust if your buttons have a custom data attribute for links
     if (target) {
       event.preventDefault(); // Prevent immediate redirection
