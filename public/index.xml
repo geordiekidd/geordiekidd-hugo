@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Geordie Kidd</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Geordie Kidd</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <copyright>Geordie Kidd</copyright>
+    <lastBuildDate>Thu, 12 Dec 2024 19:05:55 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Close Edge</title>
+      <link>http://localhost:1313/writing/2020/close-edge/</link>
+      <pubDate>Thu, 12 Dec 2024 19:05:55 +1100</pubDate>
+      <guid>http://localhost:1313/writing/2020/close-edge/</guid>
+      <description> Kidd, G. (2020). Expressions of identity by South Sudanese hip hop artists in Melbourne, Australia. Australasian review of African studies, 41(2), 147-163. </description>
+    </item>
+    <item>
+      <title>Exco Pres Als</title>
+      <link>http://localhost:1313/presentation/2024/exco-pres-als/</link>
+      <pubDate>Thu, 12 Dec 2024 18:57:39 +1100</pubDate>
+      <guid>http://localhost:1313/presentation/2024/exco-pres-als/</guid>
+      <description> 27 Nov 2024, Verb excorporation in four Gunwinyguan languages. Australian Linguistic Society Conference, Canberra. </description>
+    </item>
+    <item>
+      <title>Exco Pres Alw</title>
+      <link>http://localhost:1313/presentation/2024/exco-pres-alw/</link>
+      <pubDate>Thu, 12 Dec 2024 18:55:53 +1100</pubDate>
+      <guid>http://localhost:1313/presentation/2024/exco-pres-alw/</guid>
+      <description> 21 Sep 2024, Verb excorporation in four Gunwinyguan languages. Australian Languages Workshop, Canberra. </description>
+    </item>
+    <item>
+      <title>Wrr Pres</title>
+      <link>http://localhost:1313/presentation/2024/wrr-pres/</link>
+      <pubDate>Thu, 12 Dec 2024 18:53:27 +1100</pubDate>
+      <guid>http://localhost:1313/presentation/2024/wrr-pres/</guid>
+      <description> 16 Jan 2024, Polarity and gradience in Wardaman verbal predicates. ANU Summer Research Scholarship, Canberra. </description>
+    </item>
+    <item>
+      <title>Bjork</title>
+      <link>http://localhost:1313/extra/bjork/</link>
+      <pubDate>Wed, 03 Jul 2024 11:27:48 +1000</pubDate>
+      <guid>http://localhost:1313/extra/bjork/</guid>
+      <description>Favourite singer: Björk.</description>
+    </item>
+    <item>
+      <title>My First Post</title>
+      <link>http://localhost:1313/my-first-post/</link>
+      <pubDate>Wed, 03 Jul 2024 11:27:48 +1000</pubDate>
+      <guid>http://localhost:1313/my-first-post/</guid>
+      <description>Introduction This is bold text, and this is emphasized text.&#xA;Visit the Hugo website!</description>
+    </item>
+    <item>
+      <title>Redup Sem</title>
+      <link>http://localhost:1313/presentation/2023/model-redup-verb-sem/</link>
+      <pubDate>Wed, 03 Jul 2024 11:27:48 +1000</pubDate>
+      <guid>http://localhost:1313/presentation/2023/model-redup-verb-sem/</guid>
+      <description> 30 Nov 2023, Modelling reduplicative verb semantics using lexical conceptual structure. Australian Linguistics Society Conference, Canberra. </description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

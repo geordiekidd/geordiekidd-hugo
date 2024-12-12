@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <div class="tabcontent" data-place="Writ">
+    <p>
+      <ul>
+        {{ range .Pages }}
+          <li>
+            {{ .Content }}
+          </li>
+        {{ end }}
+      </ul>
+    </p>
+  </div>
+{{ end }}
