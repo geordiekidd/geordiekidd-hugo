@@ -45,13 +45,6 @@
       <description>Favourite singer: Björk.</description>
     </item>
     <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/my-first-post/</link>
-      <pubDate>Wed, 03 Jul 2024 11:27:48 +1000</pubDate>
-      <guid>http://localhost:1313/my-first-post/</guid>
-      <description>Introduction This is bold text, and this is emphasized text.&#xA;Visit the Hugo website!</description>
-    </item>
-    <item>
       <title>Redup Sem</title>
       <link>http://localhost:1313/presentation/2023/model-redup-verb-sem/</link>
       <pubDate>Wed, 03 Jul 2024 11:27:48 +1000</pubDate>
