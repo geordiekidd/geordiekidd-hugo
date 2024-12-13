@@ -1,13 +1,16 @@
 {{ define "main" }}
   <div class="tabcontent" data-place="Writ">
     <p>
-      <ul>
-        {{ range .Pages }}
-          <li>
-            {{ .Content }}
-          </li>
-        {{ end }}
-      </ul>
+      {{ range .Data.Pages.GroupByDate "2006" }}
+        <h2>{{ .Key }}</h2>
+        <ul>
+          {{ range .Pages.ByPublishDate.Reverse }}
+            <li>
+              {{ .Content }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
     </p>
   </div>
 {{ end }}

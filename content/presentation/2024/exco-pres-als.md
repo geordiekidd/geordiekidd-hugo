@@ -1,6 +1,6 @@
 +++
 title = 'Exco Pres Als'
-date = 2024-12-12T18:57:39+11:00
+date = 2024-11-27T18:57:39+11:00
 draft = false
 +++
 

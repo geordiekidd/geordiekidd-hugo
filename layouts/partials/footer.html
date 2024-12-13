@@ -1,2 +1,9 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/js/tabactive.js"></script>
+<!-- shamelessly lifted from https://consequently.org -->
+<div class="footer">
+  <p>
+    <em>{{ .Site.Copyright }}, 2024&ndash;<span id="js-year"></span><noscript>{{ now.Format "2006" }}</noscript></em>
+  </p>
+</div>
+<script>
+  document.getElementById("js-year").innerHTML = new Date().getFullYear();
+</script>
