@@ -1,5 +1,8 @@
 baseURL: https://geordiekidd.com/
 languageCode: en-gb
-title: Geordie Kidd
+title: geordiekidd.com
 
 copyright: (c) Geordie Kidd
+
+params:
+  slogan: "Where dreams really don't come true."
