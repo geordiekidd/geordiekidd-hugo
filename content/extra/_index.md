@@ -1,5 +1,5 @@
-+++
-type = 'extra'
-layout = 'single'
-draft = false
-+++
+---
+draft: false
+layout: single
+type: extra
+---
