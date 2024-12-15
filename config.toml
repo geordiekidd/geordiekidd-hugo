@@ -1,5 +1,4 @@
-baseURL = "https://geordiekidd.com"
-languageCode = "en-gb"
+baseurl = "https://geordiekidd.com/"
+languagecode = "en-gb"
 title = "Geordie Kidd"
-
 copyright = "(c) Geordie Kidd"
