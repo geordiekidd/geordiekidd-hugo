@@ -88,6 +88,10 @@ em {
 ul {
   padding-left: 0;
 }
+
+.spaced {
+  margin-bottom: 2em;
+}
   
 a {
   color: var(--link-color);
@@ -102,7 +106,7 @@ a:hover {
   text-decoration: underline;
   /* font-size: 115%; */
 }
-  
+ 
 .hide {
   display: none;
 }

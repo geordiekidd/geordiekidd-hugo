@@ -1,16 +1,21 @@
 {{ define "main" }}
   <div class="tabcontent" data-place="Pres">
     <p>
-      {{ range .Data.Pages.GroupByDate "2006" }}
-        <h2>{{ .Key }}</h2>
-        <ul>
-          {{ range .Pages.ByPublishDate.Reverse }}
-            <li>
-              {{ .Content }}
-            </li>
-          {{ end }}
-        </ul>
-      {{ end }}
+      <h2>{{ .Title }}</h2>
+      <div class="spaced">{{ .Date.Format "2 January 2006" }}<br>
+      {{ .Summary }}
+      </div>    
     </p>
+    <p>
+      {{ .Content }}
+    </p>
+    <div class="spaced"></div> 
+    {{ if .PrevInSection }}
+    <a href="{{.PrevInSection.Permalink}}"> &larr;&nbsp;Earlier</a> /
+    {{ end }}
+    <a href="{{ .Site.BaseURL }}/presentation">Archive</a>
+    {{ if .NextInSection }}
+    / <a href="{{.NextInSection.Permalink}}">Later&nbsp;&rarr;</a>
+    {{ end }}
   </div>
 {{ end }}
