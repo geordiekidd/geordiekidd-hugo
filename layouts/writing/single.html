@@ -1,16 +1,21 @@
 {{ define "main" }}
   <div class="tabcontent" data-place="Writ">
     <p>
-      {{ range .Data.Pages.GroupByDate "2006" }}
-        <h2>{{ .Key }}</h2>
-        <ul>
-          {{ range .Pages.ByPublishDate.Reverse }}
-            <li>
-              {{ .Content }}
-            </li>
-          {{ end }}
-        </ul>
-      {{ end }}
+      <h2>{{ .Title }}</h2>
+      <div class="spaced">{{ .Params.Citation | safeHTML }}
+      </div>    
     </p>
+    <p>
+      {{ .Content }}
+    <a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">Download PDF</a>
+    </p>
+    <div class="spaced"></div> 
+    {{ if .PrevInSection }}
+    <a href="{{.PrevInSection.Permalink}}"> &larr;&nbsp;Earlier</a> /
+    {{ end }}
+    <a href="{{ .Site.BaseURL }}/writing">Archive</a>
+    {{ if .NextInSection }}
+    / <a href="{{.NextInSection.Permalink}}">Later&nbsp;&rarr;</a>
+    {{ end }}
   </div>
 {{ end }}

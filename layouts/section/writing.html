@@ -3,11 +3,13 @@
   <div class="tabcontent" data-place="Writ">
     <p>
       {{ range .Data.Pages.GroupByDate "2006" }}
-        <h2>{{ .Key }}</h2>
+      <h2>{{ .Key }}</h2>
         <ul class="spaced">
           {{ range .Pages.ByPublishDate.Reverse }}
             <li>
-        {{ .Params.citation | safeHTML }} {{ if isset .Params "file"}}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}
+            {{ .Params.citation | safeHTML }} 
+            <a href="{{ .Permalink }}">Abstract</a>
+            {{ if isset .Params "file"}}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}
             </li>
           {{ end }}
         </ul>

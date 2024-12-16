@@ -3,5 +3,7 @@ citation: "Kidd, G. (2020). Expressions of identity by South Sudanese hip hop ar
 date: "2020-12-01T19:05:55+11:00"
 draft: false
 file: Kidd2020CloseToTheEdge.pdf
-title: Close Edge
+title: "Close to the edge: Exploring the global hip hop diaspora"
 ---
+
+My first ever publication. I wrote this for a year 12 VCE subject called [Extended Investigation](https://www.vcaa.vic.edu.au/curriculum/vce/vce-study-designs/extendedinvestigation/Pages/Index.aspx), which asks students to write a 4000 word research paper on a topic of their choosing. At the time I must&rsquo;ve been into hip hop, as I wrote about the use of hip hop music to index particular (black) identities for two South Sudanese musicians living in Melbourne. Though it's a very rough piece of work (I was 17!), I still think it says something very interesting about the global social meaning of hip hop music performance.
