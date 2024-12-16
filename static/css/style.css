@@ -6,6 +6,34 @@
     font-style: normal;
     src: url("/AdapterMono/AdapterMonoPEVF-All.woff2") format("woff2");
   }
+  @font-face {
+    font-display: block;
+    font-family: "Concrete";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/concrete/cmunorm.ttf") format("truetype");
+  }
+  @font-face {
+    font-display: block;
+    font-family: "Concrete";
+    font-style: italic;
+    font-weight: bold;
+    src: url("/concrete/cmunoti.ttf") format("truetype");
+  }
+  @font-face {
+    font-display: block;
+    font-family: "Concrete";
+    font-style: normal;
+    font-weight: bold;
+    src: url("/concrete/cmunobx.ttf") format("truetype");
+  }
+  @font-face {
+    font-display: block;
+    font-family: "Concrete";
+    font-style: italic;
+    font-weight: bold;
+    src: url("/concrete/cmunobi.ttf") format("truetype");
+  }
 }
 
 :root {
@@ -60,7 +88,10 @@ h2 {
 }
 
 h3 {
-  font-weight: 500;
+  font-variation-settings: "ital" 1, "slnt" -13, "wght" 600;
+  font-feature-settings: "ss07" on;
+  font-size: 1em;
+  margin: 1.5em 0 0.5em;
 }
   
 p {
@@ -80,8 +111,9 @@ strong {
 }
 
 em {
-  font-style: normal;
-  font-variation-settings: "ital" 1, "slnt" -13, "wght" 400;
+  /*font-style: normal;*/
+  /*font-variation-settings: "ital" 1, "slnt" -13, "wght" 400;*/
+  font-variation-settings: "ital" 1, "slnt" -13;
   font-feature-settings: "ss07" on;
 }
   
