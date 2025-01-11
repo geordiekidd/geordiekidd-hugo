@@ -7,11 +7,6 @@ copyright: (c) Geordie Kidd
 
 markup:
   goldmark:
-    extensions:
-      typographer: 
-        apostrophe: '&apos;'
-        leftDoubleQuote: '"'
-        rightDoubleQuote: '"'
     renderer:
       unsafe: true
 
