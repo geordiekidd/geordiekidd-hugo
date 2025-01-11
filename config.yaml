@@ -7,13 +7,13 @@ copyright: (c) Geordie Kidd
 
 markup:
   goldmark:
-    renderer:
-      unsafe: true
     extensions:
       typographer: 
-        apostrophe: "&apos;"
+        apostrophe: '&apos;'
         leftDoubleQuote: '"'
         rightDoubleQuote: '"'
+    renderer:
+      unsafe: true
 
 pluralizelisttitles: false
 
