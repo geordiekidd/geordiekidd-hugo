@@ -10,7 +10,7 @@ markup:
     renderer:
       unsafe: true
     extensions:
-      typographer: true
+      typographer: false
 
 pluralizelisttitles: false
 
