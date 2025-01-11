@@ -11,7 +11,7 @@ markup:
       unsafe: true
     extensions: 
       typographer:
-        disable: true
+        disable: false
 
 pluralizelisttitles: false
 
