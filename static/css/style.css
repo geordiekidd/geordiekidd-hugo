@@ -336,7 +336,7 @@ header {
   margin: 0;
 }
 
-.navbar .dropdown-list li a {
+.navbar .dropdown-list li > a {
   margin: 0;
   padding-right: 1ex;
   padding-bottom: 0.125rem;
@@ -359,59 +359,7 @@ header {
 
 
 
-/* OLD NAVBAR */
-/*.navbar-item {*/
-/*  list-style: none;*/
-/*  position: relative;*/
-/*  display: inline-block;*/
-/*  flex-direction: column;*/
-/*  margin-bottom: 0;*/
-/*  margin-left: 4ch;*/
-/*  white-space: nowrap;*/
-/*}*/
-
-/*.navbar-item::after {*/
-/*  content: "/";*/
-/*}*/
-
-/*.navbar-item.active::before {*/
-/*}*/
-/**/
-/*.navbar-item.active {*/
-/*  font-style: normal;*/
-/*  margin-left: 4ch;*/
-/*}*/
-/**/
-/*.navbar-item.active > a {*/
-/*  color: var(--fg-color);*/
-/*  text-decoration: none;*/
-/*  cursor: default;*/
-/*}*/
-
 /* THE "EXTRA" PAGE */
-#sidebar-header {
-  text-align: left;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: var(--header-height);
-  position: relative;
-  overflow: hidden;
-  padding: 0.25rem 0 0 0;
-}
-
-#sidebar-header::after{
-  left: -2ch;
-  bottom: 0;
-  position: absolute;
-  content: "________________________________________________________________________________________________________________"
-}
-
-.view-all {
-  display: none;
-}
-
 .sidebar-container {
   max-width: 100%;
   display: flex;
@@ -420,167 +368,96 @@ header {
   margin: 0;
   min-height: var(--section-height);
   overflow-x: hidden;
+  gap: 3ch;
 }
 
 .sidebar-container > * {
   margin-bottom: 0;
 }
 
-.sidebar::after{
-  bottom: -0.25rem;
-  position: absolute;
-  display: none;
-  content: "________________________________________________________________________________________________________________";
-}
-
-.shelf-container > * {
-  /*max-height: var(--section-height);*/
-  overflow: auto;
-  margin-bottom: 0;
-  /*padding-top: 1rem;*/
-}
-
-.shelf-container {
-  max-height: var(--section-height);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.sidebar {
-  position: relative;
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  margin-left: 0ch;
-  margin-bottom: 0;
-}
-
-.sidebar ul > li:last-child {
-  margin-bottom: 0;
-}
-
-section {
-  position: relative;
-  display: none;
-  padding: 1rem 0ch 0rem 0ch;
-  /*max-height: var(--section-height);*/
-  width: 100%;
-  height: 100%;
-  margin-bottom: 0;
-  background: var(--bg-color);
-  flex-direction: column;
-  overflow-y: auto;
-}
-
-section:target {
-  display: flex;
-}
-
-section:target ~ #about {
-  display: none;
-}
-
-section > header {
-  margin-bottom: 1.5rem;
-}
-
-section > article {
-  flex: 1;
-  max-width: 70ch;
-  margin-bottom: 1.5rem;
-}
-
-section > footer {
-  text-align: right;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-section p {
-  margin-bottom: 1rem;
-}
-
-#about {
-  display: flex;
-}
-
-.sidebar .content {
-  margin-left: 2ch;
-  display: none;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
+/* NOT-SIDEBAR, AKA ICONS */
 
 .not-sidebar {
   display: flex;
-  /*max-width: max-content;*/
-  /*flex: 1;*/
-  flex-direction: row;
-  padding-right: 2ch;
-  /*margin-bottom: 0;*/
+  line-height: 1.25rem;
+  flex-direction: column;
   height: fit-content;
-  position: relative;
-  align-items: flex-end;
-  padding: 0rem 2ch 0rem 2ch;
-  gap: 4ch;
+  margin-top: -0.8rem;
   overflow: auto;
 }
 
-.shelf {
+.shelf-top, .shelf-mid, .shelf-bottom {
   display: flex;
   flex-direction: row;
   overflow: hidden;
   position: relative;
-  line-height: 1.25rem;
+  line-height: inherit;
   margin: 0;
 }
 
-.shelf::before {
+.shelf-top::before {
   white-space: pre;
-  content: "___\A|\A|\A|\A|\A|\A|\A|\A\\‾‾\A\00a0\\\A\00a0\00a0‾";
+  content: "__\A|\A|\A|\A|\A|\A|\A|\A\\‾\A|\\";
 }
 
-.shelf::after {
+.shelf-top::after {
   white-space: pre;
-  content: "_ \A| \A| \A| \A| \A| \A| \A| \A\\ \A\00a0\\\A‾‾";
+  content: "_ \A| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
 }
 
-.shelf > header {
-  margin-top: 1.25rem;
-  margin-right: 1ch;
+.shelf-mid::before {
+  white-space: pre;
+  content: "|\A|\A|\A|\A|\A|\A|\A\\‾\A|\\";
 }
 
-.shelf-roof::before {
+.shelf-mid::after {
+  white-space: pre;
+  content: "| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
+}
+
+.shelf-bottom::before {
+  white-space: pre;
+  content: "|\A|\A|\A|\A|\A|\A|\A\\‾\A\00a0\\\A\00a0\00a0";
+}
+
+.shelf-bottom::after {
+  white-space: pre;
+  content: "| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
+}
+
+.shelf-roof-single-first::before {
   white-space: pre;
   bottom: 0;
-  content: "__________________________________________________________________________________\A\A\A\A\A\A\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾";
+  content: "_____________\A\A\A\A\A\A\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾\A_____________";
 }
 
-.shelf-roof {
+.shelf-roof-single::before {
+  white-space: pre;
+  bottom: 0;
+  content: "\A\A\A\A\A\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾\A_____________";
+}
+
+.shelf-roof-single, .shelf-roof-single-first {
   overflow: hidden;
-  line-height: 1.25rem;
+  line-height: inherit;
   margin: 0;
 }
 
-.shelf-items {
+.shelf-item {
   position: absolute;
-  display: flex;
-  flex-direction: row;
-  gap: 3ch;
-  align-items: flex-end;
-  margin-top: 1rem;
-  margin-left: 3ch;
+  line-height: 1.25rem;
+  bottom: 0;
 }
 
-.shelf-items > .dropcap, .shelf-items > .dropcap-small {
-  line-height: 1.25rem;
-  background: linear-gradient(to bottom, transparent 3px, var(--bg-color) 3px);
+.shelf-item > .dropcap, .shelf-item > .dropcap-small {
+  line-height: inherit;
+  background: linear-gradient(to bottom, 
+    transparent 3px, 
+    var(--bg-color) 3px, 
+    var(--bg-color) calc(100% - 0.75rem), 
+    transparent calc(100% - 0.75rem)
+  );
+  background-repeat: no-repeat;
 }
 
 .dropcap, .dropcap-small {
@@ -608,6 +485,85 @@ section p {
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+}
+
+/* SIDEBAR, AKA CONTENT */
+
+.sidebar {
+  position: relative;
+  display: flex;
+  flex: 1;
+  overflow: auto;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin-left: 0ch;
+  margin-bottom: 0;
+}
+
+.sidebar ul > li:last-child {
+  margin-bottom: 0;
+}
+
+section {
+  position: relative;
+  display: none;
+  padding: 0;
+  max-height: var(--section-height);
+  width: 100%;
+  margin-bottom: 0;
+  background: var(--bg-color);
+  flex-direction: column;
+}
+
+section:target {
+  display: flex;
+}
+
+section:target ~ #about {
+  display: none;
+}
+
+#about {
+  display: flex;
+}
+
+section > header {
+  display: flex;
+  position: relative;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  overflow-x: hidden;
+}
+
+section > header > * {
+  margin: 0;
+}
+
+section > article {
+  position: relative;
+  flex: 1;
+  max-width: 70ch;
+  margin-bottom: 1.5rem;
+  overflow-y: auto;
+}
+
+section > footer {
+  text-align: right;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+section p {
+  margin-bottom: 1rem;
+}
+
+.sidebar .content {
+  margin-left: 2ch;
+  display: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 input[type="radio"] {
@@ -642,10 +598,6 @@ input[type="radio"]:checked + label::before {
   content: ">\00a0";
 }
 
-.container .content {
-  display: none;
-}
-
 input[type="radio"]:checked + label + .content {
   display: block;
 }
@@ -656,22 +608,53 @@ input[type="radio"]:checked + label + .content {
   .view-all {
     display: flex;
   }
-  .not-sidebar {
-    gap: 3ch;
+  /* BOOK SHELF STRUCTURES */
+  .shelf-top::before {
+    white-space: pre;
+    content: "__\A|\A|\A|\A|\A|\A\\‾\A|\\";
   }
-  .shelf::before {
-    content: "___\A|\A|\A|\A|\A|\A\\‾‾\A\00a0\\\A\00a0\00a0‾";
+
+  .shelf-top::after {
+    white-space: pre;
+    content: "_ \A| \A| \A| \A| \A|\A\\ \A_\\";
   }
-  .shelf::after {
-    content: "_ \A| \A| \A| \A| \A| \A\\ \A\00a0\\\A‾‾";
+
+  .shelf-mid::before {
+    white-space: pre;
+    content: "|\A|\A|\A|\A|\A\\‾\A|\\";
   }
-  .shelf-roof::before {
-    content: "__________________________________________________________________________________\A\A\A\A\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾";
+
+  .shelf-mid::after {
+    white-space: pre;
+    content: "| \A| \A| \A| \A| \A\\ \A_\\";
   }
-  .shelf .dropcap {
+
+  .shelf-bottom::before {
+    white-space: pre;
+    content: "|\A|\A|\A|\A|\A\\‾\A\00a0\\\A\00a0\00a0";
+  }
+
+  .shelf-bottom::after {
+    white-space: pre;
+    content: "| \A| \A| \A| \A| \A\\ \A_\\";
+  }
+
+  .shelf-roof-single-first::before {
+    white-space: pre;
+    bottom: 0;
+    content: "________\A\A\A\A\A\A‾‾‾‾‾‾‾‾\A________";
+  }
+
+  .shelf-roof-single::before {
+    white-space: pre;
+    bottom: 0;
+    content: "\A\A\A\A\A‾‾‾‾‾‾‾‾\A________";
+  }
+
+  .shelf-item .dropcap {
     display: none;
   }
-  .dropcap-small {
+  .shelf-item .dropcap-small {
     display: flex;
   }
   #current-filename {

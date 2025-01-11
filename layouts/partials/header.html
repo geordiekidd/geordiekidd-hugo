@@ -6,7 +6,7 @@
         <li class="dropdown">
         <a href="{{ if .IsPage }}{{ .Parent.Permalink }}{{ else }}{{ .Permalink }}{{ end }}">{{ .Section }}</a>
           <ul class="dropdown-list">
-            {{ range .Site.Sections }}
+            {{ range sort .Site.Sections "Section" "asc" }}
               {{ if and (ne .Permalink $.Permalink) (ne .Permalink $.Parent.Permalink) }}
               <li><a href="{{ .Permalink}}">{{ .Title }}</a></li>
               {{ end }}
