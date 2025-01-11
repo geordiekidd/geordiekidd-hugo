@@ -9,9 +9,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-    extensions: 
-      typographer:
-        disable: false
 
 pluralizelisttitles: false
 
