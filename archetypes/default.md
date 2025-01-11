@@ -2,5 +2,10 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
-summary: "{{ .Summary }}"
+location: ""
+citation: ""
+file: ""
+artist: ""
+reltype: ""
+relyear: ""
 ---

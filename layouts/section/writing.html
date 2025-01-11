@@ -1,20 +1,23 @@
 {{ define "main" }}
-<main>
-  <div class="tabcontent" data-place="Writ">
-    <p>
-      {{ range .Data.Pages.GroupByDate "2006" }}
-      <h2>{{ .Key }}</h2>
-        <ul class="spaced">
-          {{ range .Pages.ByPublishDate.Reverse }}
-            <li>
-            {{ .Params.citation | safeHTML }} 
-            <a href="{{ .Permalink }}">Abstract</a>
-            {{ if isset .Params "file"}}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}
-            </li>
-          {{ end }}
-        </ul>
-      {{ end }}
-    </p>
+<div data-place="Writ">
+  {{- .Content -}}
+  <div class="container">
+    {{- range .Data.Pages.GroupByDate "2006" -}}
+    <div class="row">
+      <div class="column">
+        <div class="col-cat">{{ .Key }}</div>
+      </div>
+      <div class="column">
+        {{ range .Pages }}
+        <div class="item">
+          {{ .Params.citation | safeHTML }}
+          {{ if .RenderString .Content}}<a href="{{ .Permalink }}">abstract</a>{{ end }}
+          {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end}}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
-</main>
+</div>
 {{ end }}

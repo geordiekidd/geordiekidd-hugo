@@ -5,19 +5,18 @@
 
 <!-- styles -->
 <link rel="stylesheet" href="/css/style.css">
-<meta name="theme-color" content="rgb(8, 57, 115)">
 
 <!-- icons -->
 <link rel="icon" href="/icons/favicon.ico" sizes="any">
 <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="manifest" href="/icons/site.webmanifest">
+<!--<link rel="manifest" href="/icons/site.webmanifest">-->
 
 <!-- title -->
 <title>
   {{- if .IsHome -}}
     {{- .Site.Title -}}{{ with .Site.Params.slogan }} — {{ . }}{{ end }}
   {{- else -}}
-    {{- .Title | safeHTML }} — {{ .Site.Title -}}
+    {{- .Title | safeHTML }} — {{ .Site.Title | -}}
   {{- end -}}
 </title>

@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="dropcap" style="float:right;padding-left:2ch;margin-bottom:0;"><a href="{{ .Site.BaseURL }}img/portrait-gpk.png">     .–'`'`=.     <br>    /        \    <br>    |/`~^+^'\|    <br>    |. ¬  v  ;    <br>     \      /    <br>      ) ‾‾ (     <br>    _~'.__.'–_    <br> .–'`–._/\_.–'`–. <br>/       |. ___   \<br>|_______|._______|</a></div>
+    <div>
+      {{ range .Pages }}
+        {{ .Content }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

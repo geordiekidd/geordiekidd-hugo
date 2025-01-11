@@ -1,0 +1,20 @@
+{{ define "main" }}
+  {{- .Content -}}
+  <div class="container">
+    <!--<div class="ls">$ ls</div>-->
+    {{- range .Data.Pages.GroupByDate "2006" -}}
+    <div class="row">
+      <div class="column">
+        <div class="col-cat">{{ .Key }}</div>
+      </div>
+      <div class="column">
+        {{ range .Pages }}
+        <div class="item">
+          {{ .Date.Format "02 Jan" }}, <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>. {{ .Params.location }}.
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+{{ end }}

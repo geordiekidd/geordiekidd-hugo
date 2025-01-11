@@ -1,21 +1,26 @@
 {{ define "main" }}
-  <div class="tabcontent" data-place="Writ">
+  <div class="container">
+    <div class="post-header">
+      <h2>{{ .Title }}</h2>
+      <span class="date">
+        <div class="row">
+          <div class="column">
+            <time>
+            <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan, 2006" }}</a>
+            </time> 
+          </div>
+          <div class="column">
+            {{- if isset .Params "author" -}}
+              <span style="opacity:50%";>&nbsp;&nbsp;*&nbsp;&nbsp;by {{ .Params.author }}</span>
+            {{ end }}
+          </div>
+        </div>
+      </span>
+    </div>
+    {{ .Content }}
     <p>
-      <h3>{{ .Title }}</h3>
-      <div class="spaced">{{ .Params.Citation | safeHTML }}
-      </div>    
+    Published in <em>{{ .Params.pubname }}</em>, <em>{{ .Params.volume }}</em>{{ if isset .Params "issue" }}({{ .Params.issue }}){{ end }}, {{ .Params.pages | safeHTML }}. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}
     </p>
-    <p>
-      {{ .Content }}
-    <a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">Download PDF</a>
-    </p>
-    <div class="spaced"></div> 
-    {{ if .PrevInSection }}
-    <a href="{{.PrevInSection.Permalink}}"> &larr;&nbsp;Earlier</a> /
-    {{ end }}
-    <a href="{{ .Site.BaseURL }}/writing">Archive</a>
-    {{ if .NextInSection }}
-    / <a href="{{.NextInSection.Permalink}}">Later&nbsp;&rarr;</a>
-    {{ end }}
+    {{ partial "post-nav.html" . }}
   </div>
 {{ end }}

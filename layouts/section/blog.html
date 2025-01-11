@@ -1,19 +1,19 @@
 {{ define "main" }}
-<main>
-  {{ .Content }}
-  <div class="tabcontent" data-place="Blog">
-    <p>
-      {{ range .Data.Pages.GroupByDate "2006" }}
-        <h2>{{ .Key }}</h2>
-        <ul>
-          {{ range .Pages }}
-            <li>
-              {{ .Date.Format "January 2" }}: <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
-            </li>
-          {{ end }}
-        </ul>
-      {{ end }}
-    </p>
+  {{- .Content -}}
+  <div class="container">
+    {{- range .Data.Pages.GroupByDate "2006" -}}
+    <div class="row">
+      <div class="column">
+        <div class="col-cat">{{- .Key -}}</div>
+      </div>
+      <div class="column">
+        {{ range .Pages }}
+        <div class="item">
+          {{ .Date.Format "02 Jan" }}, <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
-</main>
 {{ end }}

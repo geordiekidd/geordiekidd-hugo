@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="post-header">
+      <h2>{{ .Title }}</h2>
+      <span class="date">
+        <div class="row">
+          <div class="column">
+            <time>
+            <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan, 2006" }}</a>{{ if isset .Params "author" }}<span style="opacity:50%";>&nbsp;&nbsp;*&nbsp;&nbsp;</span>{{ end }}
+            </time> 
+          </div>
+          <div class="column">
+            {{ if isset .Params "author" }}
+              <span class="altauth">
+                by {{ .Params.author }} 
+              </span>
+            {{ end }}
+          </div>
+        </div>
+      </span>
+    </div>
+    {{ .Content }}
+    <p>
+    Presented at the <em>{{ .Params.location -}}</em>. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}presentations/{{ .Params.file }}">slides</a>{{ end }}        
+    </p>
+    {{ partial "post-nav.html" . }}
+  </div>
+{{ end }}

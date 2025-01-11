@@ -1,12 +1,14 @@
 {{ define "main" }}
-  <div class="tabcontent" data-place="Home">
-    <p class="intro">
-      I&rsquo;m <span class="ylhl">Geordie</span>, and this is my personal website. I&rsquo;m a former undergraduate student from the <a href="https://arts.unimelb.edu.au/school-of-languages-and-linguistics">University of Melbourne</a>, where I completed my honours research on the morphology and semantics of some Indigenous languages of northern Australia. This website is intended to serve as a personal blog and an archive of my work. All views are my own. &lt;&lt;GpK&gt;&gt;
-    </p>    
-    <h2>Contact</h2>
-    <p>
-      Email: <a href="mailto:geordiekidd@gmail.com">geordiekidd@gmail.com</a><br>
-      ORCID: <a href="https://orcid.org/0009-0004-7936-1833">0009-0004-7936-1833</a>
-    </p>
+  <div class="container">    
+  <div class="ls">$ ls</div>
+  <ul class="tree">
+    {{ range sort .Sections "Section" "asc" }}
+      <li><a href="{{ .Permalink }}">{{ .Section }}/</a></li>
+    {{ end }}
+  </ul>
+  <ul class="arrow">
+    <li>I'm Geordie, and this is my personal website. Here you will find a blog, a record of my activities, and an archive of my work. All views are my own.</li>
+    <li>To reach me, geordiekidd(&lambda;)gmail.com</li>
+  </ul>
   </div>
 {{ end }}

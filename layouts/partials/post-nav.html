@@ -1,0 +1,11 @@
+<div class="post-nav">
+  <!--&lt;–&nbsp;<a href="javascript:history.back()">back</a>-->
+  $ cd&nbsp;~/<a href="{{ .Parent.Permalink }}">{{ .Parent.Section }}</a>
+  {{- if .PrevInSection -}}
+  <!--<a href="{{.PrevInSection.Permalink}}">prev</a>,&nbsp;-->
+  {{- end -}}
+  <!--<a href="{{ .Parent.Permalink }}">all</a> -->
+  {{-  if .NextInSection -}}
+  <!--,&nbsp;<a href="{{.NextInSection.Permalink}}">next</a>-->
+  {{- end -}}
+</div>

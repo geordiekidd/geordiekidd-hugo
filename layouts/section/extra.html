@@ -1,0 +1,135 @@
+{{ define "main" }}
+<style>
+:root {
+  --header-height: 2.5rem;
+  --section-height: calc(100vh - 10rem);
+  --section-height: calc(100svh - 10rem);
+}
+html {
+  margin-bottom: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+</style>
+<script> <!-- updates header based on which item is displayed -->
+  document.addEventListener('change', (event) => {
+    if (event.target.matches('input[name="collapsible"]:checked')) {
+      const filename = event.target.dataset.filename;
+      document.getElementById('current-filename').textContent = `$ cat ${filename}.md`;
+    }
+  });
+</script>
+<div class="container">
+  <div class="sidebar-container">
+    <!--<div class="divider"></div>-->
+    <div class="shelf-container">
+      <div class="shelf">
+        <div class="shelf-roof"></div>
+        <div class="shelf-items">
+          <div class="dropcap"><a href="#music">____________<br>‖¦  .---.  |<br>‖¦ /     \ |<br>‖¦|   0   ||<br>‖¦ \     / |<br>‖¦  `---'  |<br>‾‾‾‾‾‾‾‾‾‾‾‾<br></a></div>
+          <div class="dropcap"><a href="#books"> ________ <br>|\ΞΞΞΞΞΞΞ\<br>|¦       ¦<br>|¦ $&#%! ¦<br>|¦       ¦<br>|¦  *@~  ¦<br>|¦       ¦<br>\¦       ¦<br>  ‾‾‾‾‾‾‾</a></div>
+          <div class="dropcap"><a href="#movies">.–––––––––––––.<br>||‾‾‾‾‾‾‾‾‾‾‾‾|<br>||(*|[‾‾‾‾]|*)|<br>\|    ‾‾‾‾    |<br>  ‾‾‾‾‾‾‾‾‾‾‾‾ <br></a></div>
+          <div class="dropcap-small"><a href="#music">_______<br>‖ .-. |<br>‖( * )|<br>‖ `-' |<br>‾‾‾‾‾‾‾<br></a></div>
+          <div class="dropcap-small"><a href="#books"> _____ <br>|\ΞΞΞΞ\<br>|¦    ¦<br>|¦ @# ¦<br>|¦    ¦<br>\¦    ¦<br> ‾‾‾‾‾ </a></div>
+          <div class="dropcap-small"><a href="#movies"> ________ <br>|,–    –.|<br>|`–    –´|<br> ‾‾‾‾‾‾‾‾</a></div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <section id="music">
+          <header>
+            <span><a href="#music">./music</a></span>
+          </header>
+          <article>
+            <ul>
+              {{ range sort (where .Site.RegularPages ".File.Dir" "extra/music/") "Params.relyear" }}
+              <li>
+                <input type="radio" id="{{ .File.BaseFileName }}" name="collapsible" data-filename="{{ .File.BaseFileName }}">
+                <label for={{ .File.BaseFileName }}>{{ .Title | safeHTML }}</label>
+                <div class="content">
+                  <p class="content-header">
+                    {{ .Params.reltype }} by <em>{{ .Params.artist | safeHTML }}</em>, {{ .Params.relyear }}.
+                  </p>
+                  {{ .Content }}
+                  <p>
+                    {{ if isset .Params "link" }}
+                      <a href="{{ .Params.link }}">listen</a>
+                    {{ end }}
+                  </p>
+                </div>
+              </li>
+              {{ end }}
+            </ul>
+          </article>
+        </section>
+        <section id="books">
+          <header>
+            <span><a href="#books">./books</a></span>
+          </header>
+          <article>
+            wip
+            <ul>
+              {{ range sort (where .Site.RegularPages ".File.Dir" "extra/books/") "Params.relyear" }}
+              <li>
+                <input type="radio" id="{{ .File.BaseFileName }}" name="collapsible" data-filename="{{ .File.BaseFileName }}">
+                <label for={{ .File.BaseFileName }}>{{ .Title | safeHTML }}</label>
+                <div class="short-summary" id="{{ .File.BaseFileName }}">
+                  <p class="content-header">
+                    {{ .Params.reltype }} by <em>{{ .Params.artist | safeHTML }}</em>, {{ .Params.relyear }}.
+                  </p>
+                  {{ .Content }}
+                  <p>
+                    {{ if isset .Params "link" }}
+                      <a href="{{ .Params.link }}">read</a>
+                    {{ end }}
+                  </p>
+                </div>
+              </li>
+              {{ end }}
+            </ul>
+          </article>
+        </section>
+        <section id="movies">
+          <header>
+            <span><a href="#movies">./movies</a></span>
+          </header>
+          <article>
+            <!--wip-->
+            <ul>
+              {{ range sort (where .Site.RegularPages ".File.Dir" "extra/movies/") "Params.relyear" }}
+              <li>
+                <input type="radio" id="{{ .File.BaseFileName }}" name="collapsible" data-filename="{{ .File.BaseFileName }}">
+                <label for={{ .File.BaseFileName }}>{{ .Title | safeHTML  }}</label>
+                <div class="content">
+                  <p class="content-header">
+                    {{ .Params.reltype }} by <em>{{ .Params.artist | safeHTML }}</em>, {{ .Params.relyear }}.
+                  </p>
+                  {{ .Content }}
+                  <p>
+                    {{ if isset .Params "link" }}
+                      <a href="{{ .Params.link }}">watch</a>
+                    {{ end }}
+                  </p>
+                </div>
+              </li>
+              {{ end }}
+            </ul>
+          </article>
+        </section>
+        <section id="about">
+          <article>
+            <ul style="list-style-type:'>\00a0';margin-left:2ch;">
+              <li>On this page, you will find some of my personal favourites, some of which you might enjoy too. I've included a short reflection on each item, and a link to where you can find it. 
+              <li>(Try clicking one of the ASCII icons, to show some stuff!)</li>
+            </ul>
+          </article>
+          <footer>updated {{ .Lastmod | time.Format "January 2006" }}</footer>
+        </section>
+      </div>
+    </div>
+    <!--<div class="divider"></div>-->
+  </div>
+</div>
+{{ end }}

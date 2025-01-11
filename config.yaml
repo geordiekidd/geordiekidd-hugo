@@ -1,8 +1,22 @@
 baseURL: https://geordiekidd.com/
 languageCode: en-gb
 title: geordiekidd.com
+summaryLength: 10
 
 copyright: (c) Geordie Kidd
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      typographer: 
+        disable: false
+        apostrophe: "&apos;"
+        leftDoubleQuote: '"'
+        rightDoubleQuote: '"'
+
+pluralizelisttitles: false
+
 params:
-  slogan: "Where dreams really don't come true."
+  slogan: "Geordie's permanent online residence."

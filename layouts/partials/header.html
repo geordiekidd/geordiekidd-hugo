@@ -1,9 +1,29 @@
-<div class="tab">
-  <button class="tablinks" data-place="Home"><a href="/">Home</a></button>
-  <button class="tablinks" data-place="Writ"><a href="/writing/">Writing</a></button>
-  <button class="tablinks" data-place="Pres"><a href="/presentation/">Presentations</a></button>
-  <button class="tablinks" data-place="Blog"><a href="/blog/">Blog</a></button>
-  <button class="tablinks" data-place="Xtra"><a href="/extra/">Extra</a></button>
-</div>
+<header>
+  <span class="navbar">
+    <a href="/">geordiekidd.com</a>&nbsp;~
+    {{- if not .IsHome -}}
+    /<ul>
+        <li class="dropdown">
+        <a href="{{ if .IsPage }}{{ .Parent.Permalink }}{{ else }}{{ .Permalink }}{{ end }}">{{ .Section }}</a>
+          <ul class="dropdown-list">
+            {{ range .Site.Sections }}
+              {{ if and (ne .Permalink $.Permalink) (ne .Permalink $.Parent.Permalink) }}
+              <li><a href="{{ .Permalink}}">{{ .Title }}</a></li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </li>
+      </ul>
+    </span> 
+    <span id="current-filename">{{ if .IsPage }}$ cat {{ .File.BaseFileName }}.md{{ end }}</span>
+  {{ end }}
+</header>
+  <!--<ul class="navbar">-->
+  <!--  <li class="navbar-item" data-place="Home"><a href="/">home/</a></li>-->
+  <!--  <li class="navbar-item" data-place="Writ"><a href="/writing">writing</a></li>-->
+  <!--  <li class="navbar-item" data-place="Pres"><a href="/presentations">presentations</a></li>-->
+  <!--  <li class="navbar-item" data-place="Blog"><a href="/blog">blog</a></li>-->
+  <!--  <li class="navbar-item" data-place="Xtra"><a href="/extra">extra</a></li>-->
+  <!--</ul>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/js/tabactive.js"></script>
+<!--<script src="/js/tabactive.js"></script>-->

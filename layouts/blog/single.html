@@ -1,19 +1,20 @@
 {{ define "main" }}
-  <div class="tabcontent" data-place="Blog">
-    <p>
-      <h3>{{ .Title }}</h3>
-      <div class="spaced">{{ .Date.Format "2 January 2006" }}</div>    
-    </p>
-    <p>
-      {{ .Content }}
-    </p>
-    <div class="spaced"></div> 
-    {{ if .PrevInSection }}
-    <a href="{{.PrevInSection.Permalink}}"> &larr;&nbsp;Earlier</a> /
-    {{ end }}
-    <a href="{{ .Site.BaseURL }}/blog">Archive</a>
-    {{ if .NextInSection }}
-    / <a href="{{.NextInSection.Permalink}}">Later&nbsp;&rarr;</a>
-    {{ end }}
+  <div class="container">
+    <div class="post-header">
+      <h2>{{ .Title }}</h2>
+      <span class="date">
+        <div class="row">
+          <div class="column">
+            <time>
+            <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan, 2006" }}</a>{{ if isset .Params "author" }}<span style="opacity:50%";>&nbsp;&nbsp;*&nbsp;&nbsp;</span>{{ end }}
+            </time> 
+          </div>
+          <div class="column">
+          </div>
+        </div>
+      </span>
+    </div>
+    {{ .Content }}
+    {{ partial "post-nav.html" . }}
   </div>
 {{ end }}
