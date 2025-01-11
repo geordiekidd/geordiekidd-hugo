@@ -10,11 +10,7 @@ markup:
     renderer:
       unsafe: true
     extensions:
-      typographer:
-        disable: false
-        apostrophe: '&apos;'
-        leftDoubleQuote: '"'
-        rightDoubleQuote: '"'
+      typographer: true
 
 pluralizelisttitles: false
 
