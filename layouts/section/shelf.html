@@ -1,9 +1,8 @@
 {{ define "main" }}
 <style>
 :root {
-  --header-height: 2.5rem;
-  --section-height: calc(100vh - 10rem);
-  --section-height: calc(100svh - 10rem);
+  --section-height: calc(100vh - 7.5rem);
+  --section-height: calc(100svh - 7.5rem);
 }
 html {
   margin-bottom: 0;
@@ -25,38 +24,38 @@ body {
 <div class="container">
   <div class="sidebar-container">
     <div class="not-sidebar">
+      <!-- MUSIC ICON -->
       <div class="shelf-top">
         <div class="shelf-roof-single-first"></div>
-        <!-- MUSIC ICON DESKTOP -->
+        <!-- DESKTOP -->
         <div class="shelf-item" style="left:2.5ch;top:3.6rem;">
           <div class="dropcap"><a href="#music">____________<br>‖¦  .---.  |<br>‖¦ /     \ |<br>‖¦|   0   ||<br>‖¦ \     / |<br>‖¦  `---'  |<br>‾‾‾‾‾‾‾‾‾‾‾‾<br></a></div>
         </div>
-        <!-- MUSIC ICON SMALL -->
+        <!-- SMALL -->
         <div class="shelf-item" style="left:2.25ch;top:3.6rem;">
           <div class="dropcap-small"><a href="#music">_______<br>‖ .-. |<br>‖( * )|<br>‖ `-' |<br>‾‾‾‾‾‾‾<br></a></div>
         </div>
       </div>
+      <!-- BOOK ICON -->
       <div class="shelf-mid">
         <div class="shelf-roof-single"></div>
-        <!-- BOOK ICON DESKTOP -->
+        <!-- DESKTOP -->
         <div class="shelf-item" style="left:3ch;top:-0.125rem;">
           <div class="dropcap"><a href="#books"> ________ <br>|\ΞΞΞΞΞΞΞ\<br>|¦       ¦<br>|¦ $&#%! ¦<br>|¦       ¦<br>|¦  *@~  ¦<br>|¦       ¦<br>\¦       ¦<br>  ‾‾‾‾‾‾‾</a></div>
         </div>
-        <!-- BOOK ICON SMALL -->
+        <!-- SMALL -->
         <div class="shelf-item" style="left:2ch;top:0;">
           <div class="dropcap-small"><a href="#books"> _____ <br>|\ΞΞΞΞ\<br>|¦    ¦<br>|¦ @# ¦<br>|¦    ¦<br>\¦    ¦<br> ‾‾‾‾‾ </a></div>
         </div>
       </div>
+      <!-- MOVIE ICON -->
       <div class="shelf-bottom">
         <div class="shelf-roof-single"></div>
-        <!-- MOVIE ICON DESKTOP -->
+        <!-- DESKTOP -->
         <div class="shelf-item" style="left:1.6ch;top:4.5rem;">
           <div class="dropcap"><a href="#movies"> ___________<br>|–––––––––––|<br>|(*|[‾‾‾]|*)|<br>|    ‾‾‾    |<br> ‾‾‾‾‾‾‾‾‾‾‾ </a></div>
         </div>
-        <!-- MOVIE ICON SMALL -->
-        <!--<div class="shelf-item" style="left:1.25ch;top:3.6rem;">-->
-        <!--  <div class="dropcap-small"><a href="#movies"> _______ <br>|,–   –.|<br>|`–   –´|<br> ‾‾‾‾‾‾‾</a></div>-->
-        <!--</div>-->
+        <!-- SMALL -->
         <div class="shelf-item" style="left:1.75ch;top:0">
           <div class="dropcap-small"><a href="#movies"> ______ <br>| .-+. |<br>|/ (*)\|<br>|\‾‾‾‾/|<br>| `––' |<br>| StWR |<br> ‾‾‾‾‾‾ </a></div>
         </div>
@@ -69,7 +68,7 @@ body {
         </header>
         <article>
           <ul>
-            {{ range sort (where .Site.RegularPages ".File.Dir" "extra/music/") "Params.relyear" }}
+            {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.relyear" }}
             <li>
               <input type="radio" id="{{ .File.BaseFileName }}" name="collapsible" data-filename="{{ .File.BaseFileName }}">
               <label for={{ .File.BaseFileName }}>{{ .Title | safeHTML }}</label>
@@ -96,7 +95,7 @@ body {
         <article>
           wip
           <ul>
-            {{ range sort (where .Site.RegularPages ".File.Dir" "extra/books/") "Params.relyear" }}
+            {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/books/") "Params.relyear" }}
             <li>
               <input type="radio" id="{{ .File.BaseFileName }}" name="collapsible" data-filename="{{ .File.BaseFileName }}">
               <label for={{ .File.BaseFileName }}>{{ .Title | safeHTML }}</label>
@@ -122,7 +121,7 @@ body {
         </header>
         <article>
           <ul>
-            {{ range sort (where .Site.RegularPages ".File.Dir" "extra/movies/") "Params.relyear" }}
+            {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/movies/") "Params.relyear" }}
             <li>
               <input type="radio" id="{{ .File.BaseFileName }}" name="collapsible" data-filename="{{ .File.BaseFileName }}">
               <label for={{ .File.BaseFileName }}>{{ .Title | safeHTML  }}</label>
@@ -144,10 +143,10 @@ body {
       </section>
       <section id="about">
         <article>
-            <p>On this page, you will find some of my personal favourites, some of which you might enjoy too. I've included a short reflection on each item, and a link to where you can find it.</p> 
-            <p>(Try clicking one of the ASCII icons, to show some stuff!)</p>
+          <p>On this page, you will find some of my personal favourites, some of which you might enjoy too. I've included a short reflection on each item, and a link to where you can find it.</p> 
+          <p>(Try clicking one of the ASCII icons, to show some stuff!)</p>
+          <footer>updated {{ .Lastmod | time.Format "January 2006" }}</footer>
         </article>
-        <footer>updated {{ .Lastmod | time.Format "January 2006" }}</footer>
       </section>
     </div>
   </div>

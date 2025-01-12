@@ -8,7 +8,17 @@
   </ul>
   <ul class="arrow">
     <li>I'm Geordie, and this is my personal website. Here you will find a blog, a record of my activities, and an archive of my work. All views are my own.</li>
-    <li>To reach me, geordiekidd(&lambda;)gmail.com</li>
+    <li>Listen to some <a id="random-music-link" target="_blank">music</a> while you browse.</li>
+    <li>To reach me, geordiekidd(&lambda;)gmail.com.</li>
   </ul>
   </div>
+  <script>
+    var linkArray = [{{- range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.link" -}}{{- if isset .Params "link" -}}"{{ .Params.link }}",{{- end -}}{{- end -}}];
+    function updateLink() {
+      var num = Math.floor(Math.random() * linkArray.length);
+      document.getElementById("random-music-link").setAttribute("href",linkArray[num]);
+    };
+    updateLink();
+    document.getElementById("random-music-link").addEventListener("click",updateLink);
+  </script>
 {{ end }}

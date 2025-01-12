@@ -10,11 +10,11 @@ One of the biggest problems with my original website was that it was very cumber
 
 With Hugo, the site management is fairly hands-off. Each page is structured as a generic template, and is populated upon publication with individual markdown files, which Hugo converts to HTML whenever I push the changes to GitHub. Each blog post, presentation, etc. is written as its own .md file. So, when I'm done writing this post, Hugo will turn the markdown content into HTML that can be displayed on the site using the template I've constructed for blog posts. The templatic structure of a Hugo site means that I can update any of the templates and the whole site will change accordingly, since the content of each page exists independently of the formatting.
 
-Along with the restructuring of the code, I've also readjusted the design. My aim has been to construct a minimalist, functional design which is easy to interpret. It should be clear on each page which section you're in, how the elements are organised, and what the title of the post is (if any). The idea is to   A significant upgrade to the site is the [extra/](/extra) page, which contains a bunch of my favourite bits of music, writing, and film, and for which I tried to create a simple bookshelf display. It's a work in progress, and as such is missing a developed book section. I might also experiment with a vertical bookshelf design, for fun.
+Along with the restructuring of the code, I've also readjusted the design. My aim has been to construct a minimalist, functional design which is easy to interpret. It should be clear on each page which section you're in, how the elements are organised, and what the title of the post is (if any). The idea is to   A significant upgrade to the site is the [shelf/](/shelf) page, which contains a bunch of my favourite bits of music, writing, and film, and for which I tried to create a simple bookshelf display. It's a work in progress, and as such is missing a developed book section. I might also experiment with a vertical bookshelf design, for fun.
 
 This has all taught me a lot about HTML and CSS, and I hope to learn more as the year goes on. My plan is to update the blog regularly, and to add a new section for short essays or compilations of stuff that I like. My checklist at the moment is to accomplish the following before the end of the month:
 
   - Elastic ASCII image border that matches the size of the image
-  - More complete [extra/](/extra) page, with more books and movies
+  - More complete [shelf/](/shelf) page, with more books and movies
   - A new essays/ page, with short essays dedicated to particular topics
   - Randomised music roulette on front page
