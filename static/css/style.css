@@ -1,15 +1,15 @@
 @supports (font-variation-settings: initial) {
   @font-face {
     font-display: block;
-    font-family: "AdapterMonoVF";
-    font-weight: 100 900;
+    font-family: "CommitMono";
+    src: url("/commit/CommitMonoVF.woff2") format("woff2");
+    font-weight: 200 700;
     font-style: normal;
-    src: url("/AdapterMono/AdapterMonoPEVF-All.woff2") format("woff2");
   }
   @font-face {
     font-display: block;
-    font-family: "CommitMono";
-    src: url("/commit/CommitMonoVF.woff2") format("woff2");
+    font-family: "CommitMonoL";
+    src: url("/commit/CommitMonoVFL.woff2") format("woff2");
     font-weight: 200 700;
     font-style: normal;
   }
@@ -37,8 +37,8 @@
 /* General */
 
 * {
-  font-family: "CommitMono";
-  font-feature-settings: "cv11" on;
+  font-family: "CommitMonoL";
+  font-feature-settings: "cv11" on, "ss01" on, "ss02" on, "ss03" on, "ss04" on, "ss05" on;
   max-width: 75ch;
   padding: 0;
   margin: 0;
@@ -55,6 +55,7 @@ html {
   display: block;
   color: var(--fg-color);
   background: var(--bg-color);
+  scroll-behavior: smooth;
 }
 
 ::-moz-selection {
@@ -96,22 +97,16 @@ main {
 
 h1 {
   font-size: 1.5rem;
-  margin-top: 2.5em;
-  font-weight: normal;
+  font-weight: 500;
+  margin-bottom: 0rem;
 }
   
 h2 {
   font-weight: 500;
   font-size: 1.25rem;
-  /*margin-left: 2ch;*/
   position: relative;
   margin-bottom: 0rem;
-  /*font-variation-settings: "ital" 1;*/
 }
-
-/*h2:first-letter {*/
-/*  margin-left: -2ch;*/
-/*}*/
 
 h3 {
   font-weight: normal;
@@ -120,17 +115,6 @@ h3 {
   /*scroll-margin-top: 2em;*/
 }
 
-h4 {
-  margin: 0;
-  padding: 0;
-  line-height: 1rem;
-  font-weight: normal;
-}
-
-.row > h4 {
-  float: left;
-}
- 
 p {
   margin-bottom: 1.5rem;
 }
@@ -166,15 +150,23 @@ a {
   color: var(--link-color);
   font-family: CommitMono;
   text-decoration: underline;
-  /*background-color: var(--light-link-color);*/
-  /*border-radius: 5px;*/
-  /*padding: 0.05em 0.2em;*/
   line-height: 100%; /* keeps the line height the same */
 }
 
 a:hover {
   cursor: pointer;
   text-decoration: none;
+}
+
+.divider {
+  display: flex;
+  white-space: pre;
+  overflow: hidden;
+  margin: 2rem 0 2rem 0;
+}
+
+.divider::after {
+  content: "---------------------------------------------------------------------------------";
 }
 
 figure {
@@ -264,6 +256,10 @@ img {
   content: "]"
 }
 
+.post-header > a > h2:hover {
+  text-decoration: underline;
+}
+
 .post-header .row {
   column-gap: 0ch;
 }
@@ -283,8 +279,8 @@ img {
 }
 
 .post-nav {
-  margin-top: 2em;
-  margin-bottom: 0rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .ls {
@@ -334,6 +330,10 @@ img {
 .tree > li > ul > li {
   margin-left: 2ch;
   list-style-type: "\00a0";
+}
+
+.short-post > figure {
+  display: none;
 }
 
 /* Tabs */
@@ -422,6 +422,10 @@ header {
   height: var(--header-height);
   position: relative;
   overflow: hidden;
+}
+
+#top-header > span {
+  margin: 0;
 }
 
 #top-header::after {
@@ -598,7 +602,7 @@ section > header {
   position: relative;
   text-align: left;
   overflow-x: hidden;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0rem;
   margin-bottom: 0rem;
 }
 

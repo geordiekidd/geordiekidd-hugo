@@ -1,16 +1,45 @@
 {{ define "main" }}
-  {{- .Content -}}
   <div class="container">
-    {{- range .Data.Pages.GroupByDate "2006" -}}
+  <p>
+    This is my personal blog. I'm trying to get in the habit of posting to it consistently, which is why there are quite a few recent posts. Nothing that interesting happens here, but I like journaling so I'll keep it up for now. <a href="#all-posts">view all posts&nbsp;&darr;</a>
+  </p>
+  {{ range $index, $value := where .Site.RegularPages "Section" "blog" }}
+  <div class="divider"></div>
+    <div class="post-header">
+    <a href="{{ .Permalink }}" style="color:var(--fg-color);text-decoration:none;"><h2>{{ .Title }}</h2></a>
+      <span class="date">
+        <div class="row">
+          <div class="column">
+            <time>
+            <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan, 2006" }}</a>{{ if isset .Params "author" }}<span style="opacity:50%";>&nbsp;&nbsp;*&nbsp;&nbsp;</span>{{ end }}
+            </time> 
+          </div>
+          <div class="column">
+          </div>
+        </div>
+      </span>
+    </div>
+    {{ if (eq $index 0) }}
+      {{ .Content }}
+    {{ else }}
+      <div class="short-post">
+        {{ .Summary }}
+    <a href="{{ .Permalink }}">continue reading&nbsp;&rarr;</a>
+      </div>
+    {{ end }}
+  {{ end }}
+  <div class="divider"></div>
+    <div class="post-header" id="all-posts">
+      <h2>All posts</h2>
+    </div>  
+    {{ range .Data.Pages.GroupByDate "2006" }}
     <div class="row">
       <div class="column">
         <div class="col-cat">{{- .Key -}}</div>
       </div>
       <div class="column">
         {{ range .Pages }}
-        <div class="item">
-          {{ .Date.Format "02 Jan" }}, <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
-        </div>
+          <em>&para;&nbsp;{{ .Date.Format "02 Jan" }}</em>: <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>.
         {{ end }}
       </div>
     </div>

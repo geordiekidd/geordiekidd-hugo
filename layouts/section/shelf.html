@@ -65,6 +65,7 @@ body {
           <span><a href="#music">#</a> MUSIC</span>
         </header>
         <article>
+        <br>
           <ul>
             {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.relyear" }}
             <li>
@@ -91,6 +92,7 @@ body {
           <span><a href="#books">#</a> BOOKS</span>
         </header>
         <article>
+        <br>
           wip
           <ul>
             {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/books/") "Params.relyear" }}
@@ -118,6 +120,7 @@ body {
           <span><a href="#movies">#</a> MOVIES</span>
         </header>
         <article>
+        <br>
           <ul>
             {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/movies/") "Params.relyear" }}
             <li>
