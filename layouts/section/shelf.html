@@ -1,8 +1,9 @@
 {{ define "main" }}
 <style>
 :root {
-  --section-height: calc(100vh - 7.5rem);
-  --section-height: calc(100svh - 7.5rem);
+  --header-height: 2.25rem;
+  --section-height: calc(100vh - calc(7.5rem + var(--header-height)));
+  --section-height: calc(100svh - calc(7.5rem + var(--header-height)));
 }
 html {
   margin-bottom: 0;
@@ -13,17 +14,14 @@ body {
   margin-bottom: 0;
 }
 </style>
-<script> <!-- updates header based on which item is displayed -->
-  document.addEventListener('change', (event) => {
-    if (event.target.matches('input[name="collapsible"]:checked')) {
-      const filename = event.target.dataset.filename;
-      document.getElementById('current-filename').textContent = `$ cat ${filename}.md`;
-    }
-  });
-</script>
 <div class="container">
+  <div id="top-header">
+    <span class="view-all"><a onclick="javascript:menuOpenClose()">menu</a></span>
+    <span>FAVOURITES</span>
+    <span><a href="#about">about</a></span>
+  </div>
   <div class="sidebar-container">
-    <div class="not-sidebar">
+    <div class="not-sidebar" id="shelf-menu">
       <!-- MUSIC ICON -->
       <div class="shelf-top">
         <div class="shelf-roof-single-first"></div>
@@ -143,12 +141,32 @@ body {
       </section>
       <section id="about">
         <article>
-          <p>On this page, you will find some of my personal favourites, some of which you might enjoy too. I've included a short reflection on each item, and a link to where you can find it.</p> 
-          <p>(Try clicking one of the ASCII icons, to show some stuff!)</p>
+          <p> Welcome to my (book)shelf! Here you'll find some of my favourite sounds, words, and pictures, some of which you might enjoy too. I've included a short reflection on each item, and a link to where you can find it.</p> 
+          <p>(Try clicking one of the ASCII icons in the menu to show some stuff!)</p>
           <footer>updated {{ .Lastmod | time.Format "January 2006" }}</footer>
         </article>
       </section>
     </div>
   </div>
 </div>
+<script> 
+  // updates header based on which item is displayed
+  document.addEventListener('change', (event) => {
+    if (event.target.matches('input[name="collapsible"]:checked')) {
+      const filename = event.target.dataset.filename;
+      document.getElementById('current-filename').textContent = `$ cat ${filename}.md`;
+    }
+  });
+  
+  function menuOpenClose() {
+    const menu = document.getElementById('shelf-menu');
+    menu.classList.toggle('open');
+  };
+
+  document.querySelectorAll(".dropcap-small a").forEach(link => {
+    link.addEventListener("click", event => {
+      menuOpenClose();
+    });
+  });
+</script>
 {{ end }}

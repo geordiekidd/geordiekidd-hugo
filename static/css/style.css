@@ -177,6 +177,59 @@ a:hover {
   text-decoration: none;
 }
 
+figure {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+figure::before {
+  position: absolute;
+  white-space: pre;
+  top: -1rem;
+  content: "________________________________________________________________________";
+}
+
+figure::after {
+  position: absolute;
+  white-space: pre;
+  bottom: 0;
+  content: "________________________________________________________________________";
+}
+
+figure > .inner {
+  display: flex;
+  position: relative;
+  margin: 0;
+  line-height: 1.25rem;
+  overflow: hidden;
+  padding: 0.5rem 1ch 0rem 1ch;
+}
+
+figure > .inner::before {
+  position: absolute;
+  white-space: pre;
+  top: -0.75rem;
+  left: 0;
+  content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+}
+
+figure > .inner::after {
+  position: absolute;
+  white-space: pre;
+  top: -0.75rem;
+  right: 0;
+  content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+}
+
+img {
+  max-width: 100%;
+  margin: 0;
+}
+
 .hide {
   display: none;
 }
@@ -230,7 +283,7 @@ a:hover {
 }
 
 .post-nav {
-  margin-top: 4em;
+  margin-top: 2em;
   margin-bottom: 0rem;
 }
 
@@ -360,36 +413,53 @@ header {
 
 
 /* THE "EXTRA" PAGE */
+#top-header {
+  text-align: left;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--header-height);
+  position: relative;
+  overflow: hidden;
+}
+
+#top-header::after {
+  position: absolute;
+  bottom: 0;
+  content: "_____________________________________________________________________"
+}
+
 .sidebar-container {
   max-width: 100%;
   display: flex;
   flex-grow: 1;
   position: relative;
   margin: 0;
-  min-height: var(--section-height);
-  overflow-x: hidden;
+  max-height: var(--section-height);
+  overflow: hidden;
   gap: 3ch;
+  padding-top: 1rem;
 }
 
 .sidebar-container > * {
   margin-bottom: 0;
+  overflow-y: auto;
 }
 
 /* NOT-SIDEBAR, AKA ICONS */
-
 .not-sidebar {
+  position: relative;
   display: flex;
+  max-width: fit-content;
   line-height: 1.25rem;
   flex-direction: column;
-  height: fit-content;
   margin-top: -0.8rem;
-  overflow: auto;
 }
 
 .shelf-top, .shelf-mid, .shelf-bottom {
   display: flex;
   flex-direction: row;
-  overflow: hidden;
   position: relative;
   line-height: inherit;
   margin: 0;
@@ -488,21 +558,15 @@ header {
 }
 
 /* SIDEBAR, AKA CONTENT */
-
 .sidebar {
   position: relative;
   display: flex;
   flex: 1;
-  overflow: auto;
 }
 
 .sidebar ul {
   list-style-type: none;
   margin-left: 0ch;
-  margin-bottom: 0;
-}
-
-.sidebar ul > li:last-child {
   margin-bottom: 0;
 }
 
@@ -521,31 +585,32 @@ section:target {
   display: flex;
 }
 
-section:target ~ #about {
-  display: none;
-}
-
 #about {
   display: flex;
+}
+
+section:target ~ #about {
+  display: none;
 }
 
 section > header {
   display: flex;
   position: relative;
   text-align: left;
-  margin-bottom: 1.5rem;
   overflow-x: hidden;
+  padding-bottom: 1.5rem;
+  margin-bottom: 0rem;
 }
 
 section > header > * {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 section > article {
   position: relative;
   flex: 1;
   max-width: 70ch;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0rem;
   overflow-y: auto;
 }
 
@@ -602,10 +667,23 @@ input[type="radio"]:checked + label + .content {
   display: block;
 }
 
+.view-all {
+  display: none;
+}
 
 /* Responsive design */
 @media only screen and (max-width: 768px) {
+  .sidebar-container {
+    gap: 2ch;
+  }
+  /* SHOW AND HIDE SHELF MENU */
   .view-all {
+    display: inline;
+  }
+  #shelf-menu {
+    display: none;
+  }
+  #shelf-menu.open {
     display: flex;
   }
   /* BOOK SHELF STRUCTURES */
@@ -656,6 +734,7 @@ input[type="radio"]:checked + label + .content {
   }
   .shelf-item .dropcap-small {
     display: flex;
+    pointer-events: auto;
   }
   #current-filename {
     display: none;
