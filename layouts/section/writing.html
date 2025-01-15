@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div data-place="Writ">
-  {{- .Content -}}
   <div class="container">
+    {{ .Content }}
     {{- range .Data.Pages.GroupByDate "2006" -}}
     <div class="row">
       <div class="column">

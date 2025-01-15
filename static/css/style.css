@@ -134,7 +134,7 @@ em {
 
 ul {
   margin-left: 2ch;
-  list-style-type: "-\00a0";
+  list-style-type: "*\00a0";
 }
 
 li {
@@ -341,13 +341,8 @@ header {
   margin-bottom: 3rem;
 }
 
-.navbar {
-  margin 1ex 0;
-}
-
 .navbar ul {
   list-style: none;
-  /*position: relative;*/
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -393,19 +388,12 @@ header {
   margin: 0;
   padding-right: 1ex;
   padding-bottom: 0.125rem;
-  /*padding: 12px 16px;*/
 }
 
 .navbar .dropdown-list li a::after {
   content: "/";
 }
 
-.navbar .dropdown-list li a:hover {
-  background-color: var(--fg-color);
-  color: var(--bg-color);
-}
-
-/* Show dropdown on hover */
 .navbar .dropdown:hover .dropdown-list {
   display: block;
 }

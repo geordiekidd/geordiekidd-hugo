@@ -14,7 +14,8 @@ Along with the restructuring of the code, I've also readjusted the design. My ai
 
 This has all taught me a lot about HTML and CSS, and I hope to learn more as the year goes on. My plan is to update the blog regularly, and to add a new section for short essays or compilations of stuff that I like. My checklist at the moment is to accomplish the following before the end of the month:
 
-  - Elastic ASCII image border that matches the size of the image
+  - ~~Elastic ASCII image border that matches the size of the image~~
   - More complete [shelf/](/shelf) page, with more books and movies
   - A new essays/ page, with short essays dedicated to particular topics
-  - Randomised music roulette on front page
+  - ~~Randomised music roulette on front page~~
+  - Auto-generated bibtex files for presentations and publications

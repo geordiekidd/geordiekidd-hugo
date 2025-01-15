@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="container">
     <div class="post-header">
-      <h2>{{ .Title }}</h2>
+      <h2>{{ .Title | safeHTML }}</h2>
       <span class="date">
         <div class="row">
           <div class="column">
@@ -15,6 +15,9 @@
       </span>
     </div>
     {{ .Content }}
+    <p style="margin-left:0ch;">
+      <em>-- GK --</em>
+    </p>
     {{ partial "post-nav.html" . }}
   </div>
 {{ end }}

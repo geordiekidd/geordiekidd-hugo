@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="container">
     <div class="post-header">
-      <h2>{{ .Title }}</h2>
+      <h2>{{ .Title | safeHTML }}</h2>
       <span class="date">
         <div class="row">
           <div class="column">
