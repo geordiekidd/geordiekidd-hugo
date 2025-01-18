@@ -6,7 +6,7 @@ draft: false
 
 The other day I visited my friend J for lunch, and to discuss some music he is intending to include in his book-in-progress. I offered some technical descriptions of the songs, something which I hadn't sat down and done since my music analysis subject in high school. We listened to a lot of disco, dance, funk, and soul deep cuts from the 1970s and 1980s. So good. 
 
-<figure style="width:45%;float:right;margin-left:2ch;">
+<figure class="image" style="width:45%;float:right;margin-left:2ch;">
   <div class="inner">
     <img src="/img/fennel-gazpacho-1.jpeg" alt="Two bowls of soup, with bread and dip on the side">
   </div>

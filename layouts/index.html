@@ -3,14 +3,14 @@
     <div class="ls">$ ls</div>
     <ul class="tree">
       {{ range sort .Sections "Section" "asc" }}
-        <li><a href="{{ .Permalink }}">{{ .Section }}/</a></li>
+        <li><a href="{{ .Permalink }}">{{ .Section }}</a></li>
       {{ end }}
     </ul>
     <ul class="arrow">
       <li>I'm Geordie, and this is my personal website. Contained is a blog, a record of my activities, and an archive of my work. All views are my own. </li>
       <li>Listen to some <a id="random-music-link" target="_blank">music</a> while you browse.</li>
     </ul>
-    <div style="float:right;margin-top:1rem;margin-right:4ch;">
+    <div style="float:right;margin-top:1.5rem;margin-right:4ch;">
       <span style="margin-left:-4ch;">To reach me,</span><br> geordiekidd(&lambda;)gmail.com.
     </div>
   </div>

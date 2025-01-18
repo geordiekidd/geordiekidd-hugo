@@ -6,28 +6,24 @@
     font-weight: 200 700;
     font-style: normal;
   }
-  @font-face {
-    font-display: block;
-    font-family: "CommitMonoL";
-    src: url("/commit/CommitMonoVFL.woff2") format("woff2");
-    font-weight: 200 700;
-    font-style: normal;
-  }
 }
 
 :root {
   /* Colours */
   --base: #faf9f6;
+  --base2: #e8e7e3;
   --text: #312B1B;
   --link: #005faf;
   --sel: #005faf;
 
   --base-alt: #25273a;
+  --base2-alt: #363a4f;
   --text-alt: #cad3f5;
   --link-alt: #8aadf4;
   --sel-alt: #939ab7;
 
   --bg-color: var(--base);
+  --bg-color2: var(--base2);
   --fg-color: var(--text);
   --link-color: var(--link);
   /* Font size */
@@ -37,12 +33,11 @@
 /* General */
 
 * {
-  font-family: "CommitMonoL";
+  font-family: "CommitMono";
   font-feature-settings: "cv11" on, "ss01" on, "ss02" on, "ss03" on, "ss04" on, "ss05" on;
   max-width: 75ch;
   padding: 0;
   margin: 0;
-  margin-bottom: 2em;
   font-size: 14px;
   line-height: 1.5rem;
   box-sizing: border-box;
@@ -50,7 +45,7 @@
 }
 
 html {
-  padding: 0 2rem;
+  padding: 0 4ch;
   margin: 0 auto;
   display: block;
   color: var(--fg-color);
@@ -71,6 +66,7 @@ html {
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: var(--base-alt);
+    --bg-color2: var(--base2-alt);
     --fg-color: var(--text-alt);
     --link-color: var(--link-alt);
   }
@@ -81,9 +77,9 @@ html {
 }
 
 body {
-  margin-top: 3rem;
+  margin: 3rem 0;
   max-width: calc(100vw - 5.5ch);
-  margin-bottom: 3rem;
+  counter-reset: section footnote footnote-back;
 }
 
 main {
@@ -91,28 +87,72 @@ main {
 }
 
 .container {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  margin-bottom: 0rem;
+  position: relative;
 }
   
 h2 {
-  font-weight: 500;
-  font-size: 1.25rem;
+  font-weight: 400;
+  font-size: 1rem;
   position: relative;
-  margin-bottom: 0rem;
+  margin-bottom: 1.5rem;
+  scroll-margin-top: 2rem;
+  counter-reset: subsection;
+  text-transform: uppercase;
+  &::before {
+    display: inline-block;
+    counter-increment: section;
+    /*content: counter(section) ".\00a0";*/
+  }
+  &:not(:first-of-type) {
+    margin-top: 4.5rem;
+  }
 }
 
 h3 {
   font-weight: normal;
-  font-size: 1.25rem;
-  margin-bottom: 0.625rem;
-  /*scroll-margin-top: 2em;*/
+  font-size: 1rem;
+  margin-top: 3rem;
+  scroll-margin-top: 2em;
+  &::before {
+    display: inline-block;
+    counter-increment: subsection;
+    /*content: counter(section) "." counter(subsection) ".\00a0";*/
+  }
+}
+
+h4 {
+  font-weight: 400;
+  margin-top: 4.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.footnote, .footnote-back {
+  &::before {
+    content: "[";
+  }
+  &::after {
+    content: "]";
+  }
+}
+
+.footnote { 
+  counter-increment: footnote;
+  &> a::before {
+    content: counter(footnote);
+  }
+}
+
+.footnote-back {
+  counter-increment: footnote-back;
+  & > a::before {
+    content: counter(footnote-back);
+  }
 }
 
 p {
@@ -151,11 +191,10 @@ a {
   font-family: CommitMono;
   text-decoration: underline;
   line-height: 100%; /* keeps the line height the same */
-}
-
-a:hover {
-  cursor: pointer;
-  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
 }
 
 .divider {
@@ -163,13 +202,12 @@ a:hover {
   white-space: pre;
   overflow: hidden;
   margin: 2rem 0 2rem 0;
+  &::after {
+    content: "---------------------------------------------------------------------------------";
+  }
 }
 
-.divider::after {
-  content: "---------------------------------------------------------------------------------";
-}
-
-figure {
+figure.image {
   display: flex;
   position: relative;
   overflow: hidden;
@@ -178,21 +216,21 @@ figure {
   margin-bottom: 0.75rem;
 }
 
-figure::before {
+figure.image::before {
   position: absolute;
   white-space: pre;
   top: -1rem;
   content: "________________________________________________________________________";
 }
 
-figure::after {
+figure.image::after {
   position: absolute;
   white-space: pre;
   bottom: 0;
   content: "________________________________________________________________________";
 }
 
-figure > .inner {
+figure.image > .inner {
   display: flex;
   position: relative;
   margin: 0;
@@ -201,7 +239,7 @@ figure > .inner {
   padding: 0.5rem 1ch 0rem 1ch;
 }
 
-figure > .inner::before {
+figure.image > .inner::before {
   position: absolute;
   white-space: pre;
   top: -0.75rem;
@@ -209,7 +247,7 @@ figure > .inner::before {
   content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
 }
 
-figure > .inner::after {
+figure.image > .inner::after {
   position: absolute;
   white-space: pre;
   top: -0.75rem;
@@ -231,7 +269,7 @@ img {
   grid-template-columns: minmax(auto, auto) 1fr;
   column-gap: 2ch;
   scroll-margin-top: 2rem;
-  margin-bottom: 0rem;
+  margin-bottom: 2rem;
 }
 
 .item {
@@ -246,17 +284,19 @@ img {
 
 .col-cat {
   margin: 0;
+  &::before {
+    content: "[";
+  }
+  &::after {
+    content: "]";
+  }
 }
 
-.col-cat::before {
-  content: "["
+.post-header {
+  margin-bottom: 2rem;
 }
 
-.col-cat::after {
-  content: "]"
-}
-
-.post-header > a > h2:hover {
+.post-header > a > h1:hover {
   text-decoration: underline;
 }
 
@@ -268,10 +308,9 @@ img {
   text-decoration: none;
   color: var(--fg-color);
   opacity: 50%;
-}
-
-.post-header .date a:hover {
-  opacity: 100%;
+  &:hover {
+    opacity: 100%;
+  }
 }
 
 .post-header .column {
@@ -279,12 +318,7 @@ img {
 }
 
 .post-nav {
-  margin-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.ls {
-  margin-bottom: 0rem;
+  margin-top: 4.5rem;
 }
 
 .ls::after {
@@ -314,11 +348,13 @@ img {
 .tree li a {
   color: var(--fg-color);
   text-decoration: none;
-}
-
-.tree li a:hover {
-  color: var(--bg-color);
-  background: var(--fg-color);
+  &:hover {
+    color: var(--bg-color);
+    background: var(--fg-color);
+  }
+  &::after {
+    content: "/";
+  }
 }
 
 /* level 1 */
@@ -328,8 +364,8 @@ img {
 
 /* level 2 */
 .tree > li > ul > li {
-  margin-left: 2ch;
-  list-style-type: "\00a0";
+  margin-left: 4ch;
+  list-style-type: "|-- ";
 }
 
 .short-post > figure {
@@ -352,20 +388,18 @@ header {
   color: var(--fg-color);
   text-decoration: none;
   margin: 0;
-}
-
-.navbar a:hover {
-  color: var(--bg-color);
-  background-color: var(--fg-color);
+  &:hover {
+    color: var(--bg-color);
+    background-color: var(--fg-color);
+  }
 }
 
 .navbar li {
   position: relative;
   margin: 0;
-}
-
-.navbar li > a {
-  display: block;
+  & > a {
+    display: block;
+  }
 }
 
 /* Dropdown menu styling */
@@ -398,7 +432,52 @@ header {
   display: block;
 }
 
+figure {
+  position: relative;
+  overflow: hidden;
+}
 
+figure p {
+  margin-bottom: 0;
+}
+
+cite {
+  font-style: normal;
+}
+
+blockquote, cite {
+  font-variation-settings: "ital" 1;
+}
+
+blockquote,
+blockquote ~ * {
+  padding-left: 2ch;
+  position: relative;
+  max-width: 67%;
+}
+
+blockquote::before {
+  content: "\201C";
+  left: 0ch;
+  top: 0;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+figure:has(> blockquote)::before {
+  line-height: 0.75rem;
+  position: absolute;
+  white-space: pre;
+  opacity: 50%;
+  content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+}
+
+pre {
+  background-color: var(--bg-color2);
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
 
 /* THE "EXTRA" PAGE */
 #top-header {
@@ -419,7 +498,7 @@ header {
 #top-header::after {
   position: absolute;
   bottom: 0;
-  content: "_____________________________________________________________________"
+  content: "_______________________________________________________________________________"
 }
 
 .sidebar-container {
@@ -526,27 +605,23 @@ header {
   display: block;
 	white-space: pre;
   line-height: 1.25rem;
-	margin-bottom: 0rem;
   float: left;
+  & > a {
+    text-decoration: none;
+    color: var(--fg-color);
+    margin-top: 0rem;
+    line-height: 1.25rem;
+    &:hover {
+      color: var(--link-color);
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
 }
 
 .dropcap-small {
   display: none;
-}
-
-.dropcap > a, .dropcap-small > a {
-  text-decoration: none;
-  color: var(--fg-color);
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  line-height: 1.25rem;
-}
-
-.dropcap > a:hover, .dropcap-small > a:hover {
-  color: var(--link-color);
-  text-transform: uppercase;
-  font-weight: 700;
-  cursor: pointer;
 }
 
 /* SIDEBAR, AKA CONTENT */
@@ -602,7 +677,6 @@ section > article {
   position: relative;
   flex: 1;
   max-width: 70ch;
-  margin-bottom: 0rem;
   overflow-y: auto;
 }
 
@@ -620,7 +694,7 @@ section p {
   margin-left: 2ch;
   display: none;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 input[type="radio"] {
@@ -631,7 +705,6 @@ section label {
   cursor: pointer;
   display: block;
   margin-top: 0rem;
-  margin-bottom: 0rem;
   position: relative;
 }
 

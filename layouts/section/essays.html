@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <div class="container">
+    {{ range .Data.Pages }}
+      <ul>
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a> | {{ .Date.Format "2006"}}</li>
+      </ul> 
+    {{ end }}
+  </div>  
+{{ end }}

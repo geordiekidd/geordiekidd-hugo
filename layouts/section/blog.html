@@ -6,7 +6,7 @@
     {{ range $index, $value := where .Site.RegularPages "Section" "blog" }}
       <div class="divider"></div>
       <div class="post-header">
-        <a href="{{ .Permalink }}" style="color:var(--fg-color);text-decoration:none;"><h2>{{ .Title | safeHTML }}</h2></a>
+        <a href="{{ .Permalink }}" style="color:var(--fg-color);text-decoration:none;"><h1>{{ .Title | safeHTML }}</h1></a>
         <span class="date">
           <div class="row">
             <div class="column">
@@ -30,7 +30,7 @@
     {{ end }}
     <div class="divider"></div>
     <div class="post-header" id="all-posts">
-      <h2>All posts</h2>
+      <h1>All posts</h1>
     </div>  
     {{ range .Data.Pages.GroupByDate "2006" }}
       <div class="row">

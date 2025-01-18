@@ -1,11 +1,14 @@
 <div class="post-nav">
-  <!--&lt;–&nbsp;<a href="javascript:history.back()">back</a>-->
   <a href="{{ .Parent.Permalink }}">&larr;&nbsp;{{ .Parent.Section }}</a>
-  {{- if .PrevInSection -}}
-  <!--<a href="{{.PrevInSection.Permalink}}">prev</a>,&nbsp;-->
-  {{- end -}}
-  <!--<a href="{{ .Parent.Permalink }}">all</a> -->
-  {{-  if .NextInSection -}}
-  <!--,&nbsp;<a href="{{.NextInSection.Permalink}}">next</a>-->
-  {{ end }}
+  <span style="float:right;">
+    {{- if .PrevInSection -}}
+      <a href="{{.PrevInSection.Permalink}}">prev</a>
+      {{- if .NextInSection -}} 
+      ,&nbsp;
+      {{- end -}}
+    {{- end -}}
+    {{- if .NextInSection -}}
+      <a href="{{.NextInSection.Permalink}}">next</a>
+    {{- end -}}
+  </span>
 </div>
