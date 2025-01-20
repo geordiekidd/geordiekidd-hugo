@@ -8,11 +8,40 @@
     </ul>
     <ul class="arrow">
       <li>I'm Geordie, and this is my personal website. Contained is a blog, a record of my activities, and an archive of my work. All views are my own. </li>
-      <li>Listen to some <a id="random-music-link" target="_blank" href="#">music</a> while you browse.</li>
+      <li>Listen to some <a id="random-music-link" target="_blank">music</a> while you browse.</li>
     </ul>
     <div style="float:right;margin-top:1.5rem;">
       <span style="margin-left:-2ch;">To reach me,</span><br> geordiekidd(&lambda;)gmail.com.
     </div>
   </div>
-  <script src="/js/roulette.js"></script>
+  <script>
+    var linkArray = [
+      {{- range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.link" -}}
+        {{- if isset .Params "link" -}}
+          "{{ .Params.link }}",
+        {{- end -}}
+      {{- end -}}
+      "https://www.youtube.com/watch?v=opvfotohSMg", // Any Love - Chaka Khan
+      "https://www.youtube.com/watch?v=h3SJmFpWdM4", // Angel - Ohio Players
+      "https://www.youtube.com/watch?v=5Euo2PLEuU0", // Birdlike - Freddie Hubbard
+      "https://www.youtube.com/watch?v=bTpNU88utKY", // Wie schön leuchtet der Morgenstern - Bach
+      "https://www.youtube.com/watch?v=zgc0IQKFAeU", // Wouldn't It Be Loverly - Shirley Horn
+      "https://www.youtube.com/watch?v=8l4rf6UfDgA", // Warum ist das Licht gegeben - Brahms
+      "https://www.youtube.com/watch?v=Zv3q6QVhoIs", // Lamentations of Jeremiah - Carpentras
+      "https://www.youtube.com/watch?v=XVNh1plmT58", // Seriado - Arthur Verocai
+      "https://www.youtube.com/watch?v=SuDe91CXf8s", // Theme from MASH - Bill Evans
+      "https://www.youtube.com/watch?v=Q0W4jrKFIpk", // After the Rain - John Coltrane
+      "https://www.youtube.com/watch?v=9fzGGbiJags", // Massage Situation - Flying Lotus
+      "https://www.youtube.com/watch?v=G-AnGC0J1m0", // Sleep Cycles - Andrea Keller
+      "https://www.youtube.com/watch?v=l3qi3E40aWE", // For Once in My Life - Stevie Wonder
+      "https://www.youtube.com/watch?v=9-xWoMAptQ0&list=PLQvL6GLJiX92BjXlmxC9YEdREBH5RjRr9&index=8", // Power Flower - Stevie Wonder
+      "https://www.youtube.com/watch?v=2UTVGgIhfmU", // UMMG - Sasha Berliner
+    ];
+    function updateLink() {
+      var num = Math.floor(Math.random() * linkArray.length);
+      document.getElementById("random-music-link").setAttribute("href",linkArray[num]);
+    };
+    updateLink();
+    document.getElementById("random-music-link").addEventListener("click",updateLink);
+  </script>
 {{ end }}
