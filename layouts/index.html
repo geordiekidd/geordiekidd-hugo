@@ -8,19 +8,11 @@
     </ul>
     <ul class="arrow">
       <li>I'm Geordie, and this is my personal website. Contained is a blog, a record of my activities, and an archive of my work. All views are my own. </li>
-      <li>Listen to some <a id="random-music-link" target="_blank">music</a> while you browse.</li>
+      <li>Listen to some <a id="random-music-link" target="_blank" href="#">music</a> while you browse.</li>
     </ul>
-    <div style="float:right;margin-top:1.5rem;margin-right:4ch;">
-      <span style="margin-left:-4ch;">To reach me,</span><br> geordiekidd(&lambda;)gmail.com.
+    <div style="float:right;margin-top:1.5rem;">
+      <span style="margin-left:-2ch;">To reach me,</span><br> geordiekidd(&lambda;)gmail.com.
     </div>
   </div>
-  <script>
-    var linkArray = [{{- range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.link" -}}{{- if isset .Params "link" -}}"{{ .Params.link }}",{{- end -}}{{- end -}}];
-    function updateLink() {
-      var num = Math.floor(Math.random() * linkArray.length);
-      document.getElementById("random-music-link").setAttribute("href",linkArray[num]);
-    };
-    updateLink();
-    document.getElementById("random-music-link").addEventListener("click",updateLink);
-  </script>
+  <script src="/js/roulette.js"></script>
 {{ end }}

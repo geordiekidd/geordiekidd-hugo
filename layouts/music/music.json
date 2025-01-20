@@ -1,0 +1,10 @@
+{{- $pages := where .Site.RegularPages ".File.Dir" "shelf/music/" -}}
+{{- $sorted := sort $pages "Params.link" -}}
+[
+{{- range $index, $page := $sorted -}}
+  {{- if $index }},{{ end -}}
+  {
+    "{{ $page.Params.link }}"
+  }
+{{- end -}}
+]

@@ -2,7 +2,14 @@
   <div class="container">
     {{ range .Data.Pages }}
       <ul>
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a> | {{ .Date.Format "2006"}}</li>
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+          <br>
+          {{ range $i, $e := .Keywords -}}
+            {{ if $i }}, {{ end }}
+            #{{ $e -}}
+          {{ end }}
+        </li>
       </ul> 
     {{ end }}
   </div>  

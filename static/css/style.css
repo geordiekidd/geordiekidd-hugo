@@ -45,7 +45,7 @@
 }
 
 html {
-  padding: 0 4ch;
+  padding: 0 3ch;
   margin: 0 auto;
   display: block;
   color: var(--fg-color);
@@ -103,15 +103,20 @@ h2 {
   scroll-margin-top: 2rem;
   counter-reset: subsection;
   text-transform: uppercase;
-  &::before {
-    display: inline-block;
-    counter-increment: section;
-    /*content: counter(section) ".\00a0";*/
-  }
   &:not(:first-of-type) {
     margin-top: 4.5rem;
   }
 }
+
+h2 > a.section-counter {
+  &::before {
+    display: inline-block;
+    counter-increment: section;
+    content: counter(section) ".";
+    text-decoration: underline;
+  }
+}
+
 
 h3 {
   font-weight: normal;
