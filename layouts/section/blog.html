@@ -1,31 +1,25 @@
 {{ define "main" }}
   <div class="container">
     <p>
-      This is my personal blog. I'm trying to get in the habit of posting to it consistently, which is why there are quite a few recent posts. Nothing that interesting happens here, but I like journaling so I'll keep it up for now. <a href="#all-posts">view all posts&nbsp;&darr;</a>
+      This is my personal blog, populated with news items, thoughts, and reflections. Nothing that interesting happens here, but I like journaling so I'll keep it up for now. <a href="#all-posts">view all posts&nbsp;&darr;</a>
     </p>
-    {{ range $index, $value := where .Site.RegularPages "Section" "blog" }}
+    {{ range $i, $e := first 7 (.Site.GetPage "Section" "blog").Pages }}
       <div class="divider"></div>
       <div class="post-header">
         <a href="{{ .Permalink }}" style="color:var(--fg-color);text-decoration:none;"><h1>{{ .Title | safeHTML }}</h1></a>
         <span class="date">
-          <div class="row">
-            <div class="column">
-              <time>
-              <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan, 2006" }}</a>{{ if isset .Params "author" }}<span style="opacity:50%";>&nbsp;&nbsp;*&nbsp;&nbsp;</span>{{ end }}
-              </time> 
-            </div>
-            <div class="column">
-            </div>
-          </div>
+          <time>
+          <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan, 2006" }}</a>{{ if isset .Params "author" }}<span style="opacity:50%";>&nbsp;&nbsp;*&nbsp;&nbsp;</span>{{ end }}
+          </time> 
         </span>
       </div>
-      {{ if (eq $index 0) }}
+      {{ if (eq $i 0) }}
         {{ .Content }}
       {{ else }}
-        <div class="short-post">
-          {{ .Summary }}
+        {{ .Summary }}
+        {{ if .Truncated }}
           <a href="{{ .Permalink }}">continue reading&nbsp;&rarr;</a>
-        </div>
+        {{ end }}
       {{ end }}
     {{ end }}
     <div class="divider"></div>

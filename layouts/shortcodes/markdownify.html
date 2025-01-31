@@ -1,0 +1,2 @@
+{{ $optBlock := dict "display" "block" }}
+{{ with .Inner }}{{ . | $.Page.RenderString $optBlock }}{{ end }}

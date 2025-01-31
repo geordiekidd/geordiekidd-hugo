@@ -51,6 +51,9 @@ html {
   color: var(--fg-color);
   background: var(--bg-color);
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 ::-moz-selection {
@@ -172,6 +175,7 @@ p.intro {
 }
   
 em {
+  font-size: 100%;
   font-style: normal;
   font-feature-settings: "cv04" on, "cv08" on;
   font-variation-settings: "ital" 1;
@@ -182,18 +186,18 @@ ul {
   list-style-type: "*\00a0";
 }
 
+ul.prompt-secondary {
+  margin-top: 3rem;
+  list-style-type: ">\00a0";
+}
+
 li {
   text-align: left;
   margin-bottom: 1.5rem;
 }
 
-ul.arrow {
-  list-style-type: ">\00a0";
-}
-
 a {
   color: var(--link-color);
-  font-family: CommitMono;
   text-decoration: underline;
   line-height: 100%; /* keeps the line height the same */
   &:hover {
@@ -212,52 +216,58 @@ a {
   }
 }
 
-figure.image {
+figure:has(> .inner) {
   display: flex;
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding-bottom: 0.75rem;
-  margin-bottom: 0.75rem;
+  padding-bottom: 0.625rem;
+  max-width: fit-content;
+  margin-bottom: 1.25rem;
+  &::before{ 
+    position: absolute;
+    white-space: pre;
+    top: -1rem;
+    content: "_________________________________________________________________________________";
+  }
+  &::after {
+    position: absolute;
+    white-space: pre;
+    bottom: 0;
+    content: "_________________________________________________________________________________";
+  }
 }
 
-figure.image::before {
-  position: absolute;
-  white-space: pre;
-  top: -1rem;
-  content: "________________________________________________________________________";
-}
-
-figure.image::after {
-  position: absolute;
-  white-space: pre;
-  bottom: 0;
-  content: "________________________________________________________________________";
-}
-
-figure.image > .inner {
+figure > .inner {
   display: flex;
   position: relative;
   margin: 0;
   line-height: 1.25rem;
   overflow: hidden;
   padding: 0.5rem 1ch 0rem 1ch;
+  &::before {
+    position: absolute;
+    white-space: pre;
+    top: -0.75rem;
+    left: 0;
+    content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+  }
+  &::after {
+    position: absolute;
+    white-space: pre;
+    top: -0.75rem;
+    right: 0;
+    content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+  }
 }
 
-figure.image > .inner::before {
-  position: absolute;
-  white-space: pre;
-  top: -0.75rem;
-  left: 0;
-  content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
-}
+a:has(figure) {
+  color: var(--fg-color);
+  &:hover {
+    font-weight: bold;
+    color: var(--link-color);
 
-figure.image > .inner::after {
-  position: absolute;
-  white-space: pre;
-  top: -0.75rem;
-  right: 0;
-  content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+  }
 }
 
 img {
@@ -338,16 +348,13 @@ img {
 }
 
 .tree, .tree ul {
-  /*display: inline-block;*/
   margin-left: 0;
-  margin-bottom: 3rem;
   list-style: none;
 }
 
 .tree li {
   margin: 0;
   padding: 0;
-  /*display: inline-block;*/
 }
 
 .tree li a {
@@ -367,14 +374,14 @@ img {
   content: "";
 }
 
+.tree > li:last-child::before {
+  content: ""
+}
+
 /* level 2 */
 .tree > li > ul > li {
   margin-left: 4ch;
   list-style-type: "|-- ";
-}
-
-.short-post > figure {
-  display: none;
 }
 
 /* Tabs */
@@ -438,6 +445,7 @@ header {
 }
 
 figure {
+  display: flex;
   position: relative;
   overflow: hidden;
 }
@@ -458,23 +466,27 @@ blockquote,
 blockquote ~ * {
   padding-left: 2ch;
   position: relative;
-  max-width: 67%;
+  max-width: 70%;
 }
 
 blockquote::before {
-  content: "\201C";
+  white-space: pre;
+  content: "\201C\A";
   left: 0ch;
   top: 0;
   font-size: 2rem;
   line-height: 2rem;
 }
 
-figure:has(> blockquote)::before {
-  line-height: 0.75rem;
-  position: absolute;
-  white-space: pre;
-  opacity: 50%;
-  content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+figure:has(> blockquote) {
+  margin-bottom: 1.5rem;
+  &::before {
+    line-height: 0.75rem;
+    position: absolute;
+    white-space: pre;
+    opacity: 50%;
+    content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+  }
 }
 
 pre {
@@ -494,6 +506,7 @@ pre {
   height: var(--header-height);
   position: relative;
   overflow: hidden;
+  padding-right: 1ch;
 }
 
 #top-header > span {
@@ -503,7 +516,9 @@ pre {
 #top-header::after {
   position: absolute;
   bottom: 0;
-  content: "_______________________________________________________________________________"
+  content: "_______________________________________________________________________________";
+  right: 1ch;
+  line-height: 1.25rem;
 }
 
 .sidebar-container {
@@ -512,10 +527,10 @@ pre {
   flex-grow: 1;
   position: relative;
   margin: 0;
+  min-height: var(--section-height);
   max-height: var(--section-height);
   overflow: hidden;
-  gap: 3ch;
-  padding-top: 1rem;
+  flex-direction: column-reverse;
 }
 
 .sidebar-container > * {
@@ -527,10 +542,9 @@ pre {
 .not-sidebar {
   position: relative;
   display: flex;
-  max-width: fit-content;
   line-height: 1.25rem;
   flex-direction: column;
-  margin-top: -0.8rem;
+  min-height: var(--section-height);
 }
 
 .shelf-top, .shelf-mid, .shelf-bottom {
@@ -543,60 +557,86 @@ pre {
 
 .shelf-top::before {
   white-space: pre;
-  content: "__\A|\A|\A|\A|\A|\A|\A|\A\\‾\A|\\";
+  content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A\\‾\A|\\";
 }
 
 .shelf-top::after {
   white-space: pre;
-  content: "_ \A| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
+  content: "| \A| \A| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
 }
 
 .shelf-mid::before {
   white-space: pre;
-  content: "|\A|\A|\A|\A|\A|\A|\A\\‾\A|\\";
+  content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A\\‾\A|\\";
 }
 
 .shelf-mid::after {
   white-space: pre;
-  content: "| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
+  content: "| \A| \A| \A| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
 }
 
 .shelf-bottom::before {
   white-space: pre;
-  content: "|\A|\A|\A|\A|\A|\A|\A\\‾\A\00a0\\\A\00a0\00a0";
+  content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A\\‾\A\00a0\\\A\00a0\00a0";
 }
 
 .shelf-bottom::after {
   white-space: pre;
-  content: "| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
+  content: "| \A| \A| \A| \A| \A| \A| \A| \A| \A| \A\\ \A_\\";
 }
 
 .shelf-roof-single-first::before {
   white-space: pre;
   bottom: 0;
-  content: "_____________\A\A\A\A\A\A\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾\A_____________";
+  content: "\A\A\A\A\A\A\A\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\A_______________________________________________________________________________";
 }
 
 .shelf-roof-single::before {
   white-space: pre;
   bottom: 0;
-  content: "\A\A\A\A\A\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾\A_____________";
+  content: "\A\A\A\A\A\A\A\A\A\A‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\A_______________________________________________________________________________";
 }
 
 .shelf-roof-single, .shelf-roof-single-first {
   overflow: hidden;
   line-height: inherit;
   margin: 0;
+  width: calc(100% - 4ch);
 }
 
-.shelf-item {
+.shelf-header {
   position: absolute;
-  line-height: 1.25rem;
-  bottom: 0;
+  left: 2ch;
+  top: 0.75rem;
 }
 
-.shelf-item > .dropcap, .shelf-item > .dropcap-small {
-  line-height: inherit;
+.grid {
+  position: absolute;
+  display: flex;
+  row-gap: 1.5rem;
+  column-gap: 2ch;
+  overflow: auto;
+  width: calc(100% - 5ch);
+  margin-left: 2ch;
+  bottom: 0.25rem;
+}
+
+.shelf-bottom .grid {
+  bottom: 1.5rem;
+}
+
+a.card {
+  text-decoration: none;
+  color: var(--fg-color);
+  &:hover {
+    color: var(--link-color);
+    font-weight: bold;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(to bottom, 
     transparent 1rem, 
     var(--bg-color) 1rem, 
@@ -604,6 +644,55 @@ pre {
     transparent calc(100% - 1rem)
   );
   background-repeat: no-repeat;
+  margin-bottom: 0.25rem;
+}
+
+.card::before {
+  position: absolute;
+  white-space: pre;
+  top: 0;
+  left: 0;
+  line-height: 1.25rem;
+}
+
+.music .card::before {
+  content: "________________\A¦              ¦\A¦              ¦\A¦              ¦\A¦              ¦\A¦              ¦\A¦              ¦\A¦              ¦\A‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾";
+}
+
+.music .card {
+  max-width: 16ch;
+  min-width: 16ch;
+  padding: 1.25rem 1ch 1rem 1ch;
+}
+
+.books .card::before {
+  content: " __________ \A|\\ΞΞΞΞΞΞΞΞΞ\\\A|¦         ¦\A|¦         ¦\A|¦         ¦\A|¦         ¦\A|¦         ¦\A|¦         ¦\A\\¦         ¦\A\00a0\00a0‾‾‾‾‾‾‾‾‾";
+}
+
+.books .card {
+  max-width: 12ch;
+  min-width: 12ch;
+
+  padding: 2.5rem 1ch 1rem 2ch;
+}
+
+.movies .card::before {
+  content: "_____________\A|           |\A|           |\A|           |\A|           |\A|           |\A|           |\A|           |\A|           |\A‾‾‾‾‾‾‾‾‾‾‾‾‾";
+}
+
+.movies .card {
+  max-width: 13ch;
+  min-width: 13ch;
+
+  padding: 1.25rem 1ch 1rem 1ch;
+}
+
+.movies .card img {
+  max-height: 9.5rem;
+  min-height: 9.5rem;
+  overflow: hidden;
+  display: block;
+  margin:auto;
 }
 
 .dropcap, .dropcap-small {
@@ -625,14 +714,8 @@ pre {
   }
 }
 
-.dropcap-small {
-  display: none;
-}
-
 /* SIDEBAR, AKA CONTENT */
 .sidebar {
-  position: relative;
-  display: flex;
   flex: 1;
 }
 
@@ -645,20 +728,27 @@ pre {
 section {
   position: relative;
   display: none;
-  padding: 0;
-  max-height: var(--section-height);
+  padding-top: 1.5rem;
+  /*max-height: var(--section-height);*/
   width: 100%;
   margin-bottom: 0;
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   flex-direction: column;
 }
 
 section:target {
+  position: absolute;
   display: flex;
+  top: 0; 
+  min-height: var(--section-height);
+  bottom: 0;
+  overflow-y: auto;
+  width: 100%;
+  background-color: var(--bg-color);
 }
 
-#about {
-  display: flex;
+#about:not(:target) {
+  display: none;
 }
 
 section:target ~ #about {
@@ -669,142 +759,31 @@ section > header {
   display: flex;
   position: relative;
   text-align: left;
-  overflow-x: hidden;
-  padding-bottom: 0rem;
-  margin-bottom: 0rem;
-}
-
-section > header > * {
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
+  padding: 0;
 }
 
 section > article {
   position: relative;
   flex: 1;
-  max-width: 70ch;
-  overflow-y: auto;
 }
 
 section > article > footer {
+  display: flex;
+  justify-content: right;
+  margin-top: 2.25rem;
+  align-items: flex-end;
   text-align: right;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
 }
 
 section p {
   margin-bottom: 1rem;
 }
 
-.sidebar .content {
-  margin-left: 2ch;
-  display: none;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-section label {
-  cursor: pointer;
-  display: block;
-  margin-top: 0rem;
-  position: relative;
-}
-
-section label:hover {
-  color: var(--link-color);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-input[type="radio"]:checked + label {
-  text-transform: uppercase;
-}
-
-input[type="radio"]:checked + label:hover {
-  color: var(--fg-color);
-  font-weight: 400;
-  cursor: default;
-}
-
-input[type="radio"]:checked + label::before {
-  content: ">\00a0";
-}
-
-input[type="radio"]:checked + label + .content {
-  display: block;
-}
-
-.view-all {
-  display: none;
-}
-
 /* Responsive design */
 @media only screen and (max-width: 768px) {
-  .sidebar-container {
-    gap: 2ch;
-  }
-  /* SHOW AND HIDE SHELF MENU */
-  .view-all {
-    display: inline;
-  }
-  #shelf-menu {
+  #about:not(:target) {
     display: none;
-  }
-  #shelf-menu.open {
-    display: flex;
-  }
-  /* BOOK SHELF STRUCTURES */
-  .shelf-top::before {
-    white-space: pre;
-    content: "__\A|\A|\A|\A|\A|\A\\‾\A|\\";
-  }
-
-  .shelf-top::after {
-    white-space: pre;
-    content: "_ \A| \A| \A| \A| \A|\A\\ \A_\\";
-  }
-
-  .shelf-mid::before {
-    white-space: pre;
-    content: "|\A|\A|\A|\A|\A\\‾\A|\\";
-  }
-
-  .shelf-mid::after {
-    white-space: pre;
-    content: "| \A| \A| \A| \A| \A\\ \A_\\";
-  }
-
-  .shelf-bottom::before {
-    white-space: pre;
-    content: "|\A|\A|\A|\A|\A\\‾\A\00a0\\\A\00a0\00a0";
-  }
-
-  .shelf-bottom::after {
-    white-space: pre;
-    content: "| \A| \A| \A| \A| \A\\ \A_\\";
-  }
-
-  .shelf-roof-single-first::before {
-    white-space: pre;
-    bottom: 0;
-    content: "________\A\A\A\A\A\A‾‾‾‾‾‾‾‾\A________";
-  }
-
-  .shelf-roof-single::before {
-    white-space: pre;
-    bottom: 0;
-    content: "\A\A\A\A\A‾‾‾‾‾‾‾‾\A________";
-  }
-
-  .shelf-item .dropcap {
-    display: none;
-  }
-  .shelf-item .dropcap-small {
-    display: flex;
-    pointer-events: auto;
   }
   #current-filename {
     display: none;

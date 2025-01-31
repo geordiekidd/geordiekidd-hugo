@@ -13,4 +13,4 @@ link: "https://www.youtube.com/watch?v=ll3CMgiUPuU"
 
 This album really stands in as a filler for all late Coltrane recordings (it's too hard to choose one!). Still, this work is pretty meaningful to me, and is always a reminder to be grateful and free in my thinking and being. 
 
-Favourite movement: *Acknowledgement*. (Seriously, how much better could the opening of an album be!?)
+Favourite movement: *Acknowledgement*.

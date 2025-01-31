@@ -1,16 +1,19 @@
 {{ define "main" }}
   <div class="container">
-    {{ range .Data.Pages }}
-      <ul>
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
-          <br>
-          {{ range $i, $e := .Keywords -}}
-            {{ if $i }}, {{ end }}
-            #{{ $e -}}
-          {{ end }}
-        </li>
-      </ul> 
+    {{ .Content }}
+    {{- range .Data.Pages.GroupByDate "2006" -}}
+    <div class="row">
+      <div class="column">
+        <div class="col-cat">{{ .Key }}</div>
+      </div>
+      <div class="column">
+        {{ range .Pages }}
+        <div class="item">
+          <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>. &lcub;{{- range $i, $e := .Keywords -}}{{ if $i }}, {{ end }}{{- $e -}}{{ end -}}&rcub;
+        </div>
+        {{ end }}
+      </div>
+    </div>
     {{ end }}
   </div>  
 {{ end }}
