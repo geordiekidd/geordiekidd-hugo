@@ -23,7 +23,6 @@ body {
     <div class="not-sidebar">
       <!-- MUSIC CARDS -->
       <div class="shelf-top">
-        <div class="shelf-roof-single-first"></div>
         <span class="shelf-header"><a href="#music">#</a> MUSIC</span>
         <div class="grid music">
           {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.relyear" }}
@@ -35,8 +34,7 @@ body {
       </div>
       <!-- BOOK CARDS -->
       <div class="shelf-mid">
-        <div class="shelf-roof-single"></div>
-        <span class="shelf-header"><a href="#books">#</a> BOOKS</span>
+        <span class="shelf-header"><a href="#books">#</a> BOOKS (wip)</span>
         <div class="grid books">
           {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/books/") "Params.relyear" }}
             <a href="#{{ .File.BaseFileName }}" class="card">
@@ -47,8 +45,7 @@ body {
       </div>
       <!-- MOVIE CARDS -->
       <div class="shelf-bottom">
-        <div class="shelf-roof-single"></div>
-        <span class="shelf-header"><a href="#movies">#</a> MOVIES</span>
+        <span class="shelf-header"><a href="#movies">#</a> MOVIES (wip)</span>
         <div class="grid movies">
           {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/movies/") "Params.relyear" }}
             <a href="#{{ .File.BaseFileName }}" class="card">
@@ -57,43 +54,37 @@ body {
           {{ end }}
         </div>  
       </div>
+      <div>&nbsp;</div>
     </div>  
     <div class="sidebar">
       {{ range (where .Site.Pages "Section" "shelf") }}
         {{ range .Pages }}
           <section id="{{ .File.BaseFileName }}" data-filename="{{ .File.BaseFileName }}">
             <header>
-              <div class="dropcap" style="margin-right:2ch;margin-top:-1rem;width:fit-content;">{{- if eq .File.Dir "shelf/music/" -}}
-                ____________<br>‖¦  .---.  |<br>‖¦ /     \ |<br>‖¦|   0   ||<br>‖¦ \     / |<br>‖¦  `---'  |<br>‾‾‾‾‾‾‾‾‾‾‾‾
-              {{- else if eq .File.Dir "shelf/books/" -}}
-                &nbsp;________ <br>|\ΞΞΞΞΞΞΞ\<br>|¦       ¦<br>|¦ $&#%! ¦<br>|¦       ¦<br>|¦  *@~  ¦<br>|¦       ¦<br>\¦       ¦<br>  ‾‾‾‾‾‾‾
-              {{- else if eq .File.Dir "shelf/movies/" -}}
-                &nbsp;___________<br>|–––––––––––|<br>|(*|[‾‾‾]|*)|<br>|    ‾‾‾    |<br> ‾‾‾‾‾‾‾‾‾‾‾ {{- end -}}
+              <div {{ if eq .File.Dir "shelf/music/" }}class="music"{{ else if eq .File.Dir "shelf/books/" }}class="books"{{ else if eq .File.Dir "shelf/movies/" }}class="movies"{{ end }} style="display:flex;margin-right:2ch;margin-top:-1.25rem;">
+                <a href={{- if isset .Params "link" -}}"{{- .Params.link -}}" target="_blank" {{- else -}}"#{{ .File.BaseFileName }}"{{- end -}} class="card">
+                  <img src="/{{- .File.Dir -}}{{ .File.BaseFileName }}.jpg">
+                </a>
               </div>
               <div>
                 <p style="text-transform:uppercase;">{{ .Title | safeHTML }}</p>
-                {{ .Params.reltype }} by <em>{{ .Params.artist | safeHTML }}</em>, {{ .Params.relyear }}.
+                <p>{{ .Params.reltype }} by <em>{{ .Params.artist | safeHTML }}</em>, {{ .Params.relyear }}</p>
               </div>
             </header>
             <article>
               {{ .Content }}
-              <div style="margin-top:2.25rem;">
-                <a href={{- if isset .Params "link" -}}"{{- .Params.link -}}" target="_blank" {{- else -}}""{{- end -}}>
-                  <figure>
-                    <div class="inner">
-                      <img src="/{{- .File.Dir -}}{{ .File.BaseFileName }}.jpg">
-                    </div>
-                  </figure>
-                </a>
-                <p style="text-align:right;">{{ if isset .Params "link" }}<a href="{{ .Params.link }}">get it here</a>{{ end }}</p>
-              </div>
+              {{ if isset .Params "link" }}
+              <ul style="margin-top:2.5rem;">
+                <li><a href="{{ .Params.link }}">link</a></li>
+              </ul> 
+              {{ end }}
             </article>
           </section>
         {{ end }}
       {{ end }}
       <section id="about">
         <article>
-          <p> Welcome to my (book)shelf! Here you'll find some of my favourite sounds, words, and pictures, some of which you might enjoy too. I've included a short reflection on each item, and a link to where you can find it.</p> 
+          <p> Welcome to my (book)shelf! Here you'll find some of my favourite music, books, and movies. Maybe you'll enjoy some of them too. I've included a short reflection on each item, and a link to where you can find it.</p> 
           <footer>updated {{ .Lastmod | time.Format "January 2006" }}</footer>
         </article>
       </section>

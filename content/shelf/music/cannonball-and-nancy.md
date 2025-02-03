@@ -2,7 +2,7 @@
 title: "Nancy Wilson/Cannonball Adderley"
 date: 2025-01-08T17:10:53+11:00
 draft: false
-artist: Cannonball Adderley and Nancy Wilson
+artist: Nancy Wilson and Cannonball Adderley
 reltype: Album
 relyear: 1962
 link: "https://www.youtube.com/watch?v=k-pbhe51Who&list=OLAK5uy_kkYtxqsM7Eqy9RU6kme2775Gz24EBtcXw&index=1"

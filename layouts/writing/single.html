@@ -1,25 +1,19 @@
 {{ define "main" }}
   <div class="container">
     <div class="post-header">
-      <h1>{{ .Title | safeHTML }}</h1>
       <span class="date">
-        <div class="row">
-          <div class="column">
-            <time>
-            <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan, 2006" }}</a>
-            </time> 
-          </div>
-          <div class="column">
-            {{- if isset .Params "author" -}}
-              <span style="opacity:50%";>&nbsp;&nbsp;*&nbsp;&nbsp;by {{ .Params.author }}</span>
-            {{ end }}
-          </div>
-        </div>
+        <time>
+          <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }}</a>
+        </time> 
+        {{- if isset .Params "author" -}}
+          <span style="opacity:50%";>*&nbsp;by {{ .Params.author }}</span>
+        {{ end }}
       </span>
+      <h1>{{ .Title | safeHTML }}</h1>
     </div>
     {{ .Content }}
     <p>
-    Published in <em>{{ .Params.pubname }}</em>, <em>{{ .Params.volume }}</em>{{ if isset .Params "issue" }}({{ .Params.issue }}){{ end }}, {{ .Params.pages | safeHTML }}. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}
+      Published in <em>{{ .Params.pubname }}</em>, <em>{{ .Params.volume }}</em>{{ if isset .Params "issue" }}({{ .Params.issue }}){{ end }}, {{ .Params.pages | safeHTML }}. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}
     </p>
     {{ partial "post-nav.html" . }}
   </div>
