@@ -1,12 +1,12 @@
 {{ define "main" }}
   <div class="container">
     <div class="post-header">
+      <h1>{{ .Title | safeHTML }}</h1>
       <span class="date">
         <time>
-          <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }}</a>
+          <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} &gt; {{ .Date | time.Format "15:04" }}</a>
         </time> 
       </span>
-      <h1>{{ .Title | safeHTML }}</h1>
     </div>
     {{ .Content }}
     {{ partial "post-nav.html" . }}

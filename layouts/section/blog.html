@@ -1,34 +1,32 @@
 {{ define "main" }}
   <div class="container">
     <p>
-      This is my personal blog, populated with news items, thoughts, and reflections. Nothing that interesting happens here, but I like journaling so I'll keep it up for now. <a href="#all-posts">view all posts&nbsp;&darr;</a>
+      This is my personal blog, populated with news items, thoughts, and reflections. Nothing that interesting happens here, but it's fun to write these short posts so I'll keep it up for now. <a href="#all-posts">view all posts&nbsp;&darr;</a>
     </p>
-    <div class="divider"></div>
     {{ $pages := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
     {{ $paginator := .Paginate $pages 7 }}
     <div class="feed">
       {{ range $paginator.Pages }}
+      <div class="divider"></div>
       <div class="blog-post">
-        <div class="column-left">
-          <div class="post-header">
-            <span class="date">
-              <time>
+        <div class="post-header">
+          <a href="{{ .RelPermalink }}" style="color:var(--fg-color);text-decoration:none;">
+            <h1>{{ .Title | safeHTML }}</h1>
+          </a>
+          <span class="date">
+            <time>
               <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Date.Format "2006-01-02" }}</a>
-              </time> 
-            </span>
-          </div>
+            </time> 
+          </span>
         </div>
-        <div class="column-right">
-          <div class="post-header"><a href="{{ .Permalink }}" style="color:var(--fg-color);text-decoration:none;"><h1>{{ .Title | safeHTML }}</h1></a></div>
-          {{ if and (eq $paginator.PageNumber 1) (eq . (index $pages 0)) }}
-            {{ .Content }}
-          {{ else }}
-            {{ .Summary }}
-            {{- if .Truncated -}}
-              <a href="{{ .RelPermalink }}">continue reading&nbsp;&rarr;</a>
-            {{ end }}
+        {{ if and (eq $paginator.PageNumber 1) (eq . (index $pages 0)) }}
+          {{ .Content }}
+        {{ else }}
+          {{ .Summary }}
+          {{- if .Truncated -}}
+            <a href="{{ .RelPermalink }}">continue reading&nbsp;&rarr;</a>
           {{ end }}
-        </div>
+        {{ end }}
       </div>
       {{ end }}
     </div>

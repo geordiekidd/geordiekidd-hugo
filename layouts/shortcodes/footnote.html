@@ -1,0 +1,12 @@
+{{- $ref := .Get "ref" -}}
+{{- $dir1 := "" -}}
+{{- $dir2 := "" -}}
+{{- if eq (.Get "dir") "a" -}}
+  {{- $dir1 = "" -}}
+  {{- $dir2 = "-back" -}}
+{{- else if eq (.Get "dir") "b" -}} 
+  {{- $dir1 = "-back" -}}
+  {{- $dir2 = "" -}}
+{{- end -}}
+<span class='footnote{{ $dir1 }}'><a href='#footnote-{{ $ref }}{{ $dir1 }}' id='footnote-{{ $ref }}{{ $dir2 }}'></a></span>
+{{- /* Prevents newline or extra space after */ -}}

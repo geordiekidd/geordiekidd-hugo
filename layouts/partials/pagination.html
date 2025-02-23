@@ -1,54 +1,55 @@
 {{- $page := . }}
 {{- if gt $page.Paginator.TotalPages 1 }}
   <nav>
-    <!--<div class="divider"></div>-->
-    <ul class="pagination">
-      {{- with .Paginator }}
+    <div class="row">
+      <div class="divider"></div>
+      <ul class="pagination">
+        {{- with .Paginator }}
         {{- $currentPageNumber := .PageNumber }}
 
         {{- with .Prev }}
-          <li class="page-item">
-            <a href="{{ .URL }}" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&lt;</span></a>
-          </li>
+        <li class="page-item">
+          <a href="{{ .URL }}" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&lt;</span></a>
+        </li>
         {{- else }}
-          <li class="page-item disabled">
-            <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&lt;</span></a>
-          </li>
+        <li class="page-item disabled">
+          <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&lt;</span></a>
+        </li>
         {{- end }}
 
         {{- $slots := 7 }}
         {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
         {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
         {{- if lt (add (sub $end $start) 1) $slots }}
-          {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+        {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
         {{- end }}
 
         {{- range $k := seq $start $end }}
         {{ $twodigitk := printf "%02d" $k }}
-          {{- if eq $.Paginator.PageNumber $k }}
-          <li class="page-item active">
-            <a aria-current="page" aria-label="Page {{ $k }}" class="page-link" role="button">{{ $twodigitk }}</a>
-          </li>
-          {{- else }}
-          <li class="page-item">
-            <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}" aria-label="Page {{ $k }}" class="page-link" role="button">{{ $twodigitk }}</a>
-          </li>
-          {{- end }}
+        {{- if eq $.Paginator.PageNumber $k }}
+        <li class="page-item active">
+          <a aria-current="page" aria-label="Page {{ $k }}" class="page-link" role="button">{{ $twodigitk }}</a>
+        </li>
+        {{- else }}
+        <li class="page-item">
+          <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}" aria-label="Page {{ $k }}" class="page-link" role="button">{{ $twodigitk }}</a>
+        </li>
+        {{- end }}
         {{- end }}
 
         {{- with .Next }}
-          <li class="page-item">
-            <a href="{{ .URL }}" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&gt;</span></a>
-          </li>
+        <li class="page-item">
+          <a href="{{ .URL }}" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&gt;</span></a>
+        </li>
         {{- else }}
-          <li class="page-item disabled">
-            <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&gt;</span></a>
-          </li>
+        <li class="page-item disabled">
+          <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&gt;</span></a>
+        </li>
         {{- end }}
 
-      {{- end }}
-    </ul>
-    <div class="divider"></div>
+        {{- end }}
+      </ul>
+    </div>
   </nav>
 {{- else -}}
   <div class="divider"></div>

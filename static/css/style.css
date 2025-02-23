@@ -6,6 +6,10 @@
     font-weight: 200 700;
     font-style: normal;
   }
+  @font-face {
+    font-family: "Menlo Fallback";
+    src: url("/commit/Menlo.woff2") format("woff2");
+  }
 }
 
 :root {
@@ -39,9 +43,9 @@
 /* General */
 
 * {
-  font-family: "CommitMono";
+  font-family: "CommitMono", "Menlo Fallback", ui-monospace, monospace;
   font-feature-settings: "cv11" on, "ss01" on, "ss02" on, "ss03" on, "ss04" on, "ss05" on;
-  max-width: 80ch;
+  max-width: 75ch;
   padding: 0;
   margin: 0;
   font-size: 14px;
@@ -120,13 +124,11 @@ h2 {
   }
 }
 
-h2 > a.section-counter {
-  &::before {
-    display: inline-block;
-    counter-increment: section;
-    content: counter(section) ".";
-    text-decoration: underline;
-  }
+h2 > a.section-counter::before {
+  display: inline-block;
+  counter-increment: section;
+  content: counter(section) ".";
+  text-decoration: underline;
 }
 
 
@@ -134,12 +136,13 @@ h3 {
   font-weight: normal;
   font-size: 1rem;
   margin-top: 3rem;
-  scroll-margin-top: 2em;
-  &::before {
-    display: inline-block;
-    counter-increment: subsection;
-    /*content: counter(section) "." counter(subsection) ".\00a0";*/
-  }
+  scroll-margin-top: 2rem;
+}
+
+h3::before {
+  display: inline-block;
+  counter-increment: subsection;
+  /*content: counter(section) "." counter(subsection) ".\00a0";*/
 }
 
 h4 {
@@ -150,26 +153,36 @@ h4 {
 }
 
 .footnote, .footnote-back {
-  &::before {
-    content: "[";
-  }
-  &::after {
-    content: "]";
-  }
+  display: inline;
+  scroll-margin-top: 2rem;
 }
 
-.footnote { 
+.footnote::before {
+  content: "\00a0[";
+}
+
+.footnote-back::before {
+  content: "[";
+}
+
+.footnote::after, .footnote-back::after {
+  content: "]";
+}
+
+.footnote > a { 
   counter-increment: footnote;
-  &> a::before {
-    content: counter(footnote);
-  }
 }
 
-.footnote-back {
+.footnote > a::before {
+  content: counter(footnote);
+}
+
+.footnote-back > a {
   counter-increment: footnote-back;
-  & > a::before {
-    content: counter(footnote-back);
-  }
+}
+
+.footnote-back > a::before {
+  content: counter(footnote-back)
 }
 
 p {
@@ -200,10 +213,18 @@ li {
 
 a {
   color: var(--link-color);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
   text-decoration: underline;
   line-height: 100%; /* keeps the line height the same */
-  &:hover {
+  &:webkit-any-link {
     cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+@media (pointer: fine) {
+  a:hover {
     text-decoration: none;
   }
 }
@@ -213,9 +234,10 @@ a {
   white-space: pre;
   overflow: hidden;
   margin: 2.5rem 0 2.5rem 0;
-  &::after {
-    content: "---------------------------------------------------------------------------------";
-  }
+}
+
+.divider::after {
+  content: '---------------------------------------------------------------------------------';
 }
 
 figure:has(> .inner) {
@@ -226,18 +248,20 @@ figure:has(> .inner) {
   padding-bottom: 0.625rem;
   max-width: fit-content;
   margin-bottom: 1.25rem;
-  &::before{ 
-    position: absolute;
-    white-space: pre;
-    top: -1rem;
-    content: "_________________________________________________________________________________";
-  }
-  &::after {
-    position: absolute;
-    white-space: pre;
-    bottom: 0;
-    content: "_________________________________________________________________________________";
-  }
+}
+
+figure:has(> .inner)::before {
+  position: absolute;
+  white-space: pre;
+  top: -1rem;
+  content: '_________________________________________________________________________________';
+}
+
+figure:has(> .inner)::after {
+  position: absolute;
+  white-space: pre;
+  bottom: 0;
+  content: '_________________________________________________________________________________';
 }
 
 figure > .inner {
@@ -247,29 +271,31 @@ figure > .inner {
   line-height: 1.25rem;
   overflow: hidden;
   padding: 0.5rem 1ch 0rem 1ch;
-  &::before {
-    position: absolute;
-    white-space: pre;
-    top: -0.75rem;
-    left: 0;
-    content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
-  }
-  &::after {
-    position: absolute;
-    white-space: pre;
-    top: -0.75rem;
-    right: 0;
-    content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
-  }
+}
+
+figure > .inner::before {
+  position: absolute;
+  white-space: pre;
+  top: -0.75rem;
+  left: 0;
+  content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+}
+
+figure > .inner::after {
+  position: absolute;
+  white-space: pre;
+  top: -0.75rem;
+  right: 0;
+  content: "\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
 }
 
 a:has(figure) {
   color: var(--fg-color);
-  &:hover {
-    font-weight: bold;
-    color: var(--link-color);
+}
 
-  }
+a:has(figure):hover {
+  font-weight: bold;
+  color: var(--link-color);
 }
 
 img {
@@ -293,16 +319,17 @@ img {
 }
 
 .blog-post {
-  display: flex;
-  column-gap: 2ch;
+  /* display: flex; */
   scroll-margin-top: 2rem;
-  margin-bottom: 4.5rem;
-  &:last-child {
-    margin-bottom: 2rem;
-  }
-  & > .column-left {
-    min-width: fit-content;
-  }
+}
+
+.blog-post .footnote, 
+.blog-post .footnote-back, 
+.blog-post h4,
+.blog-post > p:has(> .footnote-back), 
+.blog-post > p:has(> .footnote-back) ~ figure {
+  /* Hides footnotes, footnote hyperlinks, footnote section header, and images in footnotes when on the /blog main page */
+  display: none;
 }
 
 .item {
@@ -317,12 +344,14 @@ img {
 
 .col-cat {
   margin: 0;
-  &::before {
-    content: "[";
-  }
-  &::after {
-    content: "]";
-  }
+}
+
+.col-cat::before {
+  content: "[";
+}
+
+.col-cat::after {
+  content: "]";
 }
 
 .post-header {
@@ -341,9 +370,10 @@ img {
   text-decoration: none;
   color: var(--fg-color);
   opacity: 50%;
-  &:hover {
-    opacity: 100%;
-  }
+}
+
+.post-header .date a:hover {
+  opacity: 100%;
 }
 
 .post-header .column {
@@ -379,13 +409,15 @@ img {
 .tree li a {
   color: var(--fg-color);
   text-decoration: none;
-  &:hover {
-    color: var(--bg-color);
-    background: var(--fg-color);
-  }
-  &::after {
-    content: "/";
-  }
+}
+
+.tree li a:hover {
+  color: var(--bg-color);
+  background: var(--fg-color);
+}
+
+.tree li a::after {
+  content: "/";
 }
 
 /* level 1 */
@@ -421,10 +453,11 @@ header.navbar {
   color: var(--fg-color);
   text-decoration: none;
   margin: 0;
-  &:hover {
-    color: var(--bg-color);
-    background-color: var(--fg-color);
-  }
+}
+
+.navbar a:hover {
+  color: var(--bg-color);
+  background: var(--fg-color);
 }
 
 .navbar li {
@@ -449,6 +482,7 @@ header.navbar {
 
 .navbar .dropdown-list li {
   margin: 0;
+  line-height: 1rem;
 }
 
 .navbar .dropdown-list li > a {
@@ -500,13 +534,14 @@ blockquote::before {
 
 figure:has(> blockquote) {
   margin-bottom: 1.5rem;
-  &::before {
-    line-height: 0.75rem;
-    position: absolute;
-    white-space: pre;
-    opacity: 50%;
-    content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
-  }
+}
+
+figure:has(> blockquote)::before {
+  line-height: 0.75rem;
+  position: absolute;
+  white-space: pre;
+  opacity: 50%;
+  content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
 }
 
 pre {
@@ -517,18 +552,28 @@ pre {
 }
 
 nav {
-  text-align: right;
   margin: 2.5rem 0;
 }
 
-nav > .divider {
+nav > .row {
+  display: flex;
+  flex-direction: row;
+  gap: 2ch;
+  min-width: 100%;
+  max-width: 100%;
   margin: 0;
+}
+
+nav .divider {
+  margin: 0;
+  display: inline-block;
 }
 
 .pagination, .pagination li {
   display: inline-block;
   list-style: none;
   margin: 0;
+  min-width: fit-content;
 }
 
 .disabled a, .active a {
@@ -651,12 +696,13 @@ nav > .divider {
 a.card {
   text-decoration: none;
   color: var(--fg-color);
-  &:hover {
-    color: var(--link-color);
-    font-weight: bold;
-  }
   padding: 0;
   margin: 0;
+}
+
+a.card:hover {
+  color: var(--link-color);
+  font-weight: bold;
 }
 
 .card {
@@ -726,18 +772,20 @@ article .card { margin-top: -1rem; margin-bottom: 0;}
 	white-space: pre;
   line-height: 1.25rem;
   float: left;
-  & > a {
-    text-decoration: none;
-    color: var(--fg-color);
-    margin-top: 0rem;
-    line-height: 1.25rem;
-    &:hover {
-      color: var(--link-color);
-      text-transform: uppercase;
-      font-weight: 700;
-      cursor: pointer;
-    }
-  }
+}
+
+.dropcap > a, .dropcap-small > a {
+  text-decoration: none;
+  color: var(--fg-color);
+  margin-top: 0rem;
+  line-height: 1.25rem;
+}
+
+.dropcap > a:hover, .dropcap-small > a:hover {
+  color: var(--link-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* SIDEBAR, AKA CONTENT */
@@ -801,11 +849,5 @@ section p {
 @media only screen and (max-width: 768px) {
   #current-filename {
     display: none;
-  }
-  .blog-post {
-    flex-direction: column;
-  }
-  .column-left, .column-left * {
-    margin: 0
   }
 }
