@@ -21,8 +21,9 @@ body {
   </div>
   <div class="sidebar-container">
     <div class="not-sidebar">
-      <!-- MUSIC CARDS -->
+      <!-- TOP SHELF -->
       <div class="shelf-top">
+        <!-- MUSIC CARDS -->
         <span class="shelf-header"><a href="#music">#</a> MUSIC</span>
         <div class="grid music">
           {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.relyear" }}
@@ -32,8 +33,9 @@ body {
           {{ end }}
         </div>
       </div>
-      <!-- BOOK CARDS -->
+      <!-- MIDDLE SHELF(/VES)-->
       <div class="shelf-mid">
+        <!-- BOOK CARDS -->
         <span class="shelf-header"><a href="#books">#</a> BOOKS (wip)</span>
         <div class="grid books">
           {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/books/") "Params.relyear" }}
@@ -43,8 +45,9 @@ body {
           {{ end }}
         </div>  
       </div>
-      <!-- MOVIE CARDS -->
+      <!-- BOTTOM SHELF -->
       <div class="shelf-bottom">
+        <!-- MOVIE CARDS -->
         <span class="shelf-header"><a href="#movies">#</a> MOVIES (wip)</span>
         <div class="grid movies">
           {{ range sort (where .Site.RegularPages ".File.Dir" "shelf/movies/") "Params.relyear" }}

@@ -533,7 +533,8 @@ blockquote::before {
 }
 
 figure:has(> blockquote) {
-  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 figure:has(> blockquote)::before {
@@ -542,6 +543,11 @@ figure:has(> blockquote)::before {
   white-space: pre;
   opacity: 50%;
   content: "|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A|\A";
+}
+
+figcaption {
+  font-variation-settings: "ital" 0;
+  font-style: normal;
 }
 
 pre {
@@ -690,7 +696,7 @@ nav .divider {
   overflow: auto;
   width: calc(100% - 5ch);
   left: 2ch;
-  bottom: 0.25rem;
+  bottom: 0;
 }
 
 a.card {
@@ -698,6 +704,7 @@ a.card {
   color: var(--fg-color);
   padding: 0;
   margin: 0;
+  bottom: 0.25rem;
 }
 
 a.card:hover {
@@ -730,6 +737,8 @@ a.card:hover {
 }
 
 .music .card {
+  /* max-height: 11.25rem; */
+  /* min-height: 11.25rem; */
   max-width: 16ch;
   min-width: 16ch;
   padding: 1.25rem 1ch 1rem 1ch;
@@ -740,6 +749,8 @@ a.card:hover {
 }
 
 .books .card {
+  /* max-height: 12.15rem; */
+  /* min-height: 12.15rem; */
   max-width: 12ch;
   min-width: 12ch;
   padding: 2.5rem 1ch 1rem 2ch;
