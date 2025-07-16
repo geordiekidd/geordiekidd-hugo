@@ -18,24 +18,24 @@ Much of the music that came after *Quiet Fire* -- that is, from *Roberta Flack &
 
 In the end, I wish she had've recorded more jazz and soul and folk -- more stuff like *First Take* and *Quiet Fire*. Lots of the pop music has aged terribly for one reason or another (usually the cheesy production, like the abominations on 1994's *Roberta*), and doesn't do enough justice to the beauty of complexity of her voice. (Not to mention, she's one hell of a pianist!) I can't help but feel she was pushed into recording pop music by the music industry. Perhaps that choice was indeed her own, but even if it were I still couldn't help wonder what might've been. Regardless, she has left us with a lifetime's worth of soul and one of the best discographies of any artist I know. May Her spirit live on in the groove.
 
-<figure>
-  <blockquote>
-    A whole lot of things that's wrong<br>
-    is going down,<br>
-    I don't understand it --<br>
-    my point of view,<br>
-    I remember somebody said,<br>
-    'Do unto others, as you would have<br>
-    him do unto you',<br>
-    and then folks wouldn't have to suffer<br>
-    if there was more love<br>
-    but these are Tryin' Times<br>
-    <br>
-    <figcaption>
-      – Roberta Flack, <cite>Tryin' Times</cite>            
-    </figcaption>
-  </blockquote>
-</figure>
+<!-- <figure> -->
+<!--   <blockquote> -->
+<!--     A whole lot of things that's wrong<br> -->
+<!--     is going down,<br> -->
+<!--     I don't understand it --<br> -->
+<!--     my point of view,<br> -->
+<!--     I remember somebody said,<br> -->
+<!--     'Do unto others, as you would have<br> -->
+<!--     him do unto you',<br> -->
+<!--     and then folks wouldn't have to suffer<br> -->
+<!--     if there was more love<br> -->
+<!--     but these are Tryin' Times<br> -->
+<!--     <br> -->
+<!--     <figcaption> -->
+<!--       – Roberta Flack, <cite>Tryin' Times</cite>             -->
+<!--     </figcaption> -->
+<!--   </blockquote> -->
+<!-- </figure> -->
 
 &para; [Tryin' Times][tryin-times], *First Take*. &para; [Sunday and Sister Jones][sunday-sister], *Quiet Fire*. &para; [Early Ev'ry Midnight][evry-midnight], *Feel Like Makin' Love*. &para; [25th of Last December][25th-december], *Blue Lights in the Basement*. &para; [You've Got a Friend][got-a-friend], *Roberta Flack &amp; Donny Hathaway*. &para; [No Tears (In The End)][no-tears], *Killing Me Softly*. &para; [I Can See the Sun in Late December][late-december], *Feel Like Makin' Love*. &para; [Ballad of the Sad Young Men][ballad-men], *First Take*. &para; [Go Up Moses][moses], *Quiet Fire*. &para; [Some Gospel According to Matthew][matthew], *Feel Like Makin' Love*. &para; [I'd Like to Be Baby to You][baby-to-you], *Blue Lights in the Basement*. 
 
