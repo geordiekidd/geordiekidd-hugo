@@ -1,74 +1,81 @@
 {{ define "main" }}
-  <div class="container">    
-    <div class="ls">$ ls</div>
-    <ul class="tree">
-      {{ range sort .Sections "Section" "asc" }}
-        <li><a href="{{ .Permalink }}">{{ .Section }}</a></li>
-      {{ end }}
-    </ul>
-    <ul class="prompt-secondary">
-      <li>Listen to some <a id="random-music-link" target="_blank">music</a> while you browse.</li>
-    </ul>
-  </div>
-  <script>
-    var linkArray = [
-      {{- range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.link" -}}
-        {{- if isset .Params "link" -}}
-          "{{ .Params.link }}",
-        {{- end -}}
-      {{- end -}}
-      "https://www.youtube.com/watch?v=opvfotohSMg", // Any Love - Chaka Khan
-      "https://www.youtube.com/watch?v=h3SJmFpWdM4", // Angel - Ohio Players
-      "https://www.youtube.com/watch?v=5Euo2PLEuU0", // Birdlike - Freddie Hubbard
-      "https://www.youtube.com/watch?v=bTpNU88utKY", // Wie schön leuchtet der Morgenstern - Bach
-      "https://www.youtube.com/watch?v=zgc0IQKFAeU", // Wouldn't It Be Loverly - Shirley Horn
-      "https://www.youtube.com/watch?v=8l4rf6UfDgA", // Warum ist das Licht gegeben - Brahms
-      "https://www.youtube.com/watch?v=Zv3q6QVhoIs", // Lamentations of Jeremiah - Carpentras
-      "https://www.youtube.com/watch?v=XVNh1plmT58", // Seriado - Arthur Verocai
-      "https://www.youtube.com/watch?v=SuDe91CXf8s", // Theme from MASH - Bill Evans
-      "https://www.youtube.com/watch?v=Q0W4jrKFIpk", // After the Rain - John Coltrane  
-      "https://www.youtube.com/watch?v=9fzGGbiJags", // Massage Situation - Flying Lotus
-      "https://www.youtube.com/watch?v=G-AnGC0J1m0", // Sleep Cycles - Andrea Keller
-      "https://www.youtube.com/watch?v=l3qi3E40aWE", // For Once in My Life - Stevie Wonder
-      "https://www.youtube.com/watch?v=9-xWoMAptQ0&list=PLQvL6GLJiX92BjXlmxC9YEdREBH5RjRr9&index=8", // Power Flower - Stevie Wonder
-      "https://www.youtube.com/watch?v=2UTVGgIhfmU", // UMMG - Sasha Berliner
-      "https://www.youtube.com/watch?v=n-KLFp40wWE", // Moment's Notice - McCoy Tyner
-      "https://www.youtube.com/watch?v=9KW_pU7AC4U", // Beethoven String Quartet 13
-      "https://www.youtube.com/watch?v=QH3Fx41Jpl4", // Sinnerman - Nina Simone
-      "https://www.youtube.com/watch?v=qQPm5wqMScE", // Birthday - The Sugarcubes 
-      "https://www.youtube.com/watch?v=wNHybIY9xMw", // All-Night Vigil, I - Rachmaninoff 
-      "https://www.youtube.com/watch?v=V0RoYfwvGgA", // Easy to Love - Cannonball Adderley
-      "https://www.youtube.com/watch?v=iBruvJaYVoc", // Interlude (Lament) - Gary Burton Quartet
-      "https://www.youtube.com/watch?v=DPakwOErZCg", // Down by the River - Touch
-      "https://www.youtube.com/watch?v=djjO-zCnQjI", // A Love Feeling - Ruby Andrews 
-      "https://www.youtube.com/watch?v=cv8altEAIdA", // Comp Time - Ahmad Jamal with Assai Quartet 
-      "https://www.youtube.com/watch?v=MGHqlGT9E7E", // Dindi - Wayne Shorter
-      "https://www.youtube.com/watch?v=jdHjcJCMYV0", // Blackout - Stefon Harris
-      "https://www.youtube.com/watch?v=v201PxvQ4qM", // Crazy Race - Roy Hargrove
-      "https://www.youtube.com/watch?v=vc48ITjETAk", // Searching - Roy Ayers 
-      "https://www.youtube.com/watch?v=dzIUgS3Imu0", // I Never Loved a Man - Aretha Franklin 
-      "https://www.youtube.com/watch?v=rcrTFUOv2T4", // Solitude - Ella Fitzgerald
-      "https://www.youtube.com/watch?v=3zt_yv-3qgA", // Embraceable You - Barry Harris
-      "https://www.youtube.com/watch?v=iYgTrNOsMBI", // Introspection - Luiz Bonfá
-      "https://www.youtube.com/watch?v=rv5vXFaKkIg", // Introduction et Allegro - Maurice Ravel
-      "https://www.youtube.com/watch?v=JPYGRfzfBew", // Harp Concerto - Rautavaara
-      "https://www.youtube.com/watch?v=w3uVf8p-sgE", // Ich ruf zu dir - Edward Artemyev
-      "https://www.youtube.com/watch?v=FJ00agLjPT0", // Motets - Bach
-      "https://www.youtube.com/watch?v=VnQOHOozGFY", // S'una sol lagrima - Zelenska
-      "https://www.youtube.com/watch?v=5CR8e4xMVTs", // Trois poemes de Stephane Mallarme - Ravel
-      "https://www.youtube.com/watch?v=XRRhsX4j1Oc", // Birds - Messiaen
-      "https://www.youtube.com/watch?v=vD8mPn7OQ4o", // Live at Lu Lu White's - Bill Evans Trio
-      "https://www.youtube.com/watch?v=jDwqPCAw_7k", // Ascension (Live) - John Coltrane Quartet
-      "https://www.youtube.com/watch?v=ucdYt46DpX8", // Promies - Floating Points, Pharoah Sanders, LSO
-      "https://www.youtube.com/watch?v=8fNtipp5RLs", // Devil's Pie - D'Angelo
-      "https://www.youtube.com/watch?v=Yorkdiw92PU", // Tryin' Times - Roberta Flack
-      "https://www.youtube.com/watch?v=GC7lDw-FKi0", // One of Us Cannot Be Wrong - Leonard Cohen
-    ];
-    function updateLink() {
-      var num = Math.floor(Math.random() * linkArray.length);
-      document.getElementById("random-music-link").setAttribute("href",linkArray[num]);
-    };
-    updateLink();
-    document.getElementById("random-music-link").addEventListener("click",updateLink);
-  </script>
+<div class="container">    
+	<div class="ls">$ ls</div>
+	<ul class="tree">
+		{{ range sort .Sections "Section" "asc" }}
+		<li><a href="{{ .Permalink }}">{{ .Section }}</a></li>
+		{{ end }}
+	</ul>
+	<ul class="prompt-secondary">
+		<li>Listen to some <a id="random-music-link" target="_blank">music</a> while you browse.</li>
+	</ul>
+</div>
+<script>
+	var linkArray = [
+		{{- range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.link" -}}
+		{{- if isset .Params "link" -}}
+		"{{ .Params.link }}",
+		{{- end -}}
+		{{- end -}}
+		"https://www.youtube.com/watch?v=opvfotohSMg", // Any Love - Chaka Khan
+		"https://www.youtube.com/watch?v=h3SJmFpWdM4", // Angel - Ohio Players
+		"https://www.youtube.com/watch?v=5Euo2PLEuU0", // Birdlike - Freddie Hubbard
+		"https://www.youtube.com/watch?v=bTpNU88utKY", // Wie schön leuchtet der Morgenstern - Bach
+		"https://www.youtube.com/watch?v=zgc0IQKFAeU", // Wouldn't It Be Loverly - Shirley Horn
+		"https://www.youtube.com/watch?v=8l4rf6UfDgA", // Warum ist das Licht gegeben - Brahms
+		"https://www.youtube.com/watch?v=Zv3q6QVhoIs", // Lamentations of Jeremiah - Carpentras
+		"https://www.youtube.com/watch?v=XVNh1plmT58", // Seriado - Arthur Verocai
+		"https://www.youtube.com/watch?v=SuDe91CXf8s", // Theme from MASH - Bill Evans
+		"https://www.youtube.com/watch?v=Q0W4jrKFIpk", // After the Rain - John Coltrane  
+		"https://www.youtube.com/watch?v=9fzGGbiJags", // Massage Situation - Flying Lotus
+		"https://www.youtube.com/watch?v=G-AnGC0J1m0", // Sleep Cycles - Andrea Keller
+		"https://www.youtube.com/watch?v=l3qi3E40aWE", // For Once in My Life - Stevie Wonder
+		"https://www.youtube.com/watch?v=9-xWoMAptQ0&list=PLQvL6GLJiX92BjXlmxC9YEdREBH5RjRr9&index=8", // Power Flower - Stevie Wonder
+		"https://www.youtube.com/watch?v=2UTVGgIhfmU", // UMMG - Sasha Berliner
+		"https://www.youtube.com/watch?v=n-KLFp40wWE", // Moment's Notice - McCoy Tyner
+		"https://www.youtube.com/watch?v=9KW_pU7AC4U", // Beethoven String Quartet 13
+		"https://www.youtube.com/watch?v=QH3Fx41Jpl4", // Sinnerman - Nina Simone
+		"https://www.youtube.com/watch?v=qQPm5wqMScE", // Birthday - The Sugarcubes 
+		"https://www.youtube.com/watch?v=wNHybIY9xMw", // All-Night Vigil, I - Rachmaninoff 
+		"https://www.youtube.com/watch?v=V0RoYfwvGgA", // Easy to Love - Cannonball Adderley
+		"https://www.youtube.com/watch?v=iBruvJaYVoc", // Interlude (Lament) - Gary Burton Quartet
+		"https://www.youtube.com/watch?v=DPakwOErZCg", // Down by the River - Touch
+		"https://www.youtube.com/watch?v=djjO-zCnQjI", // A Love Feeling - Ruby Andrews 
+		"https://www.youtube.com/watch?v=cv8altEAIdA", // Comp Time - Ahmad Jamal with Assai Quartet 
+		"https://www.youtube.com/watch?v=MGHqlGT9E7E", // Dindi - Wayne Shorter
+		"https://www.youtube.com/watch?v=jdHjcJCMYV0", // Blackout - Stefon Harris
+		"https://www.youtube.com/watch?v=v201PxvQ4qM", // Crazy Race - Roy Hargrove
+		"https://www.youtube.com/watch?v=vc48ITjETAk", // Searching - Roy Ayers 
+		"https://www.youtube.com/watch?v=dzIUgS3Imu0", // I Never Loved a Man - Aretha Franklin 
+		"https://www.youtube.com/watch?v=rcrTFUOv2T4", // Solitude - Ella Fitzgerald
+		"https://www.youtube.com/watch?v=3zt_yv-3qgA", // Embraceable You - Barry Harris
+		"https://www.youtube.com/watch?v=iYgTrNOsMBI", // Introspection - Luiz Bonfá
+		"https://www.youtube.com/watch?v=rv5vXFaKkIg", // Introduction et Allegro - Maurice Ravel
+		"https://www.youtube.com/watch?v=JPYGRfzfBew", // Harp Concerto - Rautavaara
+		"https://www.youtube.com/watch?v=w3uVf8p-sgE", // Ich ruf zu dir - Edward Artemyev
+		"https://www.youtube.com/watch?v=FJ00agLjPT0", // Motets - Bach
+		"https://www.youtube.com/watch?v=VnQOHOozGFY", // S'una sol lagrima - Zelenska
+		"https://www.youtube.com/watch?v=5CR8e4xMVTs", // Trois poemes de Stephane Mallarme - Ravel
+		"https://www.youtube.com/watch?v=XRRhsX4j1Oc", // Birds - Messiaen
+		"https://www.youtube.com/watch?v=vD8mPn7OQ4o", // Live at Lu Lu White's - Bill Evans Trio
+		"https://www.youtube.com/watch?v=jDwqPCAw_7k", // Ascension (Live) - John Coltrane Quartet
+		"https://www.youtube.com/watch?v=ucdYt46DpX8", // Promies - Floating Points, Pharoah Sanders, LSO
+		"https://www.youtube.com/watch?v=8fNtipp5RLs", // Devil's Pie - D'Angelo
+		"https://www.youtube.com/watch?v=Yorkdiw92PU", // Tryin' Times - Roberta Flack
+		"https://www.youtube.com/watch?v=GC7lDw-FKi0", // One of Us Cannot Be Wrong - Leonard Cohen
+		"https://www.youtube.com/watch?v=Y1n2hBn8TrU", // Summer  (Estaté) - Shirley Horn
+		"https://www.youtube.com/watch?v=4U2XlME2qMs", // I have the room above her - Paul Motian
+		"https://www.youtube.com/watch?v=hP9ipGk878E", // Tight - Jazzmeia Horn
+		"https://www.youtube.com/watch?v=idJDjUAvoC8", // I Guess I'll Have to Change My Plan - Hank Jones
+		"https://www.youtube.com/watch?v=8E-imcnfhcg", // I Want You - Marvin Gaye
+		"https://www.youtube.com/watch?v=jXBMywgcGYU", // Black Narcissus - Flora Purim
+		"https://www.youtube.com/watch?v=XealDvQwim8", // The Ghetto - Donny Hathaway
+	];
+	function updateLink() {
+		var num = Math.floor(Math.random() * linkArray.length);
+		document.getElementById("random-music-link").setAttribute("href",linkArray[num]);
+	};
+	updateLink();
+	document.getElementById("random-music-link").addEventListener("click",updateLink);
+</script>
 {{ end }}

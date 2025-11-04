@@ -42,7 +42,7 @@
           </div>
           <div class="column">
             {{ range .Pages }}
-              <em>&para;&nbsp;{{ .Date.Format "02 Jan" }}</em>: <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>.
+              <em>&para;&nbsp;{{ .Date.Format "02 Jan" }}:</em> <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>.
             {{ end }}
           </div>
         </div>

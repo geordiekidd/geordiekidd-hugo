@@ -8,6 +8,6 @@ relyear: 2019
 link: "https://www.youtube.com/watch?v=A7vM3XUHfLs&list=OLAK5uy_lkQRvg50t-8VfGg1MVSrwZHF65s0Tvdes&index=1"
 ---
 
-A housemate quietly dropped Bedouine's music on my doorstep one day, and I have been grateful ever since. This is a beautiful album with beautiful lyrics and beautiful arrangements. It tends to come on whenever I need a break from the things around me and want to relax.
+A housemate dropped Bedouine's music on my doorstep one day. This is a beautiful album with beautiful lyrics and beautiful arrangements. It tends to come on whenever I need a break from the things around me and want to relax.
 
 Favourite song: *Bird Gone Wild*.
