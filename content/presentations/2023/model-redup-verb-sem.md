@@ -2,7 +2,7 @@
 date: "2023-11-30T11:27:48+10:00"
 draft: false
 file: model-redup-verb-sem.pdf
-location: Australian Linguistics Society Conference, Sydney
+location: Australian Linguistic Society Conference, Sydney
 title: Modelling reduplicative verb semantics using lexical conceptual structure
 ---
 

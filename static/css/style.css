@@ -7,8 +7,11 @@
     font-style: normal;
   }
   @font-face {
+    font-display: block;
     font-family: "Menlo Fallback";
     src: url("/commit/Menlo.woff2") format("woff2");
+    font-weight: 200 700;
+    font-style: normal;
   }
 }
 
@@ -21,11 +24,16 @@
   --sel: #005faf;
 
   /* Dark colours */
-  --base-dark: #25273a;
-  --base-secondary-dark: #363a4f;
-  --text-dark: #cad3f5;
-  --link-dark: #8aadf4;
-  --sel-dark: #939ab7;
+  /* --base-dark: #25273a; */
+  /* --base-secondary-dark: #363a4f; */
+  /* --text-dark: #cad3f5; */
+  /* --link-dark: #8aadf4; */
+  /* --sel-dark: #939ab7; */
+  --base-dark: #1e1e2e;
+  --base-secondary-dark: #313244;
+  --text-dark: #cdd6f4;
+  --link-dark: #89b4fa;
+  --sel-dark: #9399b2;
 
   --bg-color: var(--base);
   --bg-color-secondary: var(--base-secondary);

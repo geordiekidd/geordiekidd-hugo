@@ -2,7 +2,7 @@
 date: "2024-11-27T18:57:39+11:00"
 draft: false
 file: exco-pres-als.pdf
-location: Australian Linguistics Society Conference, Canberra
+location: Australian Linguistic Society Conference, Canberra
 title: Verb excorporation in four Gunwinyguan languages
 ---
 
