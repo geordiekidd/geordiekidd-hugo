@@ -1,7 +1,7 @@
 ---
 title: "Bird Songs of a Killjoy"
 date: 2025-01-08T17:20:56+11:00
-draft: false
+draft: true
 artist: Bedouine
 reltype: Album
 relyear: 2019

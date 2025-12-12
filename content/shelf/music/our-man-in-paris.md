@@ -1,7 +1,7 @@
 ---
 title: "Our Man in Paris"
 date: 2025-01-08T17:42:20+11:00
-draft: false
+draft: true
 artist: Dexter Gordon
 reltype: Album
 relyear: 1963
