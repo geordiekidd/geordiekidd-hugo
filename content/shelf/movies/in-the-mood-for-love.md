@@ -8,4 +8,4 @@ relyear: "2000"
 link: "https://tv.apple.com/au/movie/in-the-mood-for-love/umc.cmc.85nrk9pyw9t3yvl95oo5440"
 ---
 
-11/10. This is the kind of movie you have to sit in silence after, to let yourself catch back up.
+Well, what is there to say that has not elsewhere been said. 
