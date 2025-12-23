@@ -1,52 +1,53 @@
 {{ define "main" }}
-  <div class="container">
-    <p>
-      This is my personal blog, populated with news items, thoughts, and reflections. Nothing that interesting happens here, but it's fun to write these short posts so I'll keep it up for now. <a href="#all-posts">view all posts&nbsp;&darr;</a>
-    </p>
-    {{ $pages := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
-    {{ $paginator := .Paginate $pages 7 }}
-    <div class="feed">
-      {{ range $paginator.Pages }}
-      <div class="divider"></div>
-      <div class="blog-post">
-        <div class="post-header">
-          <a href="{{ .RelPermalink }}" style="color:var(--fg-color);text-decoration:none;">
-            <h1>{{ .Title | safeHTML }}</h1>
-          </a>
-          <span class="date">
-            <time>
-              <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Date.Format "2006-01-02" }}</a>
-            </time> 
-          </span>
-        </div>
-        {{ if and (eq $paginator.PageNumber 1) (eq . (index $pages 0)) }}
-          {{ .Content }}
-        {{ else }}
-          {{ .Summary }}
-          {{- if .Truncated -}}
-            <a href="{{ .RelPermalink }}">continue reading&nbsp;&rarr;</a>
-          {{ end }}
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
-    {{ partial "pagination.html" . }}
-    <div class="post-header" id="all-posts">
-      <h1>All posts</h1>
-    </div>
-    <div class="list-container">
-      {{ range .Data.Pages.GroupByDate "2006" }}
-        <div class="row">
-          <div class="column">
-            <div class="col-cat">{{- .Key -}}</div>
-          </div>
-          <div class="column">
-            {{ range .Pages }}
-              <em>&para;&nbsp;{{ .Date.Format "02 Jan" }}:</em> <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>.
-            {{ end }}
-          </div>
-        </div>
-      {{ end }}
-    </div>
-  </div>
+<div class="container">
+	<p>
+	This is my personal blog, populated with news items, thoughts, and reflections. Nothing that interesting happens here, but it's fun to write these short posts so I'll keep it up for now. <a href="#all-posts">view all posts&nbsp;&darr;</a>
+	</p>
+	{{ $pages := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
+	{{ $paginator := .Paginate $pages 7 }}
+	<div class="feed">
+		{{ range $paginator.Pages }}
+		<div class="divider"></div>
+		<div class="blog-post">
+			<div class="post-header">
+				<a href="{{ .RelPermalink }}" style="color:var(--fg-color);text-decoration:none;">
+					<h1>{{ .Title | safeHTML }}</h1>
+				</a>
+				<span class="date">
+					<time>
+						<a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Date.Format "2006-01-02" }}</a>
+					</time> 
+				</span>
+			</div>
+			{{ if and (eq $paginator.PageNumber 1) (eq . (index $pages 0)) }}
+				{{ .Content }}
+				<a href="{{ .RelPermalink }}">view post&nbsp;&rarr;</a>
+			{{ else }}
+				{{ .Summary }}
+				{{- if .Truncated -}}
+					<a href="{{ .RelPermalink }}">continue reading&nbsp;&rarr;</a>
+				{{ end }}
+			{{ end }}
+		</div>
+		{{ end }}
+	</div>
+	{{ partial "pagination.html" . }}
+	<div class="post-header" id="all-posts">
+		<h1>All posts</h1>
+	</div>
+	<div class="list-container">
+		{{ range .Data.Pages.GroupByDate "2006" }}
+		<div class="row">
+			<div class="column">
+				<div class="col-cat">{{- .Key -}}</div>
+			</div>
+			<div class="column">
+				{{ range .Pages }}
+				<em>&para;&nbsp;{{ .Date.Format "02 Jan" }}:</em> <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>.
+				{{ end }}
+			</div>
+		</div>
+		{{ end }}
+	</div>
+</div>
 {{ end }}

@@ -1,6 +1,6 @@
 ---
 title: "Solving the great Ubykh word mystery"
-date: 2025-12-01T19:35:56+11:00
+date: 2025-12-11T19:35:56+11:00
 draft: true
 ---
 
