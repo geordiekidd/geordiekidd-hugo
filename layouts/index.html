@@ -13,8 +13,8 @@
 <script>
 	var linkArray = [
 		{{- range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.link" -}}
-		{{- if isset .Params "link" -}}
-		"{{ .Params.link }}",
+		{{- with .Params.link -}}
+		"{{ . }}",
 		{{- end -}}
 		{{- end -}}
 		"https://www.youtube.com/watch?v=opvfotohSMg", // Any Love - Chaka Khan
@@ -59,7 +59,7 @@
 		"https://www.youtube.com/watch?v=XRRhsX4j1Oc", // Birds - Messiaen
 		"https://www.youtube.com/watch?v=vD8mPn7OQ4o", // Live at Lu Lu White's - Bill Evans Trio
 		"https://www.youtube.com/watch?v=jDwqPCAw_7k", // Ascension (Live) - John Coltrane Quartet
-		"https://www.youtube.com/watch?v=ucdYt46DpX8", // Promies - Floating Points, Pharoah Sanders, LSO
+		"https://www.youtube.com/watch?v=ucdYt46DpX8", // Promise - Floating Points, Pharoah Sanders, LSO
 		"https://www.youtube.com/watch?v=8fNtipp5RLs", // Devil's Pie - D'Angelo
 		"https://www.youtube.com/watch?v=Yorkdiw92PU", // Tryin' Times - Roberta Flack
 		"https://www.youtube.com/watch?v=GC7lDw-FKi0", // One of Us Cannot Be Wrong - Leonard Cohen
@@ -70,6 +70,12 @@
 		"https://www.youtube.com/watch?v=8E-imcnfhcg", // I Want You - Marvin Gaye
 		"https://www.youtube.com/watch?v=jXBMywgcGYU", // Black Narcissus - Flora Purim
 		"https://www.youtube.com/watch?v=XealDvQwim8", // The Ghetto - Donny Hathaway
+		"https://www.youtube.com/watch?v=J70YC7qurRM", // Body and Soul [Live] - Sarah Vaughan
+		"https://www.youtube.com/watch?v=O-D8xTZXhjg", // Nothing in the World - Dinah Washington
+		"https://www.youtube.com/watch?v=AAwq3FLZHAg", // I Cover the Waterfront - Billie Holliday
+		"https://www.youtube.com/watch?v=uBLY6oVYMVI&list=PLfJndz0utgOOdlYEmXfOjmjQVz5g33-3d&index=1", // PRAYER - Joel Ross
+		"https://www.youtube.com/watch?v=BGC4Rm13lXQ", // Hour of Parting - Sun Ra
+		"https://www.youtube.com/watch?v=PDnMxgxx2jg", // Talk to Me - Joni Mitchell
 	];
 	function updateLink() {
 		var num = Math.floor(Math.random() * linkArray.length);

@@ -2,9 +2,9 @@
 title: "The Notebooks of Malta Laudrids Brigge"
 date: 2025-01-31T18:59:14+11:00
 draft: false
-artist: "Raine Maria Rilke"
-reltype: "Book"
-relyear: "1910"
+artist: Raine Maria Rilke
+reltype: Book
+relyear: 1910
 link: "https://www.penguin.com.au/books/the-notebooks-of-malte-laurids-briggs-9780141182216"
 ---
 

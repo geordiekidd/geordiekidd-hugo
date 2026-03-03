@@ -1,51 +1,51 @@
 @supports (font-variation-settings: initial) {
-  @font-face {
-    font-display: block;
-    font-family: "CommitMono";
-    src: url("/commit/CommitMonoVF.woff2") format("woff2");
-    font-weight: 200 700;
-    font-style: normal;
-  }
-  @font-face {
-    font-display: block;
-    font-family: "Menlo Fallback";
-    src: url("/commit/Menlo.woff2") format("woff2");
-    font-weight: 200 700;
-    font-style: normal;
-  }
+	@font-face {
+		font-display: block;
+		font-family: "CommitMono";
+		src: url("/commit/CommitMonoVF.woff2") format("woff2");
+		font-weight: 200 700;
+		font-style: normal;
+	}
+	@font-face {
+		font-display: block;
+		font-family: "Menlo Fallback";
+		src: url("/commit/Menlo.woff2") format("woff2");
+		font-weight: 200 700;
+		font-style: normal;
+	}
 }
 
 :root {
-  /* Colours */
-  --base: #faf9f6;
-  --base-secondary: #e8e7e3;
-  --text: #312B1B;
-  --link: #005faf;
-  --sel: #005faf;
+	/* Colours */
+	--base: #faf9f6;
+	--base-secondary: #e8e7e3;
+	--text: #312B1B;
+	--link: #005faf;
+	--sel: #005faf;
 
-  /* Dark colours */
-  /* --base-dark: #25273a; */
-  /* --base-secondary-dark: #363a4f; */
-  /* --text-dark: #cad3f5; */
-  /* --link-dark: #8aadf4; */
-  /* --sel-dark: #939ab7; */
-  --base-dark: #1e1e2e;
-  --base-secondary-dark: #313244;
-  --text-dark: #cdd6f4;
-  --link-dark: #89b4fa;
-  --sel-dark: #9399b2;
+	/* Dark colours */
+	/* --base-dark: #25273a; */
+	/* --base-secondary-dark: #363a4f; */
+	/* --text-dark: #cad3f5; */
+	/* --link-dark: #8aadf4; */
+	/* --sel-dark: #939ab7; */
+	--base-dark: #1e1e2e;
+	--base-secondary-dark: #313244;
+	--text-dark: #cdd6f4;
+	--link-dark: #89b4fa;
+	--sel-dark: #9399b2;
 
-  --bg-color: var(--base);
-  --bg-color-secondary: var(--base-secondary);
-  --fg-color: var(--text);
-  --link-color: var(--link);
-  --selection-color: var(--sel);
-  
-  /* Font size */
-  --14px: 1rem;
+	--bg-color: var(--base);
+	--bg-color-secondary: var(--base-secondary);
+	--fg-color: var(--text);
+	--link-color: var(--link);
+	--selection-color: var(--sel);
 
-  /* Spacing */ 
-  /*--text-margin-right: 12ch;*/
+	/* Font size */
+	--14px: 1rem;
+
+	/* Spacing */ 
+	/*--text-margin-right: 12ch;*/
 }
   
 /* General */
@@ -136,7 +136,7 @@ p ~ h2 {
 h2 > a.section-counter::before {
   display: inline-block;
   counter-increment: section;
-  content: counter(section) ".";
+  content: counter(section);
   text-decoration: underline;
 }
 
@@ -213,6 +213,22 @@ ul {
 ul.prompt-secondary {
   margin-top: 3rem;
   list-style-type: ">\00a0";
+}
+
+ol {
+	list-style-type: none;
+	counter-reset: foo;
+}
+
+ol > li {
+	counter-increment: foo;
+	display: table-row;
+}
+
+ol > li::before {
+	content: "(" counter(foo) ")";
+	display: table-cell;
+	padding-right: 1ch;
 }
 
 li {
@@ -509,7 +525,7 @@ header.navbar {
 }
 
 figure {
-  display: flex;
+  display: block;
   position: relative;
   overflow: hidden;
 }
@@ -518,12 +534,14 @@ figure p {
   margin-bottom: 0;
 }
 
-cite {
-  font-style: normal;
+blockquote {
+  font-variation-settings: "ital" 1;
 }
 
-blockquote, cite {
-  font-variation-settings: "ital" 1;
+cite {
+  font-style: normal;
+  font-variation-settings: "ital" 0;
+  position: relative;
 }
 
 blockquote,
@@ -534,7 +552,7 @@ blockquote ~ * {
 
 blockquote::before {
   white-space: pre;
-  content: "\201C\A";
+  /* content: "\201C\A"; */
   left: 0ch;
   top: 0;
   font-size: 2rem;
@@ -542,12 +560,12 @@ blockquote::before {
 }
 
 figure:has(> blockquote) {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 figure:has(> blockquote)::before {
-  line-height: 0.75rem;
+  line-height: .5rem;
   position: absolute;
   white-space: pre;
   opacity: 50%;
@@ -555,15 +573,20 @@ figure:has(> blockquote)::before {
 }
 
 figcaption {
-  font-variation-settings: "ital" 0;
-  font-style: normal;
+	display: block;
+	vertical-align: top;
+	font-variation-settings: "ital" 0;
+	font-style: normal;
+	width: fit-content;
 }
 
 pre {
   background-color: var(--bg-color-secondary);
   overflow-x: auto;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 nav {
