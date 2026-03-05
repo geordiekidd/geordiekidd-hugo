@@ -28,7 +28,7 @@ This is a truly remarkable, and also absurd, feat of human linguistic ability, b
 
 <!-- ASK TREY IF IMAGE CAN BE REPRODUCED ? -->
 
-{{< image src=/img/ubykh.gif width="60%" float="left" margin="margin-right:2ch" alt="Cartoon illustration of a very long Ubykh word, segmented into morphemes.">}}
+<!-- {{< image src=/img/ubykh.gif width="60%" float="left" margin="margin-right:2ch" alt="Cartoon illustration of a very long Ubykh word, segmented into morphemes.">}} -->
 
 If you're anything like me (let's hope not), then perhaps you might also be a little sceptical, given this rather unbelievable complexity. I mean, it's actually pretty hard to work out what proposition is being expressed here. It involves something about someone taking something out from under someone else for another someone else, but I can't properly comprehend the situation it is describing. It really makes you wonder how, and in what context, an Ubykh speaker uttered this thing. Obviously, the first thing to do to learn more is go back to the original source. The _allthingslinguistic.com_ post didn't name an Ubykh source, so I checked the [SpecGram post](https://specgram.com/CLII.3/09.phlogiston.cartoon.3.html). All the references are fortunately listed at its end, although strangely there's nothing specifically relating to Ubykh, only a few resources on polysynthesis more broadly. Upon checking all those resources, I tragically found no trace of The Verb, just some general remarks about Caucasian languages broadly.
 
@@ -146,7 +146,7 @@ It makes sense suddenly why The Verb doesn't appear in the published grammar: be
 
 
 
-#### <a href="#conclusions-morals">#</a> Conclusions and lessons {#conclusions-morals}
+## <a href="#conclusions-morals">#</a> Conclusions and lessons {#conclusions-morals}
 
 Well, quite the journey that was! I'm glad that after weeks of work I was able to solve one of the most irrelevant linguistic mysteries: the great Ubykh word, _a-χʲa-z-batʂ&rsquo;a-ʁa-w-də-tʷ-aaj-la-fa-q&rsquo;a-jt&rsquo;-ma-da-χ_, is a complete fabrication. We can thus be comforted then that no language has a word meaning _'if only you had not been able to make him take it all out from under me again for them!'_. I did reach out to Rhona Fenwick a couple of months ago to get confirmation of my findings, but I got no reply.
 
@@ -164,7 +164,7 @@ If anybody knows of any other too-good-to-be-true linguistic facts floating arou
 
 
 
-#### <a href="#an-error">#</a> Appendix: Has an error been found? {#an-error}
+## <a href="#an-error">#</a> Appendix: Has an error been found? {#an-error}
 
 The following doesn't constitute part of the story, so I've put it here as an appendix. 
 
