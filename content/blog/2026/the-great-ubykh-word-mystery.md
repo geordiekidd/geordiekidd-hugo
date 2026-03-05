@@ -152,13 +152,13 @@ Well, quite the journey that was! I'm glad that after weeks of work I was able t
 
 I'd be lying if I said I wasn't extremely satisfied with my own efforts here. Truly -- nothing beats the feeling of proving someone wrong, or in this case, proving someone guilty. I feel great about getting to sleep easily at night again. 
 
-On a more serious note: I believe it's irresponsible to make up scientific facts and present them as true. The scientific 'fact' here concerns the outer bounds of the design space of human language, which is a matter central to much research in the language sciences. Whilst it doesn't really matter that one satirical linguistic blog (i.e., SpecGram) reproduced a lie, it does matter that such a lie made its way into peer-reviewed academic publications, which ought to carry and represent genuine authority as well as scientific integrity. Holmes and Wiles' citation of The Verb is ultimately one of Evans, and we can only assume that the missing citation in Evans' book falls out from the rather embarrassing use of Wikipedia as a source.
+On a more serious note, I think this whole thing shows an unfortunate outcome of making things up on Wikipedia. The issue is not really with the reproduction of the factoid in a couple of fun linguistic blogs (i.e., All Things Linguistic and SpecGram), but rather with its appearance in peer-reviewed academic publications, which ought to carry and represent genuine authority as well as scientific integrity. Nick Evans would I'm sure not have assumed that the information he found on Wikipedia was false, and Holmes and Wiles would I'm sure have trusted Evans on the matter (as he is an expert on polysynthesis). This is not a dig at Fenwick by any means, just a pointing out of the consequences of a bit of fun they likely felt was harmless. (And to be clear, really no harm was done -- except to the morphology-nerd in my brain who was hoping The Verb was real.)
 
 So let this be a cautionary tale for pop-science bloggers, academic researchers, and fact-fabricators alike. From me you'll get two finger-wagging and _tsk-tsk-tsk_-ing lessons:
 
 1. Every school teacher is vindicated: don't get your information from Wikipedia, especially to make a scientific point, as you may in fact find it to be not entirely true after all. Always double-check your sources!
 
-2. If you're going to make up linguistic facts online, you should be clever about covering your tracks. You never know when a loser nerd with too much time on his hands will come along and retrace them.
+2. If you're going to fabricate linguistic facts online, you should be clever about covering your tracks. You never know when a loser nerd with too much time on his hands will come along and retrace them.
 
 If anybody knows of any other too-good-to-be-true linguistic facts floating around, please send them to me. I could be in for a new line of work.
 
