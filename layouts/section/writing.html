@@ -5,19 +5,23 @@
 	{{- range $i, $group := $writList -}}
 	<div class="row content-item-row">
 		<div class="col-4">
-			<h1>{{ $group.Key }}</h1>
-		</div>
-		<div class="col-7">
-			{{ range $group.Pages }}
-			<div class="work-item">
-				{{ if .RenderString .Content }}
-				<a href="{{ .Permalink }}">{{ .Params.citation | safeHTML }}</a>
-				{{ else }}
-				{{ .Params.citation | safeHTML }}
-				{{ end }}
-				{{- if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end}}
+			<div class="title">
+				<h1>{{ $group.Key }}</h1>
 			</div>
-			{{ end }}
+		</div>
+		<div class="col-8">
+			<article class="body-content">
+				{{ range $group.Pages }}
+				<div class="work-item">
+					{{ if .RenderString .Content }}
+					<a href="{{ .Permalink }}">{{ .Params.citation | safeHTML }}</a>
+					{{ else }}
+					{{ .Params.citation | safeHTML }}
+					{{ end }}
+					{{- if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end}}
+				</div>
+				{{ end }}
+			</article>
 			{{ if ne $i (sub $len 1) }}
 			<hr class="border border-tertiary">
 			{{ end }}

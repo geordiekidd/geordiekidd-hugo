@@ -6,14 +6,18 @@
 	{{ range $i, $group := $blogPages }}
 	<div class="row">
 		<div class="col-4">
-			<h1>{{- .Key -}}</h1>
+			<div class="title">
+				<h1>{{- .Key -}}</h1>
+			</div>
 		</div>
-		<div class="col-7">
-			{{ range .Pages }}
-			<a href="{{ .Permalink }}" class="plain"><span><span class="square square-med"></span>{{ lower (.Date.Format "2.&nbsp;Jan") | safeHTML }}:</span>
-				{{ .Title | safeHTML }}{{ if eq (substr .Title -1) "!" }}{{ else if eq (substr .Title -1) "?" }}{{ else }}.{{ end }}&nbsp;
-			</a>
-			{{ end }}
+		<div class="col-8">
+			<article class="body-content">
+				{{ range .Pages }}
+				<a href="{{ .Permalink }}" class="plain"><span><span class="square square-med"></span>{{ lower (.Date.Format "2.&nbsp;Jan") | safeHTML }}:</span>
+					{{ .Title | safeHTML }}{{ if eq (substr .Title -1) "!" }}{{ else if eq (substr .Title -1) "?" }}{{ else }}.{{ end }}&nbsp;
+				</a>
+				{{ end }}
+			</article>
 			{{ if ne $i (sub $len 1) }}
 			<hr class="border border-tertiary">
 			{{ end }}

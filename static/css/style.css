@@ -266,7 +266,7 @@ h1, h1 a {
 }
 
 @media(max-width: 50em) {
-	.col-4 > h1 { margin-bottom: 1.5rem; }
+	.title > h1 { margin-bottom: 1rem; }
 }
 
 .title h1 {
@@ -280,9 +280,9 @@ h1, h1 a {
 .title h1 .dot-big { display: none }
 
 @media(max-width: 50em) {
-	.title h1 { grid-template-columns: 12% 90%; }
+	.title h1 { grid-template-columns: 100%; }
 	.title h1 .square-big { display: inline-block; }
-	.title h1 .dot-big { display: inline-block; }
+	/* .title h1 .dot-big { display: inline-block; } */
 }
 
 h2 {
@@ -496,6 +496,10 @@ a {
 	padding: 0;
 	color: var(--link-color);
 	text-decoration: underline;
+}
+
+.title > a > h1 {
+	margin-bottom: 1.5rem;
 }
 
 a.plain {

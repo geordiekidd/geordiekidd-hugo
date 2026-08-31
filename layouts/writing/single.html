@@ -7,8 +7,8 @@
 				<a href="{{ .RelPermalink }}"><h3>published {{ (.Date.Format "2. January 2006") }}{{ if isset .Params "author" }}<br>by {{ .Params.author }}{{- end -}}</h3></a>
 			</section>
 		</div>
-		<div class="col-7">
-			<article>
+		<div class="col-8">
+			<article class="body-content">
 				{{ .Content }}
 				<p>
 				Published in <em>{{ .Params.pubname }}</em>, <em>{{ .Params.volume }}</em>{{ if isset .Params "issue" }}({{ .Params.issue }}){{ end }}, {{ .Params.pages | safeHTML }}. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}

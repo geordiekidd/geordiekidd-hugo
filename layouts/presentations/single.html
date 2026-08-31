@@ -7,10 +7,12 @@
 				<a href="{{ .RelPermalink }}"><h3>{{ (.Date.Format "2. January 2006") }}{{ if isset .Params "author" }} by {{ .Params.author }}{{- end -}}</h3></a>
 			</section>
 		</div>
-		<div class="col-7">
-			<article>
+		<div class="col-8">
+			<article class="body-content">
 				{{ .Content }}
+				<p>
 				Presented at the <em>{{ .Params.location -}}</em>. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}presentations/{{ .Params.file }}">Get slides</a>.{{ end }}
+				</p>
 			</article>
 		</div>
 	</div>

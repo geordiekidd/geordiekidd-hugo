@@ -2,9 +2,9 @@
 <div class="container index-frame">
 	<div class="row">
 		<div class="col-4">
-			<section class="meta-panel title">
+			<div class="title">
 				<a href="/about/"><h1><span class="dot dot-big"></span>Welcome</h1></a>
-			</section>
+			</div>
 		</div>
 		<div class="col-8">
 			<article class="body-content">
@@ -21,9 +21,9 @@
 	<hr class="border border-primary">
 	<div class="row">
 		<div class="col-4">
-			<section class="meta-panel title">
+			<div class="title">
 				<a href="/blog/"><h1 class="blog"><span class="dot dot-big"></span>Latest news</h1></a>
-			</section>
+			</div>
 		</div>
 		{{ range $i, $e := first 3 (.Site.GetPage "Section" "blog").Pages }}
 		{{ if gt $i 0 }}

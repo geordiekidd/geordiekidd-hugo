@@ -5,14 +5,18 @@
 	{{- range $i, $group := $presList -}}
 	<div class="row content-item-row">
 		<div class="col-4">
-			<h1>{{ $group.Key }}</h1>
-		</div>
-		<div class="col-7">
-			{{ range $group.Pages }}
-			<div class="work-item">
-				{{ lower (.Date.Format "2. Jan") }}, <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>. {{ .Params.location }}. <a href="{{ .Site.BaseURL }}presentations/{{ .Params.file }}">slides</a>
+			<div class="title">
+				<h1>{{ $group.Key }}</h1>
 			</div>
-			{{ end }}
+		</div>
+		<div class="col-8">
+			<article class="body-content">
+				{{ range $group.Pages }}
+				<div class="work-item">
+					{{ lower (.Date.Format "2. Jan") }}, <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>. {{ .Params.location }}. <a href="{{ .Site.BaseURL }}presentations/{{ .Params.file }}">slides</a>
+				</div>
+				{{ end }}
+			</article>
 			{{ if ne $i (sub $len 1) }}
 			<hr class="border border-tertiary">
 			{{ end }}
