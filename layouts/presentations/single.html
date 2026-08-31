@@ -1,20 +1,19 @@
 {{ define "main" }}
-  <div class="container">
-    <div class="post-header">
-      <span class="date">
-        <time>
-          <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }}</a>
-        </time> 
-        {{- if isset .Params "author" -}}
-          <span style="opacity:50%";>*&nbsp;by {{ .Params.author }}</span>
-        {{ end }}
-      </span>
-      <h1>{{ .Title | safeHTML }}</h1>
-    </div>
-    {{ .Content }}
-    <p>
-    Presented at the <em>{{ .Params.location -}}</em>. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}presentations/{{ .Params.file }}">slides</a>{{ end }}        
-    </p>
-    {{ partial "post-nav.html" . }}
-  </div>
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+			<section class="meta-panel">
+				<a href="{{ .RelPermalink }}"><h1>{{ .Title | safeHTML }}</h1></a>
+				<a href="{{ .RelPermalink }}"><h3>{{ (.Date.Format "2. January 2006") }}{{ if isset .Params "author" }} by {{ .Params.author }}{{- end -}}</h3></a>
+			</section>
+		</div>
+		<div class="col-7">
+			<article>
+				{{ .Content }}
+				Presented at the <em>{{ .Params.location -}}</em>. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}presentations/{{ .Params.file }}">Get slides</a>.{{ end }}
+			</article>
+		</div>
+	</div>
+	{{ partial "post-nav.html" . }}
+</div>
 {{ end }}

@@ -8,4 +8,4 @@ relyear: 1991
 link: "https://www.kanopy.com/en/product/double-life-veronique"
 ---
 
-A very charming movie about fate, love, and identity, and emblematic of late Kieślowski's style. Like the [Three Colours trilogy](https://www.criterion.com/boxsets/844-three-colors?srsltid=AfmBOoqgOOzx47jdyieEFGksm4CdTse4WXDQz7SEfGzu_a1wMN8So-vM) that followed it (which is also a must-watch), *Double Life* is about people making sense of the strange and mystical world around them. It also focuses on the rather enchanting nature of coincidence, which I really like.
+A very charming movie about fate, love, and identity, one very emblematic of late Kieślowski. Like the must-watch [Three Colours trilogy](https://www.criterion.com/boxsets/844-three-colors?srsltid=AfmBOoqgOOzx47jdyieEFGksm4CdTse4WXDQz7SEfGzu_a1wMN8So-vM) that followed it, *Double Life* is about people making sense of the coincidences that seem to follow them around, and of the greater, mystical forces that seem to organise their fates. It is an enchanting and characteristic Kieślowskian coincidence-story.

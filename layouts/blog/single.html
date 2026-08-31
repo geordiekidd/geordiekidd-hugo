@@ -1,14 +1,18 @@
 {{ define "main" }}
-  <div class="container">
-    <div class="post-header">
-      <h1>{{ .Title | safeHTML }}</h1>
-      <span class="date">
-        <time>
-          <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} &gt; {{ .Date | time.Format "15:04" }}</a>
-        </time> 
-      </span>
-    </div>
-    {{ .Content }}
-    {{ partial "post-nav.html" . }}
-  </div>
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+			<section class="meta-panel">
+				<a href="{{ .RelPermalink }}"><h1>{{ .Title | safeHTML }}</h1></a>
+				<a href="{{ .RelPermalink }}"><h3>at {{ (.Date.Format "2. January 2006") }}, {{ .Date | time.Format "15:04" }}</h3></a>
+			</section>
+		</div>
+		<div class="col-8">
+			<article class="body-content">
+				{{ .Content }}
+			</article>
+		</div>
+	</div>
+	{{ partial "post-nav.html" . }}
+</div>
 {{ end }}

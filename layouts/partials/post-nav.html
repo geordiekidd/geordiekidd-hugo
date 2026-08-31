@@ -1,14 +1,18 @@
-<div class="post-nav">
-  <a href="{{ .Parent.Permalink }}">&larr;&nbsp;{{ .Parent.Section }}</a>
-  <span style="float:right;">
-    {{- if .PrevInSection -}}
-      <a href="{{.PrevInSection.Permalink}}">prev</a>
-      {{- if .NextInSection -}} 
-      ,&nbsp;
-      {{- end -}}
-    {{- end -}}
-    {{- if .NextInSection -}}
-      <a href="{{.NextInSection.Permalink}}">next</a>
-    {{- end -}}
-  </span>
+<div class="row post-nav">
+	<div class="col-4"></div>
+	<div class="col-7">
+		<hr class="border">
+		<span>
+			<a href="{{ .Parent.Permalink }}" class="{{ .Parent.Section }}"><span class="square square-med"></span>{{ strings.TrimRight "s" .Parent.Section }} archive</a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;
+			{{ if .PrevInSection -}}
+			<a href="{{.PrevInSection.Permalink}}">prev</a>
+			{{- if .NextInSection -}},&nbsp;
+			{{- end -}}
+			{{- end -}}
+			{{- if .NextInSection -}}
+			<a href="{{.NextInSection.Permalink}}">next</a>
+			{{- end -}}
+		</span>
+	</div>
 </div>

@@ -4,4 +4,5 @@ date: 2025-12-04T17:01:42+11:00
 draft: false
 location: Australian Linguistic Society Conference, Gold Coast
 file: comp-verb-diach.pdf
+author: Geordie Kidd, Mark Harvey, and Robert Mailhammer
 ---

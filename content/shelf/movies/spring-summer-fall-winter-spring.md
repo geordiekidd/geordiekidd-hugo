@@ -8,4 +8,4 @@ relyear: 2003
 link: "https://www.kanopy.com/en/product/14870736?frontend=kui"
 ---
 
-A Korean masterpiece; a profound and breathtaking exposition of Buddhism and the Cycle. It is rich with dense but subtle symbology, reminding us that we are not exempt (however much we may wish) from the justifying forces of nature.
+A Korean masterpiece; a profound and breathtaking exposition of Buddhism and the Cycle. It is rich with dense but subtle symbology on various strata, reminding us that we are not exempt (however much we may wish) from the justifying forces of nature and the seasons through which we live. I could never not recommend this film.

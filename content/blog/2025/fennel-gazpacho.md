@@ -4,13 +4,9 @@ date: 2025-01-12T18:36:18+11:00
 draft: false
 ---
 
-The other day I visited my friend J for lunch, and to discuss some music he is intending to include in his book-in-progress. I offered some technical descriptions of the songs, something which I hadn't sat down and done since my music analysis subject in high school. We listened to a lot of disco, dance, funk, and soul deep cuts from the 1970s and 1980s. So good. 
+The other day I visited my friend JH for lunch, and to discuss some music he is intending to include in his book-in-progress. I offered some technical descriptions of the songs, something which I hadn't sat down and done since my music analysis subject in high school. We listened to a lot of disco, dance, funk, and soul deep cuts from the 1970s and 1980s. So, quite fun.
 
-<figure style="width:45%;float:right;margin-left:2ch;">
-  <div class="inner">
-    <a href="/img/fennel-gazpacho-1.jpeg"><img src="/img/fennel-gazpacho-1.jpeg" alt="Two bowls of soup, with bread and dip on the side"></a>
-  </div>
-</figure>
+{{< image src=/img/fennel-gazpacho-1.jpeg width=80% alt="Two bowls of soup, with bread and dip on the side">}}
 
 It was pretty hot that day, about 40&deg;C I think. I caught the tram from Coburg into the city, then a train out to [ PLACE ], which was much further than I'm used to going. It was still a fun journey, and I listened to some [Aretha](https://youtu.be/pMgkFU3Y3lY?si=Sw8DR5vPa2w2qPoL) while I travelled. As repayment for my help, J made the lunch (mostly) pictured: homemade olive tapenade on sourdough, fennel gazpacho, and Eton mess. Perfectly curated and very hot-weather-friendly. I will certainly be adopting the soup recipe into my repertoire. 
 

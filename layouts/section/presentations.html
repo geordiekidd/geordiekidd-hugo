@@ -1,19 +1,23 @@
 {{ define "main" }}
-  <div class="container">
-    {{ .Content }}
-    {{- range .Data.Pages.GroupByDate "2006" -}}
-    <div class="row">
-      <div class="column">
-        <div class="col-cat">{{ .Key }}</div>
-      </div>
-      <div class="column">
-        {{ range .Pages }}
-        <div class="item">
-          {{ .Date.Format "02 Jan" }}, <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>. {{ .Params.location }}.
-        </div>
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
-  </div>
+<div class="container">
+	{{- $presList := .Data.Pages.GroupByDate "2006" -}}
+	{{- $len := (len $presList) -}}
+	{{- range $i, $group := $presList -}}
+	<div class="row content-item-row">
+		<div class="col-4">
+			<h1>{{ $group.Key }}</h1>
+		</div>
+		<div class="col-7">
+			{{ range $group.Pages }}
+			<div class="work-item">
+				{{ lower (.Date.Format "2. Jan") }}, <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>. {{ .Params.location }}. <a href="{{ .Site.BaseURL }}presentations/{{ .Params.file }}">slides</a>
+			</div>
+			{{ end }}
+			{{ if ne $i (sub $len 1) }}
+			<hr class="border border-tertiary">
+			{{ end }}
+		</div>
+	</div>
+	{{ end }}
+</div>
 {{ end }}

@@ -1,23 +1,25 @@
 <header class="navbar">
-	<span>
-		<a href="/">geordiekidd.com</a>&nbsp;~
-		{{- if not .IsHome -}}
-		/<ul>
-			<li class="dropdown">
-				<a href="{{ if .IsPage }}{{ .Parent.Permalink }}{{ else }}{{ .Permalink }}{{ end }}">{{ .Section }}</a>
-				<ul class="dropdown-list">
-					{{ range sort .Site.Sections "Section" "asc" }}
-					{{ if and (ne .Permalink $.Permalink) (ne .Permalink $.Parent.Permalink) }}
-					<li><a href="{{ .Permalink}}">{{ .Title }}</a></li>
-					{{ end }}
-					{{ end }}
-				</ul>
-			</li>
+	<!-- <div class="circle-nav"> -->
+	<!-- 	<div class="circle-nav-bg"></div> -->
+	<!-- 	<ul> -->
+	<!-- 		{{ $current := .CurrentSection }} -->
+	<!-- 		{{ range .Site.Sections.ByWeight }} -->
+	<!-- 		<li><a class="{{ trim .RelPermalink "/" }}{{ if eq .RelPermalink $current.RelPermalink }} selected{{ end }}" href="{{ .RelPermalink }}">{{- lower .Title -}}</a></li> -->
+	<!-- 		{{ end }} -->
+	<!-- 	</ul> -->
+	<!-- </div> -->
+	<div class="logo-icon">
+		<a href="/"><svg class="logo-title" width="23" height="25" xmlns="http://www.w3.org/2000/svg"><path d="M 0 6 H13 V19 H0 M 18 0 H22 V25 H18" fill="var(--fg-color)"/></svg></a>
+	</div>
+	<div class="nav">
+		<ul class="nav-list">
+			{{ $current := .CurrentSection }}
+			{{ range .Site.Sections.ByWeight }}
+			<li><a class="{{ trim .RelPermalink "/" }}{{ if eq .RelPermalink $current.RelPermalink }} selected{{ end }}" href="{{ .RelPermalink }}">{{- lower .Title -}}</a></li>
+			{{ end }}
 		</ul>
-		<span id="current-filename">{{ if .IsPage }}$ cat {{ .File.BaseFileName }}.md{{ end }}</span>
-		{{ end }}
-	</span>
-	<span class="light-dark-toggle"></span>
+	</div>
 </header>
+<!-- <hr class="border border-header"> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/js/light-dark-toggle.js"></script>

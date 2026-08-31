@@ -1,7 +1,8 @@
-<!-- shamelessly lifted from https://consequently.org -->
-<div class="footer">
-  <em>{{ .Site.Copyright }}, 2024&ndash;<span id="js-year"></span><noscript>{{ now.Format "2006" }}</noscript></em>
-</div>
+<footer>
+	<p>
+	<h3><span class="dot dot-med"></span>copyright Geordie Kidd, 2024&ndash;<span id="js-year"></span><noscript>{{ now.Format "2006" }}</noscript></h3>
+	</p>
+</footer>
 <script>
-  document.getElementById("js-year").innerHTML = new Date().getFullYear();
+	document.getElementById("js-year").innerHTML = new Date().getFullYear();
 </script>

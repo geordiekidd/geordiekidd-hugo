@@ -2,79 +2,75 @@
 title: "Solving the great Ubykh word mystery"
 date: 2026-03-02T14:27:56+11:00
 draft: false
+layout: "single"
 ---
 
-## <a href="#intro">#</a> Introduction {#intro}
+<!-- #### Introduction {#intro} -->
 
 I want to share a piece of investigative linguistics I did recently. It's a bit messy, and goes as follows. Not long ago, a couple of months perhaps, I encountered a [page](https://allthingslinguistic.com/post/50939757945/morphological-typology-illustrations-from) on Gretchen McCulloch's _All Things Linguistic_ blog breaking down the major types of morphological structures found in the world's languages. This refers to the kinds of word structures that a language has. For example, one language's words might necessarily consist of multiple internal parts, each bit contributing some kind of meaning to the sentence, while another language's words may only consist of one part and the order in which you combine the words determines the sentence's meaning.
 
-Exemplified with rather cute illustrations are the types of _Isolating/Analytic_, _Agglutinative_, and _Fusional_. (Illustrations are from SpecGram, originally found [here](https://specgram.com/CLII.3/09.phlogiston.cartoon.3.html).) Analytic languages are those with very simple word structures, like Vietnamese, where each word consists basically of one part. Agglutinative and Fusional languages are synthetic, because the meanings of words emerge from the synthesis of their multiple parts. Agglutinative languages concatenate word-parts together like lego bricks, with each bit typically contributing just one bit of meaning. An example of this can be seen in the Warlpiri noun _maliki-kari-kirlangu_ [dog-another-possessive] 'belonging to another dog'{{< footnote dir=a ref="nash-1980" >}}. In fusional languages, word-parts can express multiple bits of meaning, such as the _-st_ in the German verb _wander-st_ [wander-you.singular.present] '(You sg.) are wandering'.
+Exemplified with rather cute illustrations are the types of _Isolating/Analytic_, _Agglutinative_, and _Fusional_. (Illustrations are from SpecGram, originally found [here](https://specgram.com/CLII.3/09.phlogiston.cartoon.3.html).) Analytic languages are those with very simple word structures, like Vietnamese, where each word consists basically of one part. Agglutinative and Fusional languages are synthetic, because the meanings of words emerge from the synthesis of their multiple parts. Agglutinative languages concatenate word-parts together like lego bricks, with each bit typically contributing just one bit of meaning. An example of this can be seen in the Warlpiri noun _maliki-kari-kirlangu_ [dog-another-possessive] 'belonging to another dog'.{{% sidenote %}}From page 37 of David Nash's _Topics in Walrpiri Grammar_ (1980 MIT [Dissertation](http://www.ai.mit.edu/projects/dm/theses/nash80.pdf)).{{% /sidenote %}} In fusional languages, word-parts can express multiple bits of meaning, such as the _-st_ in the German verb _wander-st_ [wander-you.singular.present] '(You sg.) are wandering'.
 
 
 
-## <a href="#polysynthetic-words">#</a> Polysynthetic words {#polysynthetic-words}
+#### Polysynthetic words {#polysynthetic-words}
 
-I encourage you at this point visit the page in question. If you do, and make it to the bottom, you'll find an example of a type of language whose words are of absolutely eye-watering levels of complexity. Ubykh, a Caucasian language formerly spoken in the Caucasus and documented meticulously by George Dumézil and the last speaker{{< footnote dir=a ref="last-speaker" >}} Tevfik Esenç in the 20th century, is a so-called _Polysynthetic_ language, which in this context means that it can express in a word{{< footnote dir=a ref="polysynthesis" >}} what corresponds to an entire sentence in most other languages. The following Ubykh verb shows (perhaps the upper limit of) just how complex these languages can get:
+I encourage you at this point visit the page in question. If you do, and make it to the bottom, you'll find an example of a type of language whose words are of absolutely eye-watering levels of complexity. Ubykh, a Caucasian language formerly spoken in the Caucasus and documented meticulously by George Dumézil and the last speaker Tevfik Esenç in the 20th century,{{% sidenote %}}A rather well-cited example of the last fluent speaker of a language, who died in 1992. It's difficult to say however whether he really was the last speaker, as it's in reality quite difficult to determine who counts as the 'last speaker' (see for example [this excellent chapter](https://www.academia.edu/24481388/12_The_last_speaker_is_dead_long_live_the_last_speaker_) by Nick Evans).{{% /sidenote %}} is a so-called _Polysynthetic_ language, which in this context means that it can express in a word{{% sidenote %}}What really counts as a _word_ in these languages anyway?{{% /sidenote %}} what corresponds to an entire sentence in most other languages. The following Ubykh verb shows (perhaps the upper limit of) just how complex these languages can get:
    
-<figure>
-    <blockquote>
-    a-χʲa-z-batʂ&rsquo;a-ʁa-w-də-tʷ-aaj-la-fa-q&rsquo;a-jt&rsquo;-ma-da-χ
-    <br><br>
-    'If only you had not been able to make him take it all out from under me again for them!'
-    </blockquote>
-</figure>
+    
+> <span class="ipa">a-χʲa-z-batʂ&rsquo;a-ʁa-w-də-tʷ-aaj-la-fa-q&rsquo;a-jt&rsquo;-ma-da-χ</span>
+>
+> 'If only you had not been able to make him take it all out from under me again for them!'
+
 
 This is a truly remarkable, and also absurd, feat of human linguistic ability, by any standard. Consisting of 16 parts, this Ubykh expression is undoubtedly more complex than any word in any language you speak or know of. So of course, it seized my interest.
-
-<!-- ASK TREY IF IMAGE CAN BE REPRODUCED ? -->
-
-<!-- {{< image src=/img/ubykh.gif width="60%" float="left" margin="margin-right:2ch" alt="Cartoon illustration of a very long Ubykh word, segmented into morphemes.">}} -->
 
 If you're anything like me (let's hope not), then perhaps you might also be a little sceptical, given this rather unbelievable complexity. I mean, it's actually pretty hard to work out what proposition is being expressed here. It involves something about someone taking something out from under someone else for another someone else, but I can't properly comprehend the situation it is describing. It really makes you wonder how, and in what context, an Ubykh speaker uttered this thing. Obviously, the first thing to do to learn more is go back to the original source. The _allthingslinguistic.com_ post didn't name an Ubykh source, so I checked the [SpecGram post](https://specgram.com/CLII.3/09.phlogiston.cartoon.3.html). All the references are fortunately listed at its end, although strangely there's nothing specifically relating to Ubykh, only a few resources on polysynthesis more broadly. Upon checking all those resources, I tragically found no trace of The Verb, just some general remarks about Caucasian languages broadly.
 
 I thought that was rather strange. Where did it come from, then? Presumably SpecGram had to have found it somewhere. Doing a little searching online, I couldn't immediately find its original location, although I did find it cited in a range of educational resources, all of them appealing to its super-complexity:
 
-- aχʲazbatʂ&rsquo;aʁawdətʷaajlafaq&rsquo;ajt&rsquo;madaχ<br>"[Morphological Typology](https://allthingslinguistic.com/post/50939757945/morphological-typology-illustrations-from)", All Things Linguistic
-- ɜχʲɜzbɜtɕ&rsquo;ɜʁɜwdɨtʷɐjlɜfɜq&rsquo;ɜjt&rsquo;mɜdɜχ<br>"[Ubykh Language](https://en.wikipedia.org/wiki/Ubykh_language)", Wikipedia
-- aqhjazbacr&rsquo;aghawdætwaaylafaq&rsquo;ayt&rsquo;madaqh<br>"[Dying Words](https://onlinelibrary.wiley.com/doi/book/10.1002/9781444310450)", p. 52, by Nick Evans (2010)
-- aqhjazbacr&rsquo;aghawdɶtwaaylafaq&rsquo;ayt&rsquo;madaqh<br>"[An Introduction to Sociolinguistics, 6th ed.](https://www.routledge.com/An-Introduction-to-Sociolinguistics/Holmes-Wilson/p/book/9780367421106)", p. 487, by Janet Holmes and Nick Wiles (2022; citing Evans, above) 
+- <span class="ipa">aχʲazbatʂ&rsquo;aʁawdətʷaajlafaq&rsquo;ajt&rsquo;madaχ</span><br>"[Morphological Typology](https://allthingslinguistic.com/post/50939757945/morphological-typology-illustrations-from)", All Things Linguistic
+- <span class="ipa">ɜχʲɜzbɜtɕ&rsquo;ɜʁɜwdɨtʷɐjlɜfɜq&rsquo;ɜjt&rsquo;mɜdɜχ</span><br>"[Ubykh Language](https://en.wikipedia.org/wiki/Ubykh_language)", Wikipedia
+- <span class="ipa">aqhjazbacr&rsquo;aghawdætwaaylafaq&rsquo;ayt&rsquo;madaqh</span><br>"[Dying Words](https://onlinelibrary.wiley.com/doi/book/10.1002/9781444310450)", p. 52, by Nick Evans (2010)
+- <span class="ipa">aqhjazbacr&rsquo;aghawdɶtwaaylafaq&rsquo;ayt&rsquo;madaqh</span><br>"[An Introduction to Sociolinguistics, 6th ed.](https://www.routledge.com/An-Introduction-to-Sociolinguistics/Holmes-Wilson/p/book/9780367421106)", p. 487, by Janet Holmes and Nick Wiles (2022; citing Evans, above) 
 
-{{< image src=/img/ubykh-in-print.jpeg width="45%" float="right" margin="margin-left:2ch" alt="A printed example of the Ubykh super word in question, from Holmes and Wiles (2022), An Introduction to Sociolinguistics (6th ed.)" >}}
+{{< image src=/img/ubykh-in-print.jpeg cap="A printed example of the Ubykh super word in question, from Holmes and Wiles (2022), An Introduction to Sociolinguistics (6th ed.)" >}}
 
 Several other online posts mention it, too. What intrigued me about these occurrences was that they vary in spelling. This puzzled me a little as there was no obvious reason why these mentions wouldn't simply use the spelling of the original source, whatever it was. The only one of these that cites any original Ubykh material at all is Evans, who references two works by Dumézil: _La Langue des Oubykhs_ (1931), and _Documents Anatoliens sur les Langues et les Traditions du Caucase, Vol. 2: Textes Oubykhs_ (1962). With the sources now revealed to me, it was time to forget about any actual work I was committed to and go down the rabbit hole.
 
 
 
-## <a href="#scouring-books">#</a> Scouring some (French) books {#scouring-books}
+#### Scouring some (French) books {#scouring-books}
 
-I did what any habitual procrastinator with a linguistics degree would do, and trawled meticulously through those books to find the original printing of the mysterious super-mega-verb. This was a rather difficult task, for two reasons. First, these books are entirely set in French. I don't speak any French. So I had to climb that barrier somehow. Second, Ubykh has a ridiculously large set of sounds. Only two vowels, but eighty-four consonants. Naturally, many unusual and not-standardly-typeable glyphs are used to represent these sounds{{< footnote dir=a ref="ubykh-phonemes" >}}, which made digitally searching the files extremely difficult. The orthographic system (i.e., the set of symbols used to represent the sounds) unhelpfully varies from publication to publication.
+I did what any habitual procrastinator with a linguistics degree would do, and trawled meticulously through those books to find the original printing of the mysterious super-mega-verb. This was a rather difficult task, for two reasons. First, these books are entirely set in French. I don't speak any French. So I had to climb that barrier somehow. Second, Ubykh has a ridiculously large set of sounds. Only two vowels, but eighty-four consonants. Naturally, many unusual and not-standardly-typeable glyphs are used to represent these sounds,{{% sidenote %}} One example is the labialised alveolopalatal ejective affricate /<span class="ipa">tɕʷ&rsquo;</span>/, spelled by Dumézil as &lt;č&deg;&rsquo;&gt; in some texts and as &lt;ć̣ʷ&gt; in others. Another is the labialised and pharyngealised uvular ejective stop /<span class="ipa">qʷˤ&rsquo;</span>/, spelled in some cases as &lt;qw&gt; and in others as &lt;q̄&deg;&rsquo;&gt;. You can see why searching directly for Ubykh text would be challenging.{{% /sidenote %}} which made digitally searching the files extremely difficult. The orthographic system (i.e., the set of symbols used to represent the sounds) unhelpfully varies from publication to publication.
 
-Of course, this was no deterrent, and I persisted. In an attempt to bypass the French problem, I decided my first strategy would be to word-search for _sous_ 'under(neath)', from the _'take it all out from under me...'_ part of the translation. Plenty of hits, none of them right. I tried _optatif_, since this is in the optative (_'if only ...!'_) mood. Nothing. I tried a bunch of other search terms but came up empty-handed each time. I looked through each chapter for Ubykh sentences and again, nothing. I was annoyed as much as I was baffled... my only lead turned out to be a dead end. So where _did_ The Verb come from? Clearly I had to expand my database for searching, and thus I collected every digitally available work on Ubykh I could find{{< footnote dir=a ref="ubykh-sources" >}}. One of these works, _Le Verbe Oubykh_, is dedicated entirely to verbs -- I was sure I'd find it in there, seeing as it's about as epic as a verb can get, but it wasn't. Text after text, search after search, I found nothing. Pieces of it could be found around, but not the whole thing. For example, I found plenty of verbs incorporating the adverbial /bɜtɕ&rsquo;ɜ-/ 'under', and plenty of causative ('make X do Y') verbs, but none matching the target. Believe me, I looked in about every single place I could find; I cried my way through many, many chapters on Ubykh and relatives from obscure volumes on Caucasian languages, went down a billion rabbit holes on the phonology of these languages, and checked anything written on their syntax. Sadly these efforts were in vain. Even the Wikipedia page didn't name a source, which was most disappointing. I emailed Trey Jones, the current Editor-in-Chief of Speculative Grammarian, to see if he could recover anything, but his search ultimately was met with the same fate.
+Of course, this was no deterrent, and I persisted. In an attempt to bypass the French problem, I decided my first strategy would be to word-search for _sous_ 'under(neath)', from the _'take it all out from under me...'_ part of the translation. Plenty of hits, none of them right. I tried _optatif_, since this is in the optative (_'if only ...!'_) mood. Nothing. I tried a bunch of other search terms but came up empty-handed each time. I looked through each chapter for Ubykh sentences and again, nothing. I was annoyed as much as I was baffled... my only lead turned out to be a dead end. So where _did_ The Verb come from? Clearly I had to expand my database for searching, and thus I collected every digitally available work on Ubykh I could find.{{% sidenote %}}
+The major descriptive works are (in order of publication): &para; _La Langue des Oubykhs_ (Dumézil, 1931); &para; _Le Verbe Oubykh_ (Dumézil &amp; Esenç, 1962); &para; _Textes Oubykhs_ (Dumézil, 1962); &para; _Dictionnaire de la Langue Oubykh_ (Vogt, 1963); &para; _Nouvelles Études Oubykh_ (Dumézil, 1965); &para; _Textes Oubykh_ (Dumézil &amp; Esenç, 1978); &para; _A Grammar of Ubykh_ (Fenwick, 2011).
+{{% /sidenote %}}One of these works, _Le Verbe Oubykh_, is dedicated entirely to verbs -- I was sure I'd find it in there, seeing as it's about as epic as a verb can get, but it wasn't. Text after text, search after search, I found nothing. Pieces of it could be found around, but not the whole thing. For example, I found plenty of verbs incorporating the adverbial /<span class="ipa">bɜtɕ&rsquo;ɜ-</span>/ 'under', and plenty of causative ('make X do Y') verbs, but none matching the target. Believe me, I looked in about every single place I could find; I cried my way through many, many chapters on Ubykh and relatives from obscure volumes on Caucasian languages, went down a billion rabbit holes on the phonology of these languages, and checked anything written on their syntax. Sadly these efforts were in vain. Even the Wikipedia page didn't name a source, which was most disappointing. I emailed Trey Jones, the current Editor-in-Chief of Speculative Grammarian, to see if he could recover anything, but his search ultimately was met with the same fate.
 
-My last hope was the reference grammar from 2011, published through LINCOM and authored by Rohan S. H. Fenwick from the University of Queensland (which is interesting to me, as I've never heard of any Australian linguists working on Caucasian languages{{< footnote dir=a ref="important-aussie" >}}). This is a fairly comprehensive description that synthesises what's been written about Ubykh previously, putting it in a format more familiar to linguists and providing new analyses of the phonology, morphology, and syntax. It's actually a very nice grammar and contains some fantastic analyses of the published material. Very unfortunately for me, I couldn't find any occurrence of _a-χʲa-z-batʂ&rsquo;a-ʁa-w-də-tʷ-aaj-la-fa-q&rsquo;a-jt&rsquo;-ma-da-χ_. This troubled me deeply -- surely if it were anywhere, it would be this grammar. I find it difficult to accept that such a fantastic exemplar of morphological complexity would not be shown at least once. As with the other sources, the pieces of The Verb are all in there but not the whole thing at once.
+My last hope was the reference grammar from 2011, published through LINCOM and authored by Rohan S. H. Fenwick from the University of Queensland (which is interesting to me, as I've never heard of any Australian linguists working on Caucasian languages). This is a fairly comprehensive description that synthesises what's been written about Ubykh previously, putting it in a format more familiar to linguists and providing new analyses of the phonology, morphology, and syntax. It's actually a very nice grammar and contains some fantastic analyses of the published material. Very unfortunately for me, I couldn't find any occurrence of _a-χʲa-z-batʂ&rsquo;a-ʁa-w-də-tʷ-aaj-la-fa-q&rsquo;a-jt&rsquo;-ma-da-χ_. This troubled me deeply -- surely if it were anywhere, it would be this grammar. I find it difficult to accept that such a fantastic exemplar of morphological complexity would not be shown at least once. As with the other sources, the pieces of The Verb are all in there but not the whole thing at once.
 
-I was pulling out hair at this point. I could not believe my unsuccess, despite how comprehensive (I thought) my search was. After a brief period of feeling like a time-waster, my original suspicions began floating back up to the surface. What if _a-χʲa-z-batʂ&rsquo;a-ʁa-w-də-tʷ-aaj-la-fa-q&rsquo;a-jt&rsquo;-ma-da-χ_ was actually a fabrication? Perhaps someone has done an M. Baker{{< footnote dir=a ref="mark-baker" >}} and only inferred it by carefully examining the existing grammatical descriptions. But how would I even prove this? I had to think about that one. With my new hunch that it was all somehow made-up, I looked through the 2011 grammar for any evidence that someone had manually stitched together different pieces of Ubykh, such as an incorrect ordering of word-parts, or something else. To my amazement, everything seemed in perfect shape. [The following discussion is likely to be of interest only to my readers with a background in linguistics; if this is not you, feel free to head on to the next paragraph.] I looked especially at the allomorphy and ordering: there is phonologically-, morphologically- and syntactically-conditioned allomorphy in the agreement prefixes, as well as particular orderings governed by other elements of the verb, but alas, the correct allomorphs do occur and in the correct order. For example, the 3rd plural oblique prefix /ɐ-/ is introduced and governed by the benefactive derivation, occurring correctly before the associated prefix. This oblique prefix then triggers the deletion of the preceding 3rd singular absolutive prefix, which is zero when directly preceding any 3rd plural agreement marker. Or another example: there are two negation options for verbs -- a prefix /m(ɨ)-/ and suffix /-mɜ/ -- the latter of which is demanded by the pluperfect tense (/-q&rsquo;ɜ:jt&rsquo;/) and correctly appears in The Verb.
+I was pulling out hair at this point. I could not believe my unsuccess, despite how comprehensive (I thought) my search was. After a brief period of feeling like a time-waster, my original suspicions began floating back up to the surface. What if _a-χʲa-z-batʂ&rsquo;a-ʁa-w-də-tʷ-aaj-la-fa-q&rsquo;a-jt&rsquo;-ma-da-χ_ was actually a fabrication? Perhaps someone has done an M. Baker{{% sidenote %}}
+    Mark Baker, a linguist who has written extensively on theoretical aspects of polysynthesis, has used this method to make certain scientific claims. It's problematic, because in languages we often find that there are certain constructions that "should" exist but don't, for one reason or another. Often, the existence of an irregular or periphrastic form suppresses the expected form. In English, to take a simple example, we should expect that a word meaning "one who steals" is _stealer_, but this possibility is 'blocked' by the existence of _thief_.
+{{% /sidenote %}} and only inferred it by carefully examining the existing grammatical descriptions. But how would I even prove this? I had to think about that one. With my new hunch that it was all somehow made-up, I looked through the 2011 grammar for any evidence that someone had manually stitched together different pieces of Ubykh, such as an incorrect ordering of word-parts, or something else. To my amazement, everything seemed in perfect shape. [The following discussion is likely to be of interest only to my readers with a background in linguistics; if this is not you, feel free to head on to the next paragraph.] I looked especially at the allomorphy and ordering: there is phonologically-, morphologically- and syntactically-conditioned allomorphy in the agreement prefixes, as well as particular orderings governed by other elements of the verb, but alas, the correct allomorphs do occur and in the correct order. For example, the 3rd plural oblique prefix /<span class="ipa">ɐ-</span>/ is introduced and governed by the benefactive derivation, occurring correctly before the associated prefix. This oblique prefix then triggers the deletion of the preceding 3rd singular absolutive prefix, which is zero when directly preceding any 3rd plural agreement marker. Or another example: there are two negation options for verbs -- a prefix /<span class="ipa">m(ɨ)-</span>/ and suffix /<span class="ipa">-mɜ</span>/ -- the latter of which is demanded by the pluperfect tense (/<span class="ipa">-q&rsquo;ɜ:jt&rsquo;</span>/) and correctly appears in The Verb.
 
 
 Clearly, if this is the work of some Ubykh-loving nerd, then that individual has done their homework and more. But who? And why? I thought I was beat, but then I had a realisation, uncovering a new lead: the [Wikipedia article](https://en.wikipedia.org/wiki/Ubykh_language) on Ubykh does not refer to any sources, but someone had to have added The Verb at some point. Perhaps there was a reference there historically, which has since been (accidentally?) deleted. To test this theory, I examined the article's revision history in painstaking detail, from its creation to now. What I found was fascinating, but messy, so please hold on for the next while. 
 
 
 
-## <a href="#findings">#</a> Findings and results {#findings}
+#### Findings and results {#findings}
 
 The verb under investigation first appeared on the Ubykh Wikipedia article in [this edit](https://en.wikipedia.org/w/index.php?title=Ubykh_language&diff=prev&oldid=5446941) from 26/08/2004, at 02:14. Most curiously, it appears in the form:
 
-<figure>
-    <blockquote>
-    azbacr'aghawtwaaylafaq'ayt'daqh
-    <br><br>
-    'if only you had been able to take it all out from under me again'
-    </blockquote>
-    <br>
+
+
+> azbacr'aghawtwaaylafaq'ayt'daqh
+>
+> 'if only you had been able to take it all out from under me again'
     <figcaption>
         &mdash; [<a href="https://en.wikipedia.org/w/index.php?title=Ubykh_language&diff=prev&oldid=5446941">02:14, 26/08/2004 : User@203.45.230.188</a>]
     </figcaption>
-</figure>
 
 Two things need mentioning here: (1) it's missing stuff that appears in its most recent edition, notably the causative and benefactive derivations and the negation; and (2) no source is given for this word. The first point is almost definitive proof that the huge current version has been engineered after the fact, rather than lifted straight from a source. The second point doesn't prove much, except that even this 'basic' version has gone unattributed. Still, I couldn't find even that version in any existing work.
 
@@ -84,15 +80,10 @@ The editor is not named, other than by their IP address, given as 203.45.230.188
 
 Amazingly, the verb is even simpler (and thus my suspicions appear to be substantiated). But you can clearly see that the foundations of the latest version are there:
 
-<figure>
-    <blockquote>
-    a-z-bacr'a-gha-w-tʷ-q'a-yt'-ba
-    <br><br>
-    'if you had taken it out from under me'
-    </blockquote>
-    <br>
-    <figcaption>&mdash; [<a href="https://en.wikipedia.org/w/index.php?title=Talk:Agglutinative_language&diff=prev&oldid=3625866">00:38, 13/10/2003 : User@130.102.42.97</a>]</figcaption>
-</figure>
+> a-z-bacr'a-gha-w-tʷ-q'a-yt'-ba
+>
+> 'if you had taken it out from under me'
+> <figcaption>&mdash; [<a href="https://en.wikipedia.org/w/index.php?title=Talk:Agglutinative_language&diff=prev&oldid=3625866">00:38, 13/10/2003 : User@130.102.42.97</a>]</figcaption>
 
 While still very complex (by English standards, at least), this is really approaching something more like you'd find in one of these languages, and you could actually imagine a situation in which someone might say this. Anyway, that edit was made by another unnamed user with IP 130.102.42.97. Sifting through the revision history of [_Talk:Agglutinative languages_](https://en.wikipedia.org/w/index.php?title=Talk:Agglutinative_language&action=history&limit=500) for edits made by users _Thefamouseccles_, 203.45.230.188, and 130.102.42.97, we can establish with great precision the chronology of _a-χʲa-z-batʂ’a-ʁa-w-də-tʷ-aaj-la-fa-q’a-jt’-ma-da-χ_ through the four revisions linked below. In all but the first case, corresponding revisions to the main Ubykh article were completed by the same user just minutes later.
 
@@ -120,25 +111,17 @@ This final one (orthographic differences notwithstanding) is the version that ca
 
 Examining the revision history for the Talk page of 203.45.230.188, one can find a revision from 09:33 at 10/05/2005 stating:
 
-<figure>
-    <blockquote>
-    Hi Rohan... you should register.
-    </blockquote>
-    <br>
-    <figcaption>&mdash; [<a href="https://en.wikipedia.org/w/index.php?title=User_talk:203.45.230.188&diff=prev&oldid=16662234">09:33, 10/05/2005 : User@node_ue</a>]</figcaption>
-</figure>
+
+> Hi Rohan... you should register.
+>
+> <figcaption>&mdash; [<a href="https://en.wikipedia.org/w/index.php?title=User_talk:203.45.230.188&diff=prev&oldid=16662234">09:33, 10/05/2005 : User@node_ue</a>]</figcaption>
 
 Rohan... as in _Rohan S. H. Fenwick_, the author of _A Grammar of Ubykh_? That seemed too coincidental to be a coincidence, but I decided to get more evidence to be sure. Visiting [this edit of User talk:130.102.42.97](https://en.wikipedia.org/w/index.php?title=User_talk:130.102.42.97&oldid=49867943) from 04:29, 24/04/2006, one sees the following disclaimer, and much further down the eventual statement:
 
-<figure>
-    <blockquote>
-    This IP address, 130.102.42.97, is registered to University of Queensland and is shared by multiple users.<br>
-    ...<br>
-    Hey thefamouseccles, you're not logged in FYI. I just wanted to let you know that there's a new comment at Talk:Ubykh phonology.
-    </blockquote>
-    <br>
-    <figcaption>&mdash; [<a href="https://en.wikipedia.org/w/index.php?title=User_talk:130.102.42.97&diff=prev&oldid=49867943">04:29, 24/04/2006 : User@Khoikhoi</a>]</figcaption>
-</figure>
+> This IP address, 130.102.42.97, is registered to University of Queensland and is shared by multiple users.\
+> [...]\
+> Hey thefamouseccles, you're not logged in FYI. I just wanted to let you know that there's a new comment at Talk:Ubykh phonology.
+> <figcaption>&mdash; [<a href="https://en.wikipedia.org/w/index.php?title=User_talk:130.102.42.97&diff=prev&oldid=49867943">04:29, 24/04/2006 : User@Khoikhoi</a>]</figcaption>
 
 Elated I felt as it all clicked into place: Fenwick was associated with the University of Queensland, which suggests that they also commanded this anonymous account, as well as _Thefamouseccles_ by the helpful admission of user _Khoikhoi_. Moreover, the intimate knowledge of Ubykh morphology needed to accomplish this feat can now appropriately be attributed to the person who literally wrote the book on the language.
 
@@ -146,7 +129,7 @@ It makes sense suddenly why The Verb doesn't appear in the published grammar: be
 
 
 
-## <a href="#conclusions-morals">#</a> Conclusions and lessons {#conclusions-morals}
+#### Conclusions and lessons {#conclusions-morals}
 
 Well, quite the journey that was! I'm glad that after weeks of work I was able to solve one of the most irrelevant linguistic mysteries: the great Ubykh word, _a-χʲa-z-batʂ&rsquo;a-ʁa-w-də-tʷ-aaj-la-fa-q&rsquo;a-jt&rsquo;-ma-da-χ_, is a complete fabrication. We can thus be comforted then that no language has a word meaning _'if only you had not been able to make him take it all out from under me again for them!'_. I did reach out to Rhona Fenwick a couple of months ago to get confirmation of my findings, but I got no reply.
 
@@ -164,7 +147,7 @@ If anybody knows of any other too-good-to-be-true linguistic facts floating arou
 
 
 
-## <a href="#an-error">#</a> Appendix: Has an error been found? {#an-error}
+#### Appendix {#an-error}
 
 The following doesn't constitute part of the story, so I've put it here as an appendix. 
 
@@ -191,7 +174,7 @@ It's not clear how option (2) would work. One would need to resort to some paroc
 
 
 
-#### <a href="#footnotes">#</a> Footnotes {#footnotes}
+#### Footnotes {#footnotes}
 
 {{< footnote dir=b ref="nash-1980" >}} From page 37 of David Nash's _Topics in Walrpiri Grammar_ (1980 MIT [Dissertation](http://www.ai.mit.edu/projects/dm/theses/nash80.pdf)). 
 

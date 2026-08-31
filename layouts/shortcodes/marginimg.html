@@ -1,0 +1,9 @@
+{{ $src := .Get "src" }}
+<figure class="l-margin-img" style='width:{{ .Get "width" }};float:{{ .Get "float" }};{{ .Get "margin" }};{{ .Get "cap" }}'>
+	<div class="inner">
+		<a href="{{ $src }}"><img src="{{ $src}}" alt="{{ .Get "alt" }}"></a>
+	</div>
+	<figcaption>
+		{{ .Get "cap" | safeHTML }}
+	</figcaption>
+</figure>

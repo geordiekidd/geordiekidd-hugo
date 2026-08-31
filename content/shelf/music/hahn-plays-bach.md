@@ -8,6 +8,6 @@ relyear: 1997
 link: "https://www.youtube.com/watch?v=STlgJEFtmeg&list=OLAK5uy_klGDnlEcgKfuGAB0ALNSjlD-EKKN01Sb4&index=13"
 ---
 
-Come for the partita(s), stay for the sonata. One of the classic Bach CDs and a must-have for any Bach fan. I grew up listening to these pieces but played by Josef Suk, whose recordings are great but not as deep as Hahn's. This set of performances strikes the perfect balance between precise and sensitive, highlighting the sheer beauty of the original compositions. I have listened to *a lot* of Bach, but this is the recording I keep coming back to. (The companion to this album, released in 2018, is also excellent.)
+Come for the partita(s), stay for the sonata. One of the classic Bach CDs and a must-have for any Bach fan. I grew up listening to these pieces but played by Josef Suk, whose recordings are great but not as deep as Hahn's. This set of performances strikes the perfect balance between precise and sensitive, doing only the most correct justice to the original compositions. I have listened to *a lot* of Bach, but this is one of the few recordings I simply cannot do without. (The companion to this album, released in 2018, is also excellent.)
 
 Favourite piece: *Violin Sonata No. 3 in C Major*.

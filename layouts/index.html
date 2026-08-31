@@ -1,16 +1,112 @@
 {{ define "main" }}
-<div class="container">    
-	<!-- <div class="title">g.</div> -->
-	<div class="ls">$ ls</div>
-	<ul class="tree">
-		{{ range sort .Sections "Section" "asc" }}
-		<li><a href="{{ .Permalink }}">{{ .Section }}</a></li>
+<div class="container index-frame">
+	<div class="row">
+		<div class="col-4">
+			<section class="meta-panel title">
+				<a href="/about/"><h1><span class="dot dot-big"></span>Welcome</h1></a>
+			</section>
+		</div>
+		<div class="col-8">
+			<article class="body-content">
+				<p>I&rsquo;m Geordie [<span class="ipa">ˈd͡ʒoˑdi</span>], and this is my personal website. I work on the phonology and morphology of the Anmatyerr dialect chain spoken around central Australia, with a focus on variation and word structure. This site I use as a personal blog, a repository of my work, and a record of my activities. All views are my own. Listen to some <a id="random-music-link" target="_blank">music</a> while you browse.</p>
+				<p>If you&rsquo;d like to get in contact with me, simply epenthesise [@gmail] at the obvious location in my website URL. Please avoid addressing me by surname. Fan or hate mail welcomed.</p>
+			</article>
+			<!-- <hr class="border border-tertiary"> -->
+			<!-- <figure class="home-img"> -->
+			<!-- 	<img src="/img/self-new.jpeg" alt="A photo of the site maintainer, wearing: Ayame sunglasses; MAN-TLE cap, bag, and jacket; Muji shirt."> -->
+			<!-- </figure> -->
+
+		</div>
+	</div>
+	<hr class="border border-primary">
+	<div class="row">
+		<div class="col-4">
+			<section class="meta-panel title">
+				<a href="/blog/"><h1 class="blog"><span class="dot dot-big"></span>Latest news</h1></a>
+			</section>
+		</div>
+		{{ range $i, $e := first 3 (.Site.GetPage "Section" "blog").Pages }}
+		{{ if gt $i 0 }}
+		<div class="col-4">
+		</div>
 		{{ end }}
-	</ul>
-	<ul class="prompt-secondary">
-		<li>Listen to some <a id="random-music-link" target="_blank">music</a> while you browse.</li>
-	</ul>
+		<div class="col-8">
+			<section class="body-content">
+				<a href="{{ .Permalink }}" class="plain"><h1>{{ .Title | safeHTML }}</h1></a>
+				<a href="{{ .Permalink }}" class="plain"><h3>from {{ (.Date.Format "2. January 2006") }}</h3></a>
+			</section>
+			<article class="body-content">
+				{{- if .Truncated -}}
+				{{- .Summary | safeHTML -}}
+				{{- else -}}
+				{{- .Content | safeHTML -}}
+				{{- end -}}
+				<a href="{{ .RelPermalink }}" class="plain"><span class="square square-med"></span>{{ if .Truncated -}}continue reading{{- else -}}view post{{- end }}</a>
+				{{ if ne (add $i 1) 3 }}
+				<hr class="border border-tertiary">
+				{{ end }}
+			</article>
+		</div>
+		{{ end }}
+	</div>
+	<hr class="border border-primary">
+	<div class="row">
+		<div class="col-4">
+			<section class="meta-panel title">
+				<a href="/presentations/"><h1 class="presentations"><span class="dot dot-big"></span>Recent talks</h1></a>
+			</section>
+		</div>
+		<div class="col-8">
+			{{ range $i, $e := first 3 (.Site.GetPage "Section" "presentations").Pages }}
+			<div class="work-item body-content">
+				<a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>. Presented on {{ lower (.Date.Format "2. Jan 2006") }}, at the {{ .Params.location }}. <a href="{{ .Site.BaseURL}}presentations/{{ .Params.file }}">slides</a>.
+			</div>
+			{{ end }}
+		</div>
+	</div>
+	<hr class="border border-primary">
+	<div class="row">
+		<div class="col-4">
+			<section class="meta-panel title"><a href="/shelf/"><h1><span class="dot dot-big"></span>Music, movie, or book</h1></a></section>
+		</div>
+		<div class="col-8">
+			<div id="random-rec"></div>
+			<div id="all-shelf-items" style="display:none;">
+			{{- range where site.RegularPages "Section" "shelf" -}}
+			<div class="index-shelf-item" data-url="{{ .RelPermalink }}">
+				<section class="body-content">
+					<a href="shelf/#{{ with .File }}{{ .ContentBaseName }}{{ end }}"><h1><em>{{ .Title | safeHTML }}</em></h1></a>
+					<a href="shelf/#{{ with .File }}{{ .ContentBaseName }}{{ end }}"><h3>{{ .Params.relyear | safeHTML }} {{ strings.ToLower .Params.reltype | safeHTML }} by {{ .Params.artist | safeHTML }}</h3></a>
+				</section>
+				<article class="body-content">
+					{{ .Content }}
+					<hr class="border border-tertiary">
+				</article>
+				<figure class="home-img">
+					<a href="{{ .Params.link }}" target="_blank">
+						<img src="{{ strings.TrimSuffix "/" .RelPermalink }}.jpg" width="50%"></img>
+					</a>
+				</figure>
+			</div>
+			{{- end -}}
+			</div>
+		</div>
+	</div>
 </div>
+<hr class="border border-primary">
+{{- partial "footer.html" . -}}
+<script>
+	const container = document.getElementById("all-shelf-items");
+	const items = container.querySelectorAll(".index-shelf-item");
+
+	if (items.length > 0) {
+		const randomIndex = Math.floor(Math.random() * items.length);
+		const randomItem = items[randomIndex];
+
+		const output = document.getElementById("random-rec");
+		output.innerHTML = randomItem.innerHTML;
+	}
+</script>
 <script>
 	var linkArray = [
 		{{- range sort (where .Site.RegularPages ".File.Dir" "shelf/music/") "Params.link" -}}
@@ -36,7 +132,7 @@
 		"https://www.youtube.com/watch?v=n-KLFp40wWE", // Moment's Notice - McCoy Tyner
 		"https://www.youtube.com/watch?v=9KW_pU7AC4U", // Beethoven String Quartet 13
 		"https://www.youtube.com/watch?v=QH3Fx41Jpl4", // Sinnerman - Nina Simone
-		"https://www.youtube.com/watch?v=qQPm5wqMScE", // Birthday - The Sugarcubes 
+		"https://www.youtube.com/watch?v=BFQPNApwJGU", // Birthday - The Sugarcubes 
 		"https://www.youtube.com/watch?v=wNHybIY9xMw", // All-Night Vigil, I - Rachmaninoff 
 		"https://www.youtube.com/watch?v=V0RoYfwvGgA", // Easy to Love - Cannonball Adderley
 		"https://www.youtube.com/watch?v=iBruvJaYVoc", // Interlude (Lament) - Gary Burton Quartet
@@ -77,6 +173,26 @@
 		"https://www.youtube.com/watch?v=uBLY6oVYMVI&list=PLfJndz0utgOOdlYEmXfOjmjQVz5g33-3d&index=1", // PRAYER - Joel Ross
 		"https://www.youtube.com/watch?v=BGC4Rm13lXQ", // Hour of Parting - Sun Ra
 		"https://www.youtube.com/watch?v=PDnMxgxx2jg", // Talk to Me - Joni Mitchell
+		"https://www.youtube.com/watch?v=cBggPpSp7WA", // Langsamer Satz - Webern
+		"https://www.youtube.com/watch?v=aLJzyzic2W4", // Love Party (extended) - Marvin Gaye
+		"https://www.youtube.com/watch?v=106riboIVco", // Yearnin' Burnin' - Pleasure
+		"https://www.youtube.com/watch?v=p7ypYnhrR8U", // Ramblin' - Aretha Franklin
+		"https://www.youtube.com/watch?v=FwnE2QXCaQQ", // Manzanita - Bobby Hutcherson
+		"https://www.youtube.com/watch?v=f5WqwKWbba8", // Ogunde - Os Tincoas
+		"https://www.youtube.com/watch?v=NjMl1tjXJNQ", // Tadd's Delight - Miles Davis
+		"https://www.youtube.com/watch?v=l7sMRqDA47k", // Es ist das Heil uns kommen her - Brahms
+		"https://www.youtube.com/watch?v=h2pR6meEr78", // You're My Choice Tonight - Teddy Pendergrass
+		"https://www.youtube.com/watch?v=W8UyhzkkrTk", // Never Let You Be Without Love - Willie Hutch
+		"https://www.youtube.com/watch?v=6uejpqBFNUo", // St Thomas (Live) - Sonny Rollins
+		"https://www.youtube.com/watch?v=xaFNHjqqWnc", // Duke Ellington's Sound of Love - Charles Mingus
+		"https://www.youtube.com/watch?v=9wmp2PYbKGw", // For Harry Carney - Charles Mingus
+		"https://www.youtube.com/watch?v=NCDtDFHQAVQ", // CTA (Live) - Brad Mehldau
+		"https://www.youtube.com/watch?v=DMb8BhCXNs4", // Use Me (Live) - D'Angelo
+		"https://www.youtube.com/watch?v=oZ4zKEGnzaU", // Sunny - James Brown
+		"https://www.youtube.com/watch?v=eJEenumn6X8", // Love's So Far Away - Donald Byrd
+		"https://www.youtube.com/watch?v=Gh5cbHQIZKo", // Just in Time (Live) - Shirley Horn
+		"https://www.youtube.com/watch?v=qUlVElzy5AQ", // Moanin' (Live) - Oscar Peterson Trio and Lee Morgan
+		"https://www.youtube.com/watch?v=8OQ8tnOkOy8", // Take this stone - Cecile McLorin Salvant
 	];
 	function updateLink() {
 		var num = Math.floor(Math.random() * linkArray.length);

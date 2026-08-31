@@ -1,20 +1,21 @@
 {{ define "main" }}
-  <div class="container">
-    <div class="post-header">
-      <span class="date">
-        <time>
-          <a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }}</a>
-        </time> 
-        {{- if isset .Params "author" -}}
-          <span style="opacity:50%";>*&nbsp;by {{ .Params.author }}</span>
-        {{ end }}
-      </span>
-      <h1>{{ .Title | safeHTML }}</h1>
-    </div>
-    {{ .Content }}
-    <p>
-      Published in <em>{{ .Params.pubname }}</em>, <em>{{ .Params.volume }}</em>{{ if isset .Params "issue" }}({{ .Params.issue }}){{ end }}, {{ .Params.pages | safeHTML }}. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}
-    </p>
-    {{ partial "post-nav.html" . }}
-  </div>
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+			<section class="meta-panel">
+				<a href="{{ .RelPermalink }}"><h1>{{ .Title | safeHTML }}</h1></a>
+				<a href="{{ .RelPermalink }}"><h3>published {{ (.Date.Format "2. January 2006") }}{{ if isset .Params "author" }}<br>by {{ .Params.author }}{{- end -}}</h3></a>
+			</section>
+		</div>
+		<div class="col-7">
+			<article>
+				{{ .Content }}
+				<p>
+				Published in <em>{{ .Params.pubname }}</em>, <em>{{ .Params.volume }}</em>{{ if isset .Params "issue" }}({{ .Params.issue }}){{ end }}, {{ .Params.pages | safeHTML }}. {{ if isset .Params "file" }}<a href="{{ .Site.BaseURL }}writing/{{ .Params.file }}">PDF</a>{{ end }}
+				</p>
+			</article>
+		</div>
+	</div>
+	{{ partial "post-nav.html" . }}
+</div>
 {{ end }}

@@ -8,4 +8,4 @@ relyear: 1992
 link: "https://typographica.org/typography-books/the-elements-of-typographic-style-4th-edition/"
 ---
 
-It's poetry about typography, really. Excellent historical overview and coverage of type and page design, and just fantastic prose throughout. 'Typographer's Bible' seems accurate. Many of the principles in there seem implicitly generalisable to designing space and shape in general, though, and I always take something new away from the book whenever I dive in.
+It's poetry about typography, really. Excellent historical overview and coverage of type and page design, dressed in fantastic prose throughout. 'Typographer's Bible' seems accurate. Like many great works in typography (Jan Tschichold's *Asymmetric Typography*, for instance), the principles espoused translate well to designing space and shape more broadly. So, I always take something new away from the book whenever I dive in.
