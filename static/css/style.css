@@ -346,6 +346,7 @@ h3:has(.dot-big) { padding-left: 1rem; text-indent: -1rem; }
 	font-size: 0.9rem;
 	line-height: 1.5rem;
 	position: relative;
+	scroll-margin-top: 6rem;
 }
 
 .sidenote-number {
@@ -368,6 +369,11 @@ h3:has(.dot-big) { padding-left: 1rem; text-indent: -1rem; }
 	content: counter(sidenote-counter);
 	position: relative;
 	font-variant-position: super;
+}
+
+.sidenote img {
+	border: 0.5px dotted var(--fg-color-secondary);
+	margin-top: 1rem;
 }
 
 @media (min-width: 50em) {
@@ -408,8 +414,9 @@ h3:has(.dot-big) { padding-left: 1rem; text-indent: -1rem; }
 		margin: 0.75rem;
 		padding-left: 0.75rem;
 	}
-	.sidenote-number:hover > .sidenote::before {
-		content: "";
+	.sidenote-number:hover > .sidenote {
+		/* content: ""; */
+		background-color: var(--bg-color-tertiary);
 	}
 }
 

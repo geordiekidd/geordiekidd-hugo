@@ -34,7 +34,7 @@ I thought that was rather strange. Where did it come from, then? Presumably Spec
 - <span class="ipa">aqhjazbacr&rsquo;aghawdætwaaylafaq&rsquo;ayt&rsquo;madaqh</span><br>"[Dying Words](https://onlinelibrary.wiley.com/doi/book/10.1002/9781444310450)", p. 52, by Nick Evans (2010)
 - <span class="ipa">aqhjazbacr&rsquo;aghawdɶtwaaylafaq&rsquo;ayt&rsquo;madaqh</span><br>"[An Introduction to Sociolinguistics, 6th ed.](https://www.routledge.com/An-Introduction-to-Sociolinguistics/Holmes-Wilson/p/book/9780367421106)", p. 487, by Janet Holmes and Nick Wiles (2022; citing Evans, above) 
 
-{{< image src=/img/ubykh-in-print.jpeg cap="A printed example of the Ubykh super word in question, from Holmes and Wiles (2022), An Introduction to Sociolinguistics (6th ed.)" >}}
+{{< image src=/img/ubykh-in-print.jpeg width=80% cap="A printed example of the Ubykh super word in question, from Holmes and Wiles (2022), An Introduction to Sociolinguistics (6th ed.)" >}}
 
 Several other online posts mention it, too. What intrigued me about these occurrences was that they vary in spelling. This puzzled me a little as there was no obvious reason why these mentions wouldn't simply use the spelling of the original source, whatever it was. The only one of these that cites any original Ubykh material at all is Evans, who references two works by Dumézil: _La Langue des Oubykhs_ (1931), and _Documents Anatoliens sur les Langues et les Traditions du Caucase, Vol. 2: Textes Oubykhs_ (1962). With the sources now revealed to me, it was time to forget about any actual work I was committed to and go down the rabbit hole.
 
@@ -76,7 +76,7 @@ Two things need mentioning here: (1) it's missing stuff that appears in its most
 
 The editor is not named, other than by their IP address, given as 203.45.230.188. To find out more I decided to review their contribution history, as any sane person would do. They had made a substantial number of edits to the Ubykh page, of various sorts, and other language-related articles (Klingon, click consonants, mora, Australian English, to name just a few). Anyway, they made an [edit at 02:10](https://en.wikipedia.org/w/index.php?title=Talk:Agglutinative_language&oldid=5451263) to the Talk page for _Agglutinative languages_, only four minutes before the edit shown above. In the 2:10 revision, one can see an entry by a user named _Thefamouseccles_ spelling out the Ubykh word as an example in a language they are "familiar with", dated 13/10/2003 at 00:37. Reviewing all edits to this Talk page, one finds that in an [edit dated 13/10/2003 at 00:38](https://en.wikipedia.org/w/index.php?title=Talk:Agglutinative_language&diff=prev&oldid=3625866), the following first appears: 
 
-{{< image src=/img/ubykh-evidence-2.png width="100%" alt="The first known appearance of the Ubykh word with which this article is concerned." >}}
+{{< image src=/img/ubykh-evidence-2.png width="80%" alt="The first known appearance of the Ubykh word with which this article is concerned." >}}
 
 Amazingly, the verb is even simpler (and thus my suspicions appear to be substantiated). But you can clearly see that the foundations of the latest version are there:
 
@@ -151,7 +151,9 @@ If anybody knows of any other too-good-to-be-true linguistic facts floating arou
 
 The following doesn't constitute part of the story, so I've put it here as an appendix. 
 
-Upon revisiting this whole thing to write up this post, I did in fact discover a contradiction in the construction of The Verb, and it has to do (as I predicted) with an error in the agreement morphology with respect to the morphosyntactic derivations. The following lays out my discovery. The verb is an ordinary transitive verb /tʷ/ 'take', derived into a causative one. That changes the meaning from 'he took it' to 'you made him take it'. In Ubykh, 'he' would be demoted from ergative to oblique case (i.e., from subject to indirect object), and 'it' would remain in absolutive case (i.e., remain the direct object){{< footnote dir=a ref="causatives" >}}. (In English this might sound something like 'you made it be taken from him'.) Importantly, this means that in 'you made him take it', the 3rd singular argument 'him' is now an oblique argument (in Ubykh; note that the absolutive argument 'it' is represented by a null prefix). According to Fenwick's 2011 grammar, obliques can be represented by prefixes in two positions: directly after the absolutive prefix but before the benefactive prefix /χʲɜ-/ (i.e., Oblique-1 position), or after the benefactive prefix but before a locational preverbal element such as /bɜtɕ&rsquo;ɜ-/ 'under' (i.e., Oblique-2 position).
+Upon revisiting this whole thing to write up this post, I did in fact discover a contradiction in the construction of The Verb, and it has to do (as I predicted) with an error in the agreement morphology with respect to the morphosyntactic derivations. The following lays out my discovery. The verb is an ordinary transitive verb /tʷ/ 'take', derived into a causative one. That changes the meaning from 'he took it' to 'you made him take it'. In Ubykh, 'he' would be demoted from ergative to oblique case (i.e., from subject to indirect object), and 'it' would remain in absolutive case (i.e., remain the direct object).{{% sidenote %}}
+see page 138 in Fenwick. R. S. H. (2011). _A Grammar of Ubykh_. Lincom Europa.{{% /sidenote %}} 
+(In English this might sound something like 'you made it be taken from him'.) Importantly, this means that in 'you made him take it', the 3rd singular argument 'him' is now an oblique argument (in Ubykh; note that the absolutive argument 'it' is represented by a null prefix). According to Fenwick's 2011 grammar, obliques can be represented by prefixes in two positions: directly after the absolutive prefix but before the benefactive prefix /χʲɜ-/ (i.e., Oblique-1 position), or after the benefactive prefix but before a locational preverbal element such as /bɜtɕ&rsquo;ɜ-/ 'under' (i.e., Oblique-2 position).
 
 If you sketch out the dependencies in The Verb, you will actually find that the third singular oblique fails to occupy either position because they are filled by two other oblique arguments:
 
@@ -171,23 +173,3 @@ The third plural oblique /ɐ-/ '(for) them' is governed by the benefactive and t
 As far as I can tell, there is no plausible explanation for this. The causee participant of the causative construction, though in oblique case, should be an obligatory argument and therefore necessarily represented in the verb. It's unclear from Fenwick's description whether obliques introduced by applicativisation are also obligatory, but their representation by prefixes on the verb suggests they are. There are three possibilities: (1) the registration of three oblique arguments on the verb is not possible, blocking the argument structure of the verb; (2) it is possible to have three oblique arguments but only two can 'survive', effectively deleting the loser; or (3) three oblique prefixes can occur on the verb, but the third singular oblique prefix is null and therefore simply cannot be observed.
 
 It's not clear how option (2) would work. One would need to resort to some parochial hierarchy in which third singular obliques lose to not only Speech Act Participants but also third plural obliques in the contest for being represented on the verb. As far as I'm aware there's no independent motivation for positing that. Option (3) seems similarly implausible, on the grounds that there is no other evidence for verbs representing three obliques, and such a lack of evidence makes it impossible to demonstrate that The Verb is in fact one such case. Moreover, Fenwick even states that "verbs [with four arguments] are rare" (p. 100), which almost _a priori_ rules out the possibility of verbs with five. Sadly we'll never truly know the answer, as there are no native speakers remaining. But I'd be willing to wager some money on being right.
-
-
-
-#### Footnotes {#footnotes}
-
-{{< footnote dir=b ref="nash-1980" >}} From page 37 of David Nash's _Topics in Walrpiri Grammar_ (1980 MIT [Dissertation](http://www.ai.mit.edu/projects/dm/theses/nash80.pdf)). 
-
-{{< footnote dir=b ref="last-speaker" >}} A rather well-cited example of the last fluent speaker of a language, who died in 1992. It's difficult to say however whether he really was the last speaker, as it's in reality quite difficult to determine who counts as the 'last speaker' (see for example [this excellent chapter](https://www.academia.edu/24481388/12_The_last_speaker_is_dead_long_live_the_last_speaker_) by Nick Evans).
-
-{{< footnote dir=b ref="polysynthesis" >}} What really counts as a _word_ in these languages anyway? 
-
-{{< footnote dir=b ref="ubykh-phonemes" >}} One example is the labialised alveolopalatal ejective affricate /tɕʷ&rsquo;/, spelled by Dumézil as &lt;č&deg;&rsquo;&gt; in some texts and as &lt;ć̣ʷ&gt; in others. Another is the labialised and pharyngealised uvular ejective stop /qʷˤ&rsquo;/, spelled in some cases as &lt;qw&gt; and in others as &lt;q̄&deg;&rsquo;&gt;. You can see why searching directly for Ubykh text would be challenging.
-
-{{< footnote dir=b ref="ubykh-sources" >}} The major descriptive works are (in order of publication): &para; _La Langue des Oubykhs_ (Dumézil, 1931); &para; _Le Verbe Oubykh_ (Dumézil &amp; Esenç, 1962); &para; _Textes Oubykhs_ (Dumézil, 1962); &para; _Dictionnaire de la Langue Oubykh_ (Vogt, 1963); &para; _Nouvelles Études Oubykh_ (Dumézil, 1965); &para; _Textes Oubykh_ (Dumézil &amp; Esenç, 1978); &para; _A Grammar of Ubykh_ (Fenwick, 2011).
-
-{{< footnote dir=b ref="important-aussie" >}} This fact, as it turned out, was crucial.
-
-{{< footnote dir=b ref="mark-baker" >}} Mark Baker, a linguist who has written extensively on theoretical aspects of polysynthesis, is quite the fan of this method. It's problematic, because in languages we often find that there are certain constructions that "should" exist (according to grammatical generalisations made by the analyst) but don't, for one reason or another. Often, the existence of an irregular or periphrastic form suppresses the expected form. In English, to take a simple example, we should 'expect' that a word meaning "one who steals" is _stealer_, but this possibility is 'blocked' by the existence of _thief_.
-
-{{< footnote dir=b ref="causatives" >}} see page 138 in Fenwick. R. S. H. (2011). _A Grammar of Ubykh_. Lincom Europa.
