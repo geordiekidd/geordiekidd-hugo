@@ -1254,7 +1254,7 @@ pre {
 	margin-bottom: 0rem;
 }
 .shelf-section > * {
-	width: 90%;
+	/* width: 90%; */
 }
 
 .shelf-section header a {

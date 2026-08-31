@@ -60,7 +60,7 @@
 					<a href="{{ if isset .Params "link" }}{{ .Params.link }}{{ else }}#{{ .File.BaseFileName }}{{ end }}" target="{{ if isset .Params "link" }}_blank{{ end }}"><h1>{{ .Title | safeHTML }}</h1></a>
 					<h3>{{ .Params.reltype }} by {{ .Params.artist | safeHTML }}, {{ .Params.relyear }}</h3>
 				</section>
-				<article>
+				<article class="body-content">
 					{{ .Content }}
 					<footer>
 					<hr class="border border-tertiary">
@@ -77,7 +77,7 @@
 					<h1>My favourite music, books, and movies</h1>
 					<h3>updated {{ .Lastmod | time.Format "January 2006" }}</h3>
 				</section>
-				<article>
+				<article class="body-content">
 					<p>On these shelves you'll find some of my favourite music, books, and movies. Maybe you'll enjoy some of them too. I've included a short reflection on each item, and a link to where you can find it. (Scroll horizontally through each shelf to see more.)</p>
 				</article>
 			</div>
