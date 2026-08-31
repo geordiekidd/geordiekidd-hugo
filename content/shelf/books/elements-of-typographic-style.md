@@ -1,7 +1,7 @@
 ---
 title: "The Elements of Typographic Style"
 date: 2025-10-26T11:57:54+11:00
-draft: false
+draft: true
 artist: Robert Bringhurst
 reltype: Book
 relyear: 1992

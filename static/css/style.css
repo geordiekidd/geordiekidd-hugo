@@ -376,6 +376,8 @@ h3:has(.dot-big) { padding-left: 1rem; text-indent: -1rem; }
 	margin-top: 1rem;
 }
 
+.index-frame .sidenote { display: none}
+
 @media (min-width: 50em) {
 	.sidenote {
 		display: block;
