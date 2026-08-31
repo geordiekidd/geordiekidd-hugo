@@ -222,6 +222,9 @@ hr.border-horiz--mobile {
 .body-content {
 	width: 90%;
 }
+
+.body-content + hr.border-tertiary { width: 90%; }
+
 .home-img {
 	width: 50%;
 }
@@ -229,6 +232,7 @@ hr.border-horiz--mobile {
 @media(max-width: 50em) {
 	.body-content, .home-img { margin-left: 10%; }
 	.container > .row:has(article.body-content) { width: 100%; }
+	.body-content + hr.border-tertiary { width: 100%; }
 }
 
 .index-frame hr.border-primary {
