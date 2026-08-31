@@ -113,6 +113,12 @@ main {
 .container {
 }
 
+.title {
+	font-size: 3rem;
+	letter-spacing: -0.5rem;
+	margin-bottom: 3rem;
+}
+
 h1 {
   font-weight: 400;
   position: relative;
@@ -447,11 +453,11 @@ img {
 
 /* level 1 */
 .tree > li::before {
-  content: "";
+  /* content: "├─ "; */
 }
 
 .tree > li:last-child::before {
-  content: ""
+  /* content: "└─ " */
 }
 
 /* level 2 */
