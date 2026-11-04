@@ -1,7 +1,7 @@
 ---
 title: "Symphony No. 9"
 date: 2025-01-09T14:12:12+11:00
-draft: false
+draft: true
 artist: Gustav Mahler
 reltype: Composition
 relyear: 1912

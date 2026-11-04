@@ -139,6 +139,35 @@ html {
 	-webkit-font-smoothing: antialiased;
 }
 
+/* Hyphenation */
+html {
+	-moz-hyphens: auto;
+	-moz-hyphenate-limit-chars: 6 3 3;
+	-moz-hyphenate-limit-lines: 2;
+	-moz-hyphenate-limit-last: always;
+	-moz-hyphenate-limit-zone: 8%;
+
+	-webkit-hyphens: auto;
+	-webkit-hyphenate-limit-limit-before: 3;
+	-webkit-hyphenate-limit-limit-after: 3;
+	-webkit-hyphenate-limit-chars: 6 3 3;
+	-webkit-hyphenate-limit-lines: 2;
+	-webkit-hyphenate-limit-last: always;
+	-webkit-hyphenate-limit-zone: 8%;
+
+	-ms-hyphens: auto;
+	-ms-hyphenate-limit-chars: 6 3 3;
+	-ms-hyphenate-limit-lines: 2;
+	-ms-hyphenate-limit-last: always;
+	-ms-hyphenate-limit-zone: 8%;
+
+	hyphens: auto;
+	hyphenate-limit-chars: 6 3 3;
+	hyphenate-limit-lines: 2;
+	hyphenate-limit-last: always;
+	hyphenate-limit-zone: 8%;
+}
+
 body {
 	margin: 0px;
 	color: var(--fg-color);
@@ -254,6 +283,10 @@ section:has(.site-title) {
 }
 
 b {
+	font-weight: 600;
+}
+
+strong {
 	font-weight: 500;
 }
 
@@ -313,19 +346,21 @@ h3:has(.dot-med) {
 h4 {
 	font-weight: 400;
 	font-style: italic;
-	margin-top: 3rem;
-	margin-bottom: 1rem;
-}
-
-h4::after {
-	display: block;
-	content: "";
-	width: 33%;
-	border-bottom: 1.5px dotted var(--bg-color-secondary);
+	margin: 1.5rem 0;
+	padding-top: 1.5rem;
+	border-top: 0.06em dashed var(--bg-color-secondary);
+	scroll-margin-top: 4.5rem;
 }
 
 h4:not(p + h4) {
 	margin-top: 0;
+}
+
+@media(max-width: 50em) {
+	h4 {
+		margin-left: -10%;
+		border-top: 0.06em dashed var(--bg-color-secondary);
+	}
 }
 
 a:has(h1) { text-decoration: none; }
@@ -342,33 +377,46 @@ h3:has(.dot-big) { padding-left: 1rem; text-indent: -1rem; }
 	margin-bottom: 1.5rem;
 }
 
+sup {
+	font-variant-position: super;
+	font-size: 0.75rem;
+}
+
 .sidenote {
-	font-size: 0.9rem;
+	font-size: 0.86rem;
 	line-height: 1.5rem;
 	position: relative;
 	scroll-margin-top: 6rem;
-}
-
-.sidenote-number {
-	counter-increment: sidenote-counter;
-	display: inline;
-}
-
-.sidenote-number:hover {
-	background: var(--bg-color-secondary);
 }
 
 .sidenote::before {
 	content: counter(sidenote-counter)". ";
 	position: relative;
 	vertical-align: baseline;
-	font-size: 0.9rem;
+	font-size: 0.86rem;
+}
+
+.sidenote-number {
+	counter-increment: sidenote-counter;
+	appearance: none;
+	-webkit-appearance: none;
+	background: none;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	cursor: pointer;
 }
 
 .sidenote-number::after {
 	content: counter(sidenote-counter);
-	position: relative;
+	/* color: var(--fg-color); */
+	/* text-decoration: underline; */
+	font-size: 0.9rem;
 	font-variant-position: super;
+}
+
+.sidenote-number:hover, .sidenote-number:hover + .sidenote {
+	background: var(--bg-color-secondary);
 }
 
 .sidenote img {
@@ -381,17 +429,15 @@ h3:has(.dot-big) { padding-left: 1rem; text-indent: -1rem; }
 @media (min-width: 50em) {
 	.sidenote {
 		display: block;
-
 		float: left;
 		clear: left;
 		margin-left: -55.555%;
 		text-align: left;
-
 		top: -1rem;
 		max-width: 50%;
 		margin-top: 1rem;
 	}
-	.sidenote-number:hover .sidenote {
+	.sidenote:hover .sidenote-number {
 		background-color: var(--bg-color-tertiary);
 	}
 	figure.l-margin-img {
@@ -410,12 +456,25 @@ h3:has(.dot-big) { padding-left: 1rem; text-indent: -1rem; }
 @media (max-width: 50em) {
 	.sidenote {
 		display: block;
-		z-index: 9999;
-		float: left;
+		position: static;
+		left: auto;
+		top: auto;
+		width: auto;
+		z-index: 2;
 		text-align: left;
-		margin: 0.75rem;
-		padding-left: 0.75rem;
+		margin: 0.75rem 0rem;
+		padding: 0.25rem 0.75rem;
+		background-color: var(--bg-color-tertiary);
+		border-left: 1px solid var(--fg-color-secondary);
+		line-height: 1.29rem;
 	}
+	.sidenote-number::after {
+		color: var(--fg-color);
+		background-color: var(--bg-color-tertiary);
+
+	}
+	html.js .sidenote { display: none; }
+	html.js .sidenote.is-open { display: block; }
 	.sidenote-number:hover > .sidenote {
 		/* content: ""; */
 		background-color: var(--bg-color-tertiary);
@@ -649,7 +708,7 @@ a:has(figure):hover {
 	color: var(--link-color);
 }
 
-figure {
+figure ~ {
 	margin-top: 1.5rem;
 }
 

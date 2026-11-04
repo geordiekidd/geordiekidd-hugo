@@ -11,6 +11,7 @@ markup:
       unsafe: true
     extensions:
       typographer: true
+      bibtex: true
 
 outputs:
   home: 
